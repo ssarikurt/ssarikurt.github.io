@@ -1,2 +1,6 @@
-remote_theme:  coderefinery/sphinx-lesson-template
+plugins:
+  - jekyll-remote-theme
+remote_theme: benbalter/retlab
+
+##remote_theme:  coderefinery/sphinx-lesson-template
 ###readthedocs/sphinx_rtd_theme 
