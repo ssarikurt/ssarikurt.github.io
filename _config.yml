@@ -1,1 +1,2 @@
-remote_theme:  readthedocs/sphinx_rtd_theme 
+remote_theme:  coderefinery/sphinx-lesson-template
+###readthedocs/sphinx_rtd_theme 
