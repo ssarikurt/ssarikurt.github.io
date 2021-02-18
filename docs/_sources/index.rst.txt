@@ -6,6 +6,8 @@
 Deneme 1 2 3!
 =================================
 
+$\int_a x dx$
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
