@@ -8,6 +8,11 @@ Deneme 1 2 3!
 
 $\int_a x dx$
 
+r"""
+  :math:`a^2+b^2=c^2`
+
+"""
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
