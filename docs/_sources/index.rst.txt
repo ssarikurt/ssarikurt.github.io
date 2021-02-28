@@ -43,3 +43,15 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. Software section
+.. toctree::
+   :maxdepth: 1
+   :caption: Yazılımlar
+
+   software/applicatios
+
+.. toctree::
+   :maxdepth: 2
+
+   applications/sw_guides
