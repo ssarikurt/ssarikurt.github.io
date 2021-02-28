@@ -6,7 +6,7 @@
 Malzeme Bilimlerinde YBH Uygulamaları
 ======================================
 
-Bilgisayara dayalı malzeme bilimleri araştırma alanlarında kullanılan açık kaynakkaodlu ve lisanlaı yazılımlar ile ilgili temel bilgilere bu sayfadan ulaşabilirsiniz. 
+Bilgisayara dayalı malzeme bilimleri araştırma alanlarında kullanılan açık kaynak kodlu ve lisanlı yazılımlar ile ilgili temel bilgilere bu sayfadan ulaşabilirsiniz. 
  
 
 İlgili Yazılımlar
@@ -17,7 +17,7 @@ Bilgisayara dayalı malzeme bilimleri araştırma alanlarında kullanılan açı
    :maxdepth: 1
    :caption: Yazılımlar
 
-   software/applicatios
+   software/applications
 
 .. toctree::
    :maxdepth: 2
