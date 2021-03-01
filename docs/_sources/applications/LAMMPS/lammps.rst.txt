@@ -98,4 +98,43 @@ Window subsystem for Linux (WSL)’yi etkinleştiriniz ve Ubuntu kurunuz. Daha s
 2- Docker ile Hazır LAMMPS Kurulumu
 ====================================
 
+Sizler için Linux tabanlı bir “Docker Container” oluşturduk. Bu container eğitim için gerekli paketleri ile LAMMPS’ı ve bazı yardımcı grafik arayüzleri içermektedir.  Bu container’i çalıştırınca, internet tarayıcınız (örn. Firefox) ile linux sisteme erişebilir, ve LAMMPS’ı kullanabilirsiniz. Windows, Linux, ve macOS işletim sistemleri ile uyumludur.   
 
+
+* Linux işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:
+
+  `Linux’a Docker nasıl kurulur? <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04>` 
+
+* Windows işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:
+
+  `Windows’a Docker nasıl kurulur? <https://hub.docker.com/editions/community/docker-ce-desktop-windows>`
+
+* MacOS işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:
+
+ `MacOS’a Docker nasıl kurulur? <https://hub.docker.com/editions/community/docker-ce-desktop-mac>`
+
+* `Diğer işletim sistemlerine Docker kurulumu ile ilgili bilgilere ulaşmak için tıklayınız <https://hub.docker.com/search?q=&type=edition&offering=community>`
+
+Docker programı düzgün bir şekilde kurulduktan sonra Docker’ı kullanmaya başlayabilirsiniz. Daha fazlasını öğrenmek isterseniz bazı yararlı öğretici yönergelere bakabilirsiniz. Bu uygulama kapsamında Docker’ı çalıştırmanız için sadece çok temel komutlara ihtiyacınız olacak.
+
+* Docker’ı Windows işletim sistemine kurmak, Ubuntu veya MacOS işletim sistemine kıyasla biraz daha karmaşıktır.
+
+  Windows işletim sistemini kullanıyorsanız, docker ile bir terminalin nasıl kullanılacağına dair bir eğitim videosu izlemek için aşağıdaki linki takip edebilirsiniz:
+
+  https://www.youtube.com/watch?v=_9AWYlt86B8
+
+  Docker'ı Windows üzerinde çalıştırmak, kendi makinenizin BIOS'unda sanallaştırmayı açmayı zorunlu kılar. Bunu nasıl yapacağınızı aşağıdaki linkten okuyabilirsiniz:
+
+  https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html
+
+  Ücretsiz olarak dağıtımı olan “Linux için Windows Subsytem (WSL2)”, Windows Home sürümünde mutlaka gereklidir ve Windows Pro sürümünde kesinlikle önerilmektedir. Windows Pro'da WSL2 olmadan da ilerleyebiliriniz, ancak bu önerilen bir çözüm değildir. Docker, neredeyse her şeyi sizin için yükler, ancak gerekli Linux Kernel’ini aşağıdaki linkten, Microsoft'tan indirmeniz gerekir.
+
+  https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package
+
+* İlgili kurulumlar yapıldıktan ve Docker programı başlatıldıktan sonra komut istemine gidin ve docker'ı çalıştırın::
+
+   docker run -p 6080:80 -v /dev/shm:/dev/shm obminator/lammps_playground
+
+LAMMPS Playground'a erişebilmek için bilgisayarınızda Docker güvenlik duvarı erişimine izin verdiğinizden emin olun.
+
+.. image:: files/docker-firewall.png

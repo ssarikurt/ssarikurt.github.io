@@ -139,6 +139,40 @@
 </div>
 <div class="section" id="docker-ile-hazir-lammps-kurulumu">
 <h2>2- Docker ile Hazır LAMMPS Kurulumu<a class="headerlink" href="#docker-ile-hazir-lammps-kurulumu" title="Permalink to this headline">¶</a></h2>
+<p>Sizler için Linux tabanlı bir “Docker Container” oluşturduk. Bu container eğitim için gerekli paketleri ile LAMMPS’ı ve bazı yardımcı grafik arayüzleri içermektedir.  Bu container’i çalıştırınca, internet tarayıcınız (örn. Firefox) ile linux sisteme erişebilir, ve LAMMPS’ı kullanabilirsiniz. Windows, Linux, ve macOS işletim sistemleri ile uyumludur.</p>
+<ul>
+<li><p>Linux işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:</p>
+<p><cite>Linux’a Docker nasıl kurulur? &lt;https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04&gt;</cite></p>
+</li>
+<li><p>Windows işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:</p>
+<p><cite>Windows’a Docker nasıl kurulur? &lt;https://hub.docker.com/editions/community/docker-ce-desktop-windows&gt;</cite></p>
+</li>
+<li><p>MacOS işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:</p></li>
+</ul>
+<blockquote>
+<div><p><cite>MacOS’a Docker nasıl kurulur? &lt;https://hub.docker.com/editions/community/docker-ce-desktop-mac&gt;</cite></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><cite>Diğer işletim sistemlerine Docker kurulumu ile ilgili bilgilere ulaşmak için tıklayınız &lt;https://hub.docker.com/search?q=&amp;type=edition&amp;offering=community&gt;</cite></p></li>
+</ul>
+<p>Docker programı düzgün bir şekilde kurulduktan sonra Docker’ı kullanmaya başlayabilirsiniz. Daha fazlasını öğrenmek isterseniz bazı yararlı öğretici yönergelere bakabilirsiniz. Bu uygulama kapsamında Docker’ı çalıştırmanız için sadece çok temel komutlara ihtiyacınız olacak.</p>
+<ul>
+<li><p>Docker’ı Windows işletim sistemine kurmak, Ubuntu veya MacOS işletim sistemine kıyasla biraz daha karmaşıktır.</p>
+<p>Windows işletim sistemini kullanıyorsanız, docker ile bir terminalin nasıl kullanılacağına dair bir eğitim videosu izlemek için aşağıdaki linki takip edebilirsiniz:</p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=_9AWYlt86B8">https://www.youtube.com/watch?v=_9AWYlt86B8</a></p>
+<p>Docker’ı Windows üzerinde çalıştırmak, kendi makinenizin BIOS’unda sanallaştırmayı açmayı zorunlu kılar. Bunu nasıl yapacağınızı aşağıdaki linkten okuyabilirsiniz:</p>
+<p><a class="reference external" href="https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html">https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html</a></p>
+<p>Ücretsiz olarak dağıtımı olan “Linux için Windows Subsytem (WSL2)”, Windows Home sürümünde mutlaka gereklidir ve Windows Pro sürümünde kesinlikle önerilmektedir. Windows Pro’da WSL2 olmadan da ilerleyebiliriniz, ancak bu önerilen bir çözüm değildir. Docker, neredeyse her şeyi sizin için yükler, ancak gerekli Linux Kernel’ini aşağıdaki linkten, Microsoft’tan indirmeniz gerekir.</p>
+<p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package">https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4—download-the-linux-kernel-update-package</a></p>
+</li>
+<li><p>İlgili kurulumlar yapıldıktan ve Docker programı başlatıldıktan sonra komut istemine gidin ve docker’ı çalıştırın:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">p</span> <span class="mi">6080</span><span class="p">:</span><span class="mi">80</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">shm</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">shm</span> <span class="n">obminator</span><span class="o">/</span><span class="n">lammps_playground</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>LAMMPS Playground’a erişebilmek için bilgisayarınızda Docker güvenlik duvarı erişimine izin verdiğinizden emin olun.</p>
+<img alt="../../_images/docker-firewall.png" src="../../_images/docker-firewall.png" />
 </div>
 </div>
 
