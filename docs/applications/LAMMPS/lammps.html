@@ -61,6 +61,8 @@
 <h2>Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma<a class="headerlink" href="#kendi-bilgisayariniza-lammps-yukleme-ve-calistirma" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="debian-ubuntu-linux-icin">
 <h3>Debian/Ubuntu Linux için:<a class="headerlink" href="#debian-ubuntu-linux-icin" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="on-hazirlik">
+<h4>1- Ön Hazırlık<a class="headerlink" href="#on-hazirlik" title="Permalink to this headline">¶</a></h4>
 <p>Sisteminizde bazı paketlerin kurulu olması gerekmektedir. Bunları</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt install &lt;paket adları&gt;
 </pre></div>
@@ -68,6 +70,32 @@
 <p>ile kurabilirsiniz. Gerekli paket listesi aşağıdaki gibidir:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc gfortran cmake autoconf automake autotools-dev libopenmpi-dev libopenmpi3  mpi-default-bin openmpi-bin openmpi-common libopenblas-base libopenblas-dev
 </pre></div>
+</div>
+</div>
+<div class="section" id="lammpsin-indirilmesi">
+<h4>2- LAMMPS’ın indirilmesi<a class="headerlink" href="#lammpsin-indirilmesi" title="Permalink to this headline">¶</a></h4>
+<p>LAMMPS’ın kaynak kodunun indirilmesi için iki yöntem mevcuttur. Detaylara</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lammps.sandia.gov/doc/Install_tarball.html">https://lammps.sandia.gov/doc/Install_tarball.html</a></p></li>
+<li><p><a class="reference external" href="https://lammps.sandia.gov/doc/Install_git.html">https://lammps.sandia.gov/doc/Install_git.html</a></p></li>
+</ul>
+<p>adreslerinden ulaşabilirsiniz.</p>
+<ul>
+<li><p><a class="reference external" href="https://lammps.sandia.gov/download.html">https://lammps.sandia.gov/download.html</a> sayfasından LAMMPS Stable seçeneğini seçin, ve “Download now” tuşuna basın. Bilgisayarınıza indirdiğiniz dosyayı:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tar zxvf lammps*.tar.gz
+</pre></div>
+</div>
+</li>
+</ul>
+<p>komutu ile açabilirsiniz.</p>
+<ul>
+<li><p>veya  sisteminizde git yüklü ise:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone -b stable https://github.com/lammps/lammps.git lammps-stable
+</pre></div>
+</div>
+</li>
+</ul>
+<p>ile lammps-stable klasörüne lammps’ı klonlayabilirsiniz.</p>
 </div>
 </div>
 </div>
@@ -88,7 +116,11 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#kendi-bilgisayariniza-lammps-yukleme-ve-calistirma">Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma</a><ul>
-<li><a class="reference internal" href="#debian-ubuntu-linux-icin">Debian/Ubuntu Linux için:</a></li>
+<li><a class="reference internal" href="#debian-ubuntu-linux-icin">Debian/Ubuntu Linux için:</a><ul>
+<li><a class="reference internal" href="#on-hazirlik">1- Ön Hazırlık</a></li>
+<li><a class="reference internal" href="#lammpsin-indirilmesi">2- LAMMPS’ın indirilmesi</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
