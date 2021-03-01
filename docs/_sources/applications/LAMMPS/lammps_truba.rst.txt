@@ -13,9 +13,11 @@ komutu ile ulaşabilirsiniz.
 
 TRUBA sisteminde LAMMPS çalıştırmak için örnek ıs betiği dosyası aşağıdaki gibidir:
 
-=====================================================================================
 lammps_run.slurm
-=====================================================================================
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
   #!/bin/bash
   #SBATCH -p barbun
   #SBATCH -A accountname
@@ -27,7 +29,7 @@ lammps_run.slurm
   echo "NUMBER OF CORES $SLURM_NTASKS"
 
   export OMP_NUM_THREADS=1
- 
+  
   module load centos7.3/lib/openmpi/1.8.8-gcc-4.8.5
   module load centos7.3/comp/gcc/9.2
 
@@ -39,7 +41,6 @@ lammps_run.slurm
 
   exit
 
-=====================================================================================
 
 Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını oluşturduktan sonra ::
   

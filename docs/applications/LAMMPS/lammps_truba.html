@@ -52,32 +52,38 @@
 </div>
 <p>komutu ile ulaşabilirsiniz.</p>
 <p>TRUBA sisteminde LAMMPS çalıştırmak için örnek ıs betiği dosyası aşağıdaki gibidir:</p>
-</div>
 <div class="section" id="lammps-run-slurm">
-<h1>lammps_run.slurm<a class="headerlink" href="#lammps-run-slurm" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>#!/bin/bash
-#SBATCH -p barbun
-#SBATCH -A accountname
-#SBATCH -J lammps-test
-#SBATCH -N 1
-#SBATCH -n 20</p>
-<p>echo “SLURM_NODELIST $SLURM_NODELIST”
-echo “NUMBER OF CORES $SLURM_NTASKS”</p>
-<p>export OMP_NUM_THREADS=1</p>
-<p>module load centos7.3/lib/openmpi/1.8.8-gcc-4.8.5
-module load centos7.3/comp/gcc/9.2</p>
-<p>export OMP_NUM_THREADS=1</p>
-<p>LAMMPS_DIR=/truba/sw/centos7.3/app/lammps/4Feb21-openmpi-1.8.8-gcc-4.8.5/bin</p>
-<p>mpirun  $LAMMPS_DIR/lmp_mpi  &lt; in.lammpsinputfile</p>
-<p>exit</p>
-</div></blockquote>
-<hr class="docutils" />
+<h2>lammps_run.slurm<a class="headerlink" href="#lammps-run-slurm" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -p barbun</span>
+<span class="c1">#SBATCH -A accountname</span>
+<span class="c1">#SBATCH -J lammps-test</span>
+<span class="c1">#SBATCH -N 1</span>
+<span class="c1">#SBATCH -n 20</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;SLURM_NODELIST </span><span class="nv">$SLURM_NODELIST</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;NUMBER OF CORES </span><span class="nv">$SLURM_NTASKS</span><span class="s2">&quot;</span>
+
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+
+module load centos7.3/lib/openmpi/1.8.8-gcc-4.8.5
+module load centos7.3/comp/gcc/9.2
+
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nv">LAMMPS_DIR</span><span class="o">=</span>/truba/sw/centos7.3/app/lammps/4Feb21-openmpi-1.8.8-gcc-4.8.5/bin
+
+mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp_mpi  &lt; <span class="k">in</span>.lammpsinputfile
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
 <p>Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını oluşturduktan sonra</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">lammps_run</span><span class="o">.</span><span class="n">slurm</span>
 </pre></div>
 </div>
 <p>komutu ile TRUBA sistemine işinizi gönderebilirsiniz.</p>
+</div>
 </div>
 
 
@@ -89,8 +95,10 @@ module load centos7.3/comp/gcc/9.2</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">TRUBA’da LAMMPS Kullanımı:</a></li>
+<li><a class="reference internal" href="#">TRUBA’da LAMMPS Kullanımı:</a><ul>
 <li><a class="reference internal" href="#lammps-run-slurm">lammps_run.slurm</a></li>
+</ul>
+</li>
 </ul>
 
   <h4>Previous topic</h4>
