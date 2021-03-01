@@ -173,6 +173,53 @@
 </ul>
 <p>LAMMPS Playground’a erişebilmek için bilgisayarınızda Docker güvenlik duvarı erişimine izin verdiğinizden emin olun.</p>
 <img alt="../../_images/docker-firewall.png" src="../../_images/docker-firewall.png" />
+<ul>
+<li><p>İndirme işlemi tamamlandığında, çalışan görüntüye erişmek için web tarayıcınızdan</p>
+<blockquote>
+<div><p><a class="reference external" href="http://127.0.0.1:6080/">http://127.0.0.1:6080/</a></p>
+</div></blockquote>
+</li>
+</ul>
+<p>adresine gidebilirsiniz.</p>
+<blockquote>
+<div><p>(eğer kullandığınız işletim sistemi tarafından istenirse, makineniz içinde engelsiz iletişim için güvenlik duvarlarına izin verin (bu genellikle varsayılandır)).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><a class="reference external" href="http://127.0.0.1:6080/">http://127.0.0.1:6080/</a> bağlantısını desteklenen bir web tarayıcısında açmak sizi Ubuntu masaüstüne götürür.</p></li>
+</ul>
+<img alt="../../_images/docker-desktop.png" src="../../_images/docker-desktop.png" />
+<ul class="simple">
+<li><p>Görevlerinizin çoğu LXTerminal’i kullanacaktır. Masaüstü kısayoluna çift tıklayabilir veya sol alttaki uygulamalar menüsüne gidip orada terminal uygulamasını bulabilirsiniz.</p></li>
+<li><p>Ayrıca ilgili paket kurulumu içerisine hazır olarak jmol, ovito ve gnuplot programları eklenmiş durumdadır. Bunlar LAMMPS sonuçlarını görselleştirmek için kullanabileceğiniz programlardır.</p></li>
+<li><p>LAMMPS kaynak kodu ve örnekler sırasıyla lammps-stable ve lammps-stable/examples dizinleri altındadır.</p></li>
+</ul>
+<dl>
+<dt>docker images :</dt><dd><p>Çalıştırılmaya hazır olan paketi listeler. Disk alanı sorununuz varsa bazı görüntüleri kaldırabilirsiniz. Önceki adımı yaptıysanız obminator/lammps_playground’u görebiliyor olmanız lazım. Eğer göremiyorsanız aşağıdaki komutu çalıştırmanız gerekmektedir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">obminator</span><span class="o">/</span><span class="n">lammps_playground</span>
+</pre></div>
+</div>
+</dd>
+<dt>docker pull DOCKER_IMAGE:</dt><dd><p>Belirttiğiniz DOCKER_IMAGE imaj dosyasını bilgisaayrınıza indirir. Ve ilgili imaj dosyası  mevcut imajlar kısmında yer alır.</p>
+</dd>
+<dt>docker ps -l :</dt><dd><p>Çalışan (yakın zamanda çalıştırılmış olan) Docker imajlarını listeler. İlgili imajları “CONTAINER ID” bilgisini kullanarak kontrol edebilirsiniz.</p>
+</dd>
+<dt>docker stop CONTAINER_ID :</dt><dd><p>İlgili “CONTAINER ID” etiketine sahip imajını çalışmasını durdurur.</p>
+</dd>
+<dt>docker rm CONTAINER ID :</dt><dd><p>İlgili “CONTAINER ID” etiketine sahip imajı listeden siler.</p>
+</dd>
+</dl>
+<p>docker run -p 6080:80 obminator/lammps_playground :</p>
+<p>Bu komut aşağıdaki işlemi gerçekleştirir:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Yerel imajlar arasında obminator/lammps_playground imajını arar. Yerel kopya yoksa, görüntüyü docker hub’dan indirir (Uyarı! İmaj görüntüsü &gt; 5 Gb!).</p></li>
+<li><p>İmaj dosyasını çalıştırır ve imajın 80 numaralı bağlantı noktasını yerel makinenin 6080’ine eşler (VNC bağlantınız bu bağlantı noktası üzerinden olacaktır)</p></li>
+</ol>
+</div></blockquote>
+<dl class="simple">
+<dt>docker image rm DOCKER_IMAGE :</dt><dd><p>Yerel imaj dosyasını diskinizden kaldırarak disk alanını boşaltır. İmaj dosyasını tekrar çalıştırmak isterseniz, sıfırdan bir kez daha indirmeniz gerekecek.</p>
+</dd>
+</dl>
 </div>
 </div>
 

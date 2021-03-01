@@ -138,3 +138,57 @@ Docker programı düzgün bir şekilde kurulduktan sonra Docker’ı kullanmaya 
 LAMMPS Playground'a erişebilmek için bilgisayarınızda Docker güvenlik duvarı erişimine izin verdiğinizden emin olun.
 
 .. image:: files/docker-firewall.png
+
+* İndirme işlemi tamamlandığında, çalışan görüntüye erişmek için web tarayıcınızdan 
+
+   http://127.0.0.1:6080/ 
+
+adresine gidebilirsiniz.
+
+  (eğer kullandığınız işletim sistemi tarafından istenirse, makineniz içinde engelsiz iletişim için güvenlik duvarlarına izin verin (bu genellikle varsayılandır)).
+
+* http://127.0.0.1:6080/ bağlantısını desteklenen bir web tarayıcısında açmak sizi Ubuntu masaüstüne götürür.
+
+.. image:: files/docker-desktop.png
+
+* Görevlerinizin çoğu LXTerminal'i kullanacaktır. Masaüstü kısayoluna çift tıklayabilir veya sol alttaki uygulamalar menüsüne gidip orada terminal uygulamasını bulabilirsiniz.
+
+* Ayrıca ilgili paket kurulumu içerisine hazır olarak jmol, ovito ve gnuplot programları eklenmiş durumdadır. Bunlar LAMMPS sonuçlarını görselleştirmek için kullanabileceğiniz programlardır.
+
+* LAMMPS kaynak kodu ve örnekler sırasıyla lammps-stable ve lammps-stable/examples dizinleri altındadır.
+
+Docker İle İlgili Ayrıntılı Bilgiler:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Bazı Faydalı Docker Komutları:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+docker images : 
+   Çalıştırılmaya hazır olan paketi listeler. Disk alanı sorununuz varsa bazı görüntüleri kaldırabilirsiniz. Önceki adımı yaptıysanız obminator/lammps_playground’u görebiliyor olmanız lazım. Eğer göremiyorsanız aşağıdaki komutu çalıştırmanız gerekmektedir::
+
+    docker pull obminator/lammps_playground
+
+docker pull DOCKER_IMAGE: 
+  Belirttiğiniz DOCKER_IMAGE imaj dosyasını bilgisaayrınıza indirir. Ve ilgili imaj dosyası  mevcut imajlar kısmında yer alır.
+
+docker ps -l : 
+  Çalışan (yakın zamanda çalıştırılmış olan) Docker imajlarını listeler. İlgili imajları “CONTAINER ID” bilgisini kullanarak kontrol edebilirsiniz.
+
+docker stop CONTAINER_ID : 
+  İlgili “CONTAINER ID” etiketine sahip imajını çalışmasını durdurur.
+
+docker rm CONTAINER ID : 
+  İlgili “CONTAINER ID” etiketine sahip imajı listeden siler.
+
+docker run -p 6080:80 obminator/lammps_playground : 
+
+Bu komut aşağıdaki işlemi gerçekleştirir:
+
+   1. Yerel imajlar arasında obminator/lammps_playground imajını arar. Yerel kopya yoksa, görüntüyü docker hub'dan indirir (Uyarı! İmaj görüntüsü > 5 Gb!).
+
+   2. İmaj dosyasını çalıştırır ve imajın 80 numaralı bağlantı noktasını yerel makinenin 6080'ine eşler (VNC bağlantınız bu bağlantı noktası üzerinden olacaktır)
+
+docker image rm DOCKER_IMAGE : 
+  Yerel imaj dosyasını diskinizden kaldırarak disk alanını boşaltır. İmaj dosyasını tekrar çalıştırmak isterseniz, sıfırdan bir kez daha indirmeniz gerekecek.
+
+
