@@ -17,7 +17,7 @@
     <script src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)" href="lammps_personal.html" />
+    <link rel="prev" title="Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma" href="lammps_personal.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
     <script src="_static/css3-mediaqueries.js"></script>
@@ -30,7 +30,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="lammps_personal.html" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)"
+          <a href="lammps_personal.html" title="Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../sw_guides.html" >Yazılım Kurulumları Kitapçığı</a> &#187;</li>
@@ -46,6 +46,38 @@
             
   <div class="section" id="truba-da-lammps-kullanimi">
 <span id="lammps-truba"></span><h1>TRUBA’da LAMMPS Kullanımı:<a class="headerlink" href="#truba-da-lammps-kullanimi" title="Permalink to this headline">¶</a></h1>
+<p>TRUBA sisteminde kurulu olan programlar hakkındaki bilgiye:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">available</span>
+</pre></div>
+</div>
+<p>komutu ile ulaşabilirsiniz.</p>
+<p>TRUBA sisteminde LAMMPS çalıştırmak için örnek ıs betiği dosyası aşağıdaki gibidir:</p>
+</div>
+<div class="section" id="lammps-run-slurm">
+<h1>lammps_run.slurm<a class="headerlink" href="#lammps-run-slurm" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>#!/bin/bash
+#SBATCH -p barbun
+#SBATCH -A accountname
+#SBATCH -J lammps-test
+#SBATCH -N 1
+#SBATCH -n 20</p>
+<p>echo “SLURM_NODELIST $SLURM_NODELIST”
+echo “NUMBER OF CORES $SLURM_NTASKS”</p>
+<p>export OMP_NUM_THREADS=1</p>
+<p>module load centos7.3/lib/openmpi/1.8.8-gcc-4.8.5
+module load centos7.3/comp/gcc/9.2</p>
+<p>export OMP_NUM_THREADS=1</p>
+<p>LAMMPS_DIR=/truba/sw/centos7.3/app/lammps/4Feb21-openmpi-1.8.8-gcc-4.8.5/bin</p>
+<p>mpirun  $LAMMPS_DIR/lmp_mpi  &lt; in.lammpsinputfile</p>
+<p>exit</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını oluşturduktan sonra</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">lammps_run</span><span class="o">.</span><span class="n">slurm</span>
+</pre></div>
+</div>
+<p>komutu ile TRUBA sistemine işinizi gönderebilirsiniz.</p>
 </div>
 
 
@@ -55,9 +87,15 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">TRUBA’da LAMMPS Kullanımı:</a></li>
+<li><a class="reference internal" href="#lammps-run-slurm">lammps_run.slurm</a></li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="lammps_personal.html"
-                        title="previous chapter">LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)</a></p>
+                        title="previous chapter">Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -86,7 +124,7 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="lammps_personal.html" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)"
+          <a href="lammps_personal.html" title="Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../sw_guides.html" >Yazılım Kurulumları Kitapçığı</a> &#187;</li>
