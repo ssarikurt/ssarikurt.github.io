@@ -113,7 +113,7 @@ Sizler için Linux tabanlı bir “Docker Container” oluşturduk. Bu container
 
  `MacOS’a Docker nasıl kurulur? <https://hub.docker.com/editions/community/docker-ce-desktop-mac>`_
 
-* `Diğer işletim sistemlerine Docker kurulumu ile ilgili bilgilere ulaşmak için tıklayınız <https://hub.docker.com/search?q=&type=edition&offering=community>`
+* `Diğer işletim sistemlerine Docker kurulumu ile ilgili bilgilere ulaşmak için tıklayınız <https://hub.docker.com/search?q=&type=edition&offering=community>`_
 
 Docker programı düzgün bir şekilde kurulduktan sonra Docker’ı kullanmaya başlayabilirsiniz. Daha fazlasını öğrenmek isterseniz bazı yararlı öğretici yönergelere bakabilirsiniz. Bu uygulama kapsamında Docker’ı çalıştırmanız için sadece çok temel komutlara ihtiyacınız olacak.
 
