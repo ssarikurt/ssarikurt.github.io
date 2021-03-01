@@ -157,10 +157,10 @@ adresine gidebilirsiniz.
 
 * LAMMPS kaynak kodu ve örnekler sırasıyla lammps-stable ve lammps-stable/examples dizinleri altındadır.
 
-Docker İle İlgili Ayrıntılı Bilgiler:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Docker İle İlgili Ayrıntılı Bilgiler
+-------------------------------------
 
-Bazı Faydalı Docker Komutları:
+Bazı Faydalı Docker Komutları
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 docker images : 
