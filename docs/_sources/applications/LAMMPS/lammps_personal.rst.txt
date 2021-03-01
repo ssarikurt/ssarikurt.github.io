@@ -1,21 +1,6 @@
 .. _lammps_personal:
 
-==================================================================
-LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)
-==================================================================
-
-Genel Bilgiler
-==============
-
-LAMMPS, açık kaynak kodlu moleküler dinamik simülasyon programıdır.
-
-Çevrimiçi Bilgiler
--------------------
-
-* Web Sayfası: https://lammps.sandia.gov/
-* Program Kitapçığı :  https://lammps.sandia.gov/doc/Manual.html
-* Örnek Eğitim Dosyaları:  https://lammps.sandia.gov/tutorials.html
-
+===================================================
 Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma
 ===================================================
 
