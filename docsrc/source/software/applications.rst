@@ -11,6 +11,6 @@ TRUBA kullanıcı hesabınzıdaki aktif tanımlı modül bilgilerine ise aşağ�
   module list
 
 TRUBA sistemi üzerindeki kurulu kütüphaneleri ve/veya yazılımları kullanabilmek için ilgili modülleri kendi kullanıcınız üzerinde yüklemeniz gerekmektedir. Bu işlemi aşağıdaki komutu slurm dosyanıza yazarak yapabilirsiniz:
-  
- module load yazılım-adı
+
+  module load yazılım-adı
  
