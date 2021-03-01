@@ -17,6 +17,7 @@
     <script src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)" href="lammps_personal.html" />
     <link rel="prev" title="Yazılım Kurulumları Kitapçığı" href="../sw_guides.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
@@ -29,6 +30,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="lammps_personal.html" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../sw_guides.html" title="Yazılım Kurulumları Kitapçığı"
              accesskey="P">previous</a> |</li>
@@ -57,174 +61,13 @@
 </ul>
 </div>
 </div>
-<div class="section" id="kendi-bilgisayariniza-lammps-yukleme-ve-calistirma">
-<h2>Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma<a class="headerlink" href="#kendi-bilgisayariniza-lammps-yukleme-ve-calistirma" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="kendi-bilgisayariniza-lammps-kurmak">
-<h2>1- Kendi Bilgisayarınıza LAMMPS kurmak<a class="headerlink" href="#kendi-bilgisayariniza-lammps-kurmak" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="debian-ubuntu-linux-icin">
-<h3>Debian/Ubuntu Linux için:<a class="headerlink" href="#debian-ubuntu-linux-icin" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="on-hazirlik">
-<h4>1- Ön Hazırlık<a class="headerlink" href="#on-hazirlik" title="Permalink to this headline">¶</a></h4>
-<p>Sisteminizde bazı paketlerin kurulu olması gerekmektedir. Bunları</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt install &lt;paket adları&gt;
-</pre></div>
-</div>
-<p>ile kurabilirsiniz. Gerekli paket listesi aşağıdaki gibidir:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc gfortran cmake autoconf automake autotools-dev libopenmpi-dev libopenmpi3  mpi-default-bin openmpi-bin openmpi-common libopenblas-base libopenblas-dev
-</pre></div>
-</div>
-</div>
-<div class="section" id="lammpsin-indirilmesi">
-<h4>2- LAMMPS’ın İndirilmesi<a class="headerlink" href="#lammpsin-indirilmesi" title="Permalink to this headline">¶</a></h4>
-<p>LAMMPS’ın kaynak kodunun indirilmesi için iki yöntem mevcuttur. Detaylara</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://lammps.sandia.gov/doc/Install_tarball.html">https://lammps.sandia.gov/doc/Install_tarball.html</a></p></li>
-<li><p><a class="reference external" href="https://lammps.sandia.gov/doc/Install_git.html">https://lammps.sandia.gov/doc/Install_git.html</a></p></li>
-</ul>
-<p>adreslerinden ulaşabilirsiniz.</p>
+<div class="section" id="lammps-kurulumu-ve-kullanimi">
+<h2>LAMMPS Kurulumu ve Kullanımı<a class="headerlink" href="#lammps-kurulumu-ve-kullanimi" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
 <ul>
-<li><p><a class="reference external" href="https://lammps.sandia.gov/download.html">https://lammps.sandia.gov/download.html</a> sayfasından LAMMPS Stable seçeneğini seçin, ve “Download now” tuşuna basın. Bilgisayarınıza indirdiğiniz dosyayı:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tar zxvf lammps*.tar.gz
-</pre></div>
-</div>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="lammps_personal.html">LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lammps_truba.html">TRUBA’da LAMMPS Kullanımı:</a></li>
 </ul>
-<p>komutu ile açabilirsiniz.</p>
-<ul>
-<li><p>veya  sisteminizde git yüklü ise:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone -b stable https://github.com/lammps/lammps.git lammps-stable
-</pre></div>
-</div>
-</li>
-</ul>
-<p>ile lammps-stable klasörüne lammps’ı klonlayabilirsiniz.</p>
-</div>
-<div class="section" id="lammps-in-derlenmesi">
-<h4>3- LAMMPS’in Derlenmesi<a class="headerlink" href="#lammps-in-derlenmesi" title="Permalink to this headline">¶</a></h4>
-<p>LAMMPS’ın derlenmesi için iki yöntem mevcuttur. Burada CMAKE yöntemini kullanacağız. Detaylara <code class="docutils literal notranslate"><span class="pre">https://lammps.sandia.gov/doc/Build_cmake.html</span></code> adresinden ulaşabilirsiniz.</p>
-<ul>
-<li><p>LAMMPS kodunu açtığınız klasörün içine gidin (örneğin <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">lammps-stable</span></code>), burada build klasörü oluşturun, ve içine gidin:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir build
-</pre></div>
-</div>
-<p>$ cd build</p>
-</li>
-<li><p>Bulunduğunuz yer lammps_stable/build olmalı.</p></li>
-<li><p>Aşağıdaki komut ile cmake’i çalıştırın. Cmake sisteminizi tarayarak gerekli ayarları yapacaktır. Ekteki komutla ReaxFF dahil birkaç yaygın paket kurulmaktadır:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cmake ../cmake -D PKG_BODY=yes -D PKG_CLASS2=yes -D PKG_DIPOLE=yes -D PKG_MANYBODY=yes -D PKG_USER-REAXC=yes -D PKG_USER-MEAMC=yes
-</pre></div>
-</div>
-</li>
-<li><p>cmake size sisteminizde bulduğu özellikleri, ve LAMMPS’a dahil olacak paketleri özet geçecektir. Lütfen USER-REAXC paketinin açık olduğundan emin olun:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Enabled</span> <span class="n">packages</span><span class="p">:</span> <span class="n">BODY</span><span class="p">;</span><span class="n">CLASS2</span><span class="p">;</span><span class="n">DIPOLE</span><span class="p">;</span><span class="n">MANYBODY</span><span class="p">;</span><span class="n">USER</span><span class="o">-</span><span class="n">MEAMC</span><span class="p">;</span><span class="n">USER</span><span class="o">-</span><span class="n">REAXC</span>
-</pre></div>
-</div>
-</li>
-<li><p>Aşağıdaki komut ile LAMMPS’ı derleyebilirsiniz (sondaki noktaya dikkat ediniz,  ve build klasörünün içinde olduğunuzdan emin olunuz):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cmake --build .
-</pre></div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="windows-10-icin">
-<h3>Windows 10 için:<a class="headerlink" href="#windows-10-icin" title="Permalink to this headline">¶</a></h3>
-<p>Window subsystem for Linux (WSL)’yi etkinleştiriniz ve Ubuntu kurunuz. Daha sonra yukarıdaki Ubuntu talimatlarını uygulayınız.</p>
-<ul class="simple">
-<li><p>WSL kurulumu için  <code class="docutils literal notranslate"><span class="pre">https://docs.microsoft.com/tr-tr/windows/wsl/install-win10</span></code> adresinden yardım alabilirsiniz.</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="docker-ile-hazir-lammps-kurulumu">
-<h2>2- Docker ile Hazır LAMMPS Kurulumu<a class="headerlink" href="#docker-ile-hazir-lammps-kurulumu" title="Permalink to this headline">¶</a></h2>
-<p>Sizler için Linux tabanlı bir “Docker Container” oluşturduk. Bu container eğitim için gerekli paketleri ile LAMMPS’ı ve bazı yardımcı grafik arayüzleri içermektedir.  Bu container’i çalıştırınca, internet tarayıcınız (örn. Firefox) ile linux sisteme erişebilir, ve LAMMPS’ı kullanabilirsiniz. Windows, Linux, ve macOS işletim sistemleri ile uyumludur.</p>
-<ul>
-<li><p>Linux işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:</p>
-<p><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04">Linux’a Docker nasıl kurulur?</a></p>
-</li>
-<li><p>Windows işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:</p>
-<p><a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-windows">Windows’a Docker nasıl kurulur?</a></p>
-</li>
-<li><p>MacOS işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:</p></li>
-</ul>
-<blockquote>
-<div><p><a class="reference external" href="https://hub.docker.com/editions/community/docker-ce-desktop-mac">MacOS’a Docker nasıl kurulur?</a></p>
-</div></blockquote>
-<ul class="simple">
-<li><p><a class="reference external" href="https://hub.docker.com/search?q=&amp;type=edition&amp;offering=community">Diğer işletim sistemlerine Docker kurulumu ile ilgili bilgilere ulaşmak için tıklayınız</a></p></li>
-</ul>
-<p>Docker programı düzgün bir şekilde kurulduktan sonra Docker’ı kullanmaya başlayabilirsiniz. Daha fazlasını öğrenmek isterseniz bazı yararlı öğretici yönergelere bakabilirsiniz. Bu uygulama kapsamında Docker’ı çalıştırmanız için sadece çok temel komutlara ihtiyacınız olacak.</p>
-<ul>
-<li><p>Docker’ı Windows işletim sistemine kurmak, Ubuntu veya MacOS işletim sistemine kıyasla biraz daha karmaşıktır.</p>
-<p>Windows işletim sistemini kullanıyorsanız, docker ile bir terminalin nasıl kullanılacağına dair bir eğitim videosu izlemek için aşağıdaki linki takip edebilirsiniz:</p>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=_9AWYlt86B8">https://www.youtube.com/watch?v=_9AWYlt86B8</a></p>
-<p>Docker’ı Windows üzerinde çalıştırmak, kendi makinenizin BIOS’unda sanallaştırmayı açmayı zorunlu kılar. Bunu nasıl yapacağınızı aşağıdaki linkten okuyabilirsiniz:</p>
-<p><a class="reference external" href="https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html">https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html</a></p>
-<p>Ücretsiz olarak dağıtımı olan “Linux için Windows Subsytem (WSL2)”, Windows Home sürümünde mutlaka gereklidir ve Windows Pro sürümünde kesinlikle önerilmektedir. Windows Pro’da WSL2 olmadan da ilerleyebiliriniz, ancak bu önerilen bir çözüm değildir. Docker, neredeyse her şeyi sizin için yükler, ancak gerekli Linux Kernel’ini aşağıdaki linkten, Microsoft’tan indirmeniz gerekir.</p>
-<p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package">https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4—download-the-linux-kernel-update-package</a></p>
-</li>
-<li><p>İlgili kurulumlar yapıldıktan ve Docker programı başlatıldıktan sonra komut istemine gidin ve docker’ı çalıştırın:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">p</span> <span class="mi">6080</span><span class="p">:</span><span class="mi">80</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">shm</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">shm</span> <span class="n">obminator</span><span class="o">/</span><span class="n">lammps_playground</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p>LAMMPS Playground’a erişebilmek için bilgisayarınızda Docker güvenlik duvarı erişimine izin verdiğinizden emin olun.</p>
-<img alt="../../_images/docker-firewall.png" src="../../_images/docker-firewall.png" />
-<ul>
-<li><p>İndirme işlemi tamamlandığında, çalışan görüntüye erişmek için web tarayıcınızdan</p>
-<blockquote>
-<div><p><a class="reference external" href="http://127.0.0.1:6080/">http://127.0.0.1:6080/</a></p>
-</div></blockquote>
-</li>
-</ul>
-<p>adresine gidebilirsiniz.</p>
-<blockquote>
-<div><p>(eğer kullandığınız işletim sistemi tarafından istenirse, makineniz içinde engelsiz iletişim için güvenlik duvarlarına izin verin (bu genellikle varsayılandır)).</p>
-</div></blockquote>
-<ul class="simple">
-<li><p><a class="reference external" href="http://127.0.0.1:6080/">http://127.0.0.1:6080/</a> bağlantısını desteklenen bir web tarayıcısında açmak sizi Ubuntu masaüstüne götürür.</p></li>
-</ul>
-<img alt="../../_images/docker-desktop.png" src="../../_images/docker-desktop.png" />
-<ul class="simple">
-<li><p>Görevlerinizin çoğu LXTerminal’i kullanacaktır. Masaüstü kısayoluna çift tıklayabilir veya sol alttaki uygulamalar menüsüne gidip orada terminal uygulamasını bulabilirsiniz.</p></li>
-<li><p>Ayrıca ilgili paket kurulumu içerisine hazır olarak jmol, ovito ve gnuplot programları eklenmiş durumdadır. Bunlar LAMMPS sonuçlarını görselleştirmek için kullanabileceğiniz programlardır.</p></li>
-<li><p>LAMMPS kaynak kodu ve örnekler sırasıyla lammps-stable ve lammps-stable/examples dizinleri altındadır.</p></li>
-</ul>
-<div class="section" id="docker-ile-ilgili-ayrintili-bilgiler">
-<h3>Docker İle İlgili Ayrıntılı Bilgiler<a class="headerlink" href="#docker-ile-ilgili-ayrintili-bilgiler" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="bazi-faydali-docker-komutlari">
-<h4>Bazı Faydalı Docker Komutları<a class="headerlink" href="#bazi-faydali-docker-komutlari" title="Permalink to this headline">¶</a></h4>
-<dl>
-<dt>docker images :</dt><dd><p>Çalıştırılmaya hazır olan paketi listeler. Disk alanı sorununuz varsa bazı görüntüleri kaldırabilirsiniz. Önceki adımı yaptıysanız obminator/lammps_playground’u görebiliyor olmanız lazım. Eğer göremiyorsanız aşağıdaki komutu çalıştırmanız gerekmektedir:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">obminator</span><span class="o">/</span><span class="n">lammps_playground</span>
-</pre></div>
-</div>
-</dd>
-<dt>docker pull DOCKER_IMAGE:</dt><dd><p>Belirttiğiniz DOCKER_IMAGE imaj dosyasını bilgisaayrınıza indirir. Ve ilgili imaj dosyası  mevcut imajlar kısmında yer alır.</p>
-</dd>
-<dt>docker ps -l :</dt><dd><p>Çalışan (yakın zamanda çalıştırılmış olan) Docker imajlarını listeler. İlgili imajları “CONTAINER ID” bilgisini kullanarak kontrol edebilirsiniz.</p>
-</dd>
-<dt>docker stop CONTAINER_ID :</dt><dd><p>İlgili “CONTAINER ID” etiketine sahip imajını çalışmasını durdurur.</p>
-</dd>
-<dt>docker rm CONTAINER ID :</dt><dd><p>İlgili “CONTAINER ID” etiketine sahip imajı listeden siler.</p>
-</dd>
-</dl>
-<p>docker run -p 6080:80 obminator/lammps_playground :</p>
-<p>Bu komut aşağıdaki işlemi gerçekleştirir:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Yerel imajlar arasında obminator/lammps_playground imajını arar. Yerel kopya yoksa, görüntüyü docker hub’dan indirir (Uyarı! İmaj görüntüsü &gt; 5 Gb!).</p></li>
-<li><p>İmaj dosyasını çalıştırır ve imajın 80 numaralı bağlantı noktasını yerel makinenin 6080’ine eşler (VNC bağlantınız bu bağlantı noktası üzerinden olacaktır)</p></li>
-</ol>
-</div></blockquote>
-<dl class="simple">
-<dt>docker image rm DOCKER_IMAGE :</dt><dd><p>Yerel imaj dosyasını diskinizden kaldırarak disk alanını boşaltır. İmaj dosyasını tekrar çalıştırmak isterseniz, sıfırdan bir kez daha indirmeniz gerekecek.</p>
-</dd>
-</dl>
-</div>
 </div>
 </div>
 </div>
@@ -243,24 +86,7 @@
 <li><a class="reference internal" href="#cevrimici-bilgiler">Çevrimiçi Bilgiler</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#kendi-bilgisayariniza-lammps-yukleme-ve-calistirma">Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma</a></li>
-<li><a class="reference internal" href="#kendi-bilgisayariniza-lammps-kurmak">1- Kendi Bilgisayarınıza LAMMPS kurmak</a><ul>
-<li><a class="reference internal" href="#debian-ubuntu-linux-icin">Debian/Ubuntu Linux için:</a><ul>
-<li><a class="reference internal" href="#on-hazirlik">1- Ön Hazırlık</a></li>
-<li><a class="reference internal" href="#lammpsin-indirilmesi">2- LAMMPS’ın İndirilmesi</a></li>
-<li><a class="reference internal" href="#lammps-in-derlenmesi">3- LAMMPS’in Derlenmesi</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#windows-10-icin">Windows 10 için:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#docker-ile-hazir-lammps-kurulumu">2- Docker ile Hazır LAMMPS Kurulumu</a><ul>
-<li><a class="reference internal" href="#docker-ile-ilgili-ayrintili-bilgiler">Docker İle İlgili Ayrıntılı Bilgiler</a><ul>
-<li><a class="reference internal" href="#bazi-faydali-docker-komutlari">Bazı Faydalı Docker Komutları</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#lammps-kurulumu-ve-kullanimi">LAMMPS Kurulumu ve Kullanımı</a></li>
 </ul>
 </li>
 </ul>
@@ -268,6 +94,9 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="../sw_guides.html"
                         title="previous chapter">Yazılım Kurulumları Kitapçığı</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lammps_personal.html"
+                        title="next chapter">LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -295,6 +124,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="lammps_personal.html" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)"
+             >next</a> |</li>
         <li class="right" >
           <a href="../sw_guides.html" title="Yazılım Kurulumları Kitapçığı"
              >previous</a> |</li>
