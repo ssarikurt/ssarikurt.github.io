@@ -59,6 +59,9 @@
 </div>
 <div class="section" id="kendi-bilgisayariniza-lammps-yukleme-ve-calistirma">
 <h2>Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma<a class="headerlink" href="#kendi-bilgisayariniza-lammps-yukleme-ve-calistirma" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="kendi-bilgisayariniza-lammps-kurmak">
+<h2>1- Kendi Bilgisayarınıza LAMMPS kurmak<a class="headerlink" href="#kendi-bilgisayariniza-lammps-kurmak" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="debian-ubuntu-linux-icin">
 <h3>Debian/Ubuntu Linux için:<a class="headerlink" href="#debian-ubuntu-linux-icin" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="on-hazirlik">
@@ -73,7 +76,7 @@
 </div>
 </div>
 <div class="section" id="lammpsin-indirilmesi">
-<h4>2- LAMMPS’ın indirilmesi<a class="headerlink" href="#lammpsin-indirilmesi" title="Permalink to this headline">¶</a></h4>
+<h4>2- LAMMPS’ın İndirilmesi<a class="headerlink" href="#lammpsin-indirilmesi" title="Permalink to this headline">¶</a></h4>
 <p>LAMMPS’ın kaynak kodunun indirilmesi için iki yöntem mevcuttur. Detaylara</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://lammps.sandia.gov/doc/Install_tarball.html">https://lammps.sandia.gov/doc/Install_tarball.html</a></p></li>
@@ -97,7 +100,45 @@
 </ul>
 <p>ile lammps-stable klasörüne lammps’ı klonlayabilirsiniz.</p>
 </div>
+<div class="section" id="lammps-in-derlenmesi">
+<h4>3- LAMMPS’in Derlenmesi<a class="headerlink" href="#lammps-in-derlenmesi" title="Permalink to this headline">¶</a></h4>
+<p>LAMMPS’ın derlenmesi için iki yöntem mevcuttur. Burada CMAKE yöntemini kullanacağız. Detaylara <code class="docutils literal notranslate"><span class="pre">https://lammps.sandia.gov/doc/Build_cmake.html</span></code> adresinden ulaşabilirsiniz.</p>
+<ul>
+<li><p>LAMMPS kodunu açtığınız klasörün içine gidin (örneğin <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">lammps-stable</span></code>), burada build klasörü oluşturun, ve içine gidin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir build
+</pre></div>
 </div>
+<p>$ cd build</p>
+</li>
+<li><p>Bulunduğunuz yer lammps_stable/build olmalı.</p></li>
+<li><p>Aşağıdaki komut ile cmake’i çalıştırın. Cmake sisteminizi tarayarak gerekli ayarları yapacaktır. Ekteki komutla ReaxFF dahil birkaç yaygın paket kurulmaktadır:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cmake ../cmake -D PKG_BODY=yes -D PKG_CLASS2=yes -D PKG_DIPOLE=yes -D PKG_MANYBODY=yes -D PKG_USER-REAXC=yes -D PKG_USER-MEAMC=yes
+</pre></div>
+</div>
+</li>
+<li><p>cmake size sisteminizde bulduğu özellikleri, ve LAMMPS’a dahil olacak paketleri özet geçecektir. Lütfen USER-REAXC paketinin açık olduğundan emin olun:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Enabled</span> <span class="n">packages</span><span class="p">:</span> <span class="n">BODY</span><span class="p">;</span><span class="n">CLASS2</span><span class="p">;</span><span class="n">DIPOLE</span><span class="p">;</span><span class="n">MANYBODY</span><span class="p">;</span><span class="n">USER</span><span class="o">-</span><span class="n">MEAMC</span><span class="p">;</span><span class="n">USER</span><span class="o">-</span><span class="n">REAXC</span>
+</pre></div>
+</div>
+</li>
+<li><p>Aşağıdaki komut ile LAMMPS’ı derleyebilirsiniz (sondaki noktaya dikkat ediniz,  ve build klasörünün içinde olduğunuzdan emin olunuz):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cmake --build .
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="windows-10-icin">
+<h3>Windows 10 için:<a class="headerlink" href="#windows-10-icin" title="Permalink to this headline">¶</a></h3>
+<p>Window subsystem for Linux (WSL)’yi etkinleştiriniz ve Ubuntu kurunuz. Daha sonra yukarıdaki Ubuntu talimatlarını uygulayınız.</p>
+<ul class="simple">
+<li><p>WSL kurulumu için  <code class="docutils literal notranslate"><span class="pre">https://docs.microsoft.com/tr-tr/windows/wsl/install-win10</span></code> adresinden yardım alabilirsiniz.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="docker-ile-hazir-lammps-kurulumu">
+<h2>2- Docker ile Hazır LAMMPS Kurulumu<a class="headerlink" href="#docker-ile-hazir-lammps-kurulumu" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -115,14 +156,18 @@
 <li><a class="reference internal" href="#cevrimici-bilgiler">Çevrimiçi Bilgiler</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#kendi-bilgisayariniza-lammps-yukleme-ve-calistirma">Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma</a><ul>
+<li><a class="reference internal" href="#kendi-bilgisayariniza-lammps-yukleme-ve-calistirma">Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma</a></li>
+<li><a class="reference internal" href="#kendi-bilgisayariniza-lammps-kurmak">1- Kendi Bilgisayarınıza LAMMPS kurmak</a><ul>
 <li><a class="reference internal" href="#debian-ubuntu-linux-icin">Debian/Ubuntu Linux için:</a><ul>
 <li><a class="reference internal" href="#on-hazirlik">1- Ön Hazırlık</a></li>
-<li><a class="reference internal" href="#lammpsin-indirilmesi">2- LAMMPS’ın indirilmesi</a></li>
+<li><a class="reference internal" href="#lammpsin-indirilmesi">2- LAMMPS’ın İndirilmesi</a></li>
+<li><a class="reference internal" href="#lammps-in-derlenmesi">3- LAMMPS’in Derlenmesi</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#windows-10-icin">Windows 10 için:</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#docker-ile-hazir-lammps-kurulumu">2- Docker ile Hazır LAMMPS Kurulumu</a></li>
 </ul>
 </li>
 </ul>
