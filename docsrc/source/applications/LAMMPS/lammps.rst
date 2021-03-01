@@ -103,15 +103,15 @@ Sizler için Linux tabanlı bir “Docker Container” oluşturduk. Bu container
 
 * Linux işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:
 
-  `Linux’a Docker nasıl kurulur? <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04>` 
+  `Linux’a Docker nasıl kurulur? <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04>`_
 
 * Windows işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:
 
-  `Windows’a Docker nasıl kurulur? <https://hub.docker.com/editions/community/docker-ce-desktop-windows>`
+  `Windows’a Docker nasıl kurulur? <https://hub.docker.com/editions/community/docker-ce-desktop-windows>`_
 
 * MacOS işletim sistemi için Docker kurulumu ile ilgili yönergeler için lütfen linkteki web sayfasını ziyaret ediniz:
 
- `MacOS’a Docker nasıl kurulur? <https://hub.docker.com/editions/community/docker-ce-desktop-mac>`
+ `MacOS’a Docker nasıl kurulur? <https://hub.docker.com/editions/community/docker-ce-desktop-mac>`_
 
 * `Diğer işletim sistemlerine Docker kurulumu ile ilgili bilgilere ulaşmak için tıklayınız <https://hub.docker.com/search?q=&type=edition&offering=community>`
 
