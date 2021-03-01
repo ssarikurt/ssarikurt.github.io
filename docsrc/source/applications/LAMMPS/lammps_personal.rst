@@ -4,7 +4,7 @@
 Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma
 ===================================================
 
-1- Kendi Bilgisayarınıza LAMMPS kurmak
+1- Kendi Bilgisayarınıza LAMMPS Kurmak
 =======================================
 
 Debian/Ubuntu Linux için:
