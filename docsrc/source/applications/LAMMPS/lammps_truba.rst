@@ -11,7 +11,7 @@ TRUBA sisteminde kurulu olan programlar hakkındaki bilgiye::
 komutu ile ulaşabilirsiniz. 
   
 
-TRUBA sisteminde LAMMPS çalıştırmak için örnek ıs betiği dosyası aşağıdaki gibidir:
+TRUBA sisteminde LAMMPS çalıştırmak için örnek iş betiği dosyası aşağıdaki gibidir:
 
 lammps_run.slurm
 ^^^^^^^^^^^^^^^^^^

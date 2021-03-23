@@ -12,5 +12,6 @@ YBH sistemlerinde kullandığınız programların kendi bilgisayarınıza nasıl
    :titlesonly:
 
    LAMMPS/lammps
+   VS_Code/vscode
 
 
