@@ -39,7 +39,9 @@ latex_elements['preamble'] = '\\usepackage{amsmath}\\n\\usepackage{amssymb}\\n'
 extensions = [
 'sphinx.ext.todo', 
 'sphinx.ext.mathjax', 
-'sphinx.ext.ifconfig'
+'sphinx.ext.ifconfig',
+'sphinx.ext.autodoc',
+'sphinx.ext.viewcode'
 ]
 
 ###mathjax_path="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
