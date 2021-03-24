@@ -11,9 +11,10 @@ YBH sistemlerinde kullandığınız programların kendi bilgisayarınıza nasıl
    :maxdepth: 2
    :titlesonly:
 
-   LAMMPS/lammps
+   GitHubLocal/githublocal
    Spinhx/spinhx
    Spinhx/rst-doc
    VS_Code/vscode
+   LAMMPS/lammps
 
 
