@@ -12,6 +12,8 @@ YBH sistemlerinde kullandığınız programların kendi bilgisayarınıza nasıl
    :titlesonly:
 
    LAMMPS/lammps
+   Spinhx/spinhx
+   Spinhx/rst-doc
    VS_Code/vscode
 
 
