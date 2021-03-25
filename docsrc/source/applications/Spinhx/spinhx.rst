@@ -14,10 +14,8 @@ SPINHX Kullanarak GitHub'da Web Sayfası Hazırlamak
   * Proje havuzunu GitHub'da belirtildiği şekilde oluşturun. 
   * Daha sonra kendi bilgisayarınızda, projenizin kök dizininin altında **docs** adlı bir dizin oluşturun. Bu, web sayfası dosyalarının bulunacağı dizindir.    
 
-  .. code-block:: bash
+     *Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusunda :ref:`githublocal` sayfasına bakabilirsiniz.*
 
-     Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusunda !!reeff!! sayfasına bakabilirsiniz.
- 
   * Spinhx'i kullanmak istediğimiz için GitHub'ın ``jekyll`` ini devre dışı bırakmamız gerekmektedir. Bu, web kök dizinine ``.nojekyll`` adlı bir dosya yerleştirilerek yapılır. Bu dosya mevcut olduğunda GitHub, *index.html* 'yi doğrudan sunacaktır. (Not: Bu aynı zamanda ``Spinhx hızlı başlangıç betiği`` tarafından da sunulmaktadır, ancak burada ilk aşamada yapılması daha iyidir.)
 
    - mkdir docs
@@ -28,4 +26,4 @@ SPINHX Kullanarak GitHub'da Web Sayfası Hazırlamak
    - git push
 
   * GitHub sayfanıza gidin ve projenizin ayarlar sayfasını açın.
-  * Eğer projeyi oluştururken GitHub önerilerini takip ettiyseniz projenize ait bir ``ana dal`` olacaktır. GitHub'a, bu projenin **docs** klasöründe ve **ana dalda** yer alan bir web sayfası olacağına dair tanımlama yapmamız gerekmektedir.   
+  * Eğer projeyi oluştururken GitHub önerilerini takip ettiyseniz projenize ait bir **``ana dal``** olacaktır. GitHub'a, bu projenin **docs** klasöründe ve **ana dal** da yer alan bir web sayfası olacağına dair tanımlama yapmamız gerekmektedir.   

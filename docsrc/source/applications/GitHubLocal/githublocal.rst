@@ -1,6 +1,6 @@
 .. _githublocal:
 
 ================================================
-Kendi Bilgisyarınızda GitHub İçeriği Düzenleme
+Kendi Bilgisayarınızda GitHub İçeriği Düzenleme
 ================================================
 
