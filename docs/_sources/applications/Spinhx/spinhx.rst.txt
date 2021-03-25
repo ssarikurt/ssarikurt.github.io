@@ -45,7 +45,7 @@ Spinhx Kurulumu
 
 Spinhx, anlaşılabilir ve güzel dökümantasyon oluşturmayı kolaylaştıran bir araçtır. Temel olarak, kod yazıyormuş gibi belgeler yazabilirsiniz ve kodlaması kolaydır. `Spinhx web sayfasından <https://www.sphinx-doc.org/>`_ ayrıntılı bilgilere ulaşabilirsiniz.
 
-Öncelikle Spinhx'i kurmanız gerekiyor. Farklı işletim sistemleri için `Spinhx kurulum yönergelerine <https://www.sphinx-doc.org/en/master/usage/installation.html>`_ web sayfasından ulaşabilirsiniz. Linux için alağıdaki adımları takip edebilirsiniz::
+Öncelikle Spinhx'i kurmanız gerekiyor. Farklı işletim sistemleri için `Spinhx kurulum yönergelerine <https://www.sphinx-doc.org/en/master/usage/installation.html>`_ web sayfasından ulaşabilirsiniz. Linux için aşağıdaki adımları takip edebilirsiniz::
 
  sudo apt install python3-sphinx
 
@@ -59,7 +59,8 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
 
  Welcome to the Sphinx 1.8.5 quickstart utility.
 
- Please enter values for the following settings (just press Enter to accept a default value, if one is given in brackets).
+ Please enter values for the following settings (just press Enter to accept a default value,
+ if one is given in brackets).
  Selected root path: .
 
  You have two options for placing the build directory for Sphinx output.
@@ -67,7 +68,9 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
  "source" and "build" directories within the root path.
  > Separate source and build directories (y/n) [n]: y
 
- Inside the root directory, two more directories will be created; "_templates" for custom HTML templates and "_static" for custom stylesheets and other static files. You can enter another prefix (such as ".") to replace the underscore.
+ Inside the root directory, two more directories will be created; "_templates" for custom 
+ HTML templates and "_static" for custom stylesheets and other static files. You can enter 
+ another prefix (such as ".") to replace the underscore.
  > Name prefix for templates and static dir [_]:
 
 
@@ -84,10 +87,14 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
  http://sphinx-doc.org/config.html#confval-language.
  > Project language [en]:
 
- The file name suffix for source files. Commonly, this is either ".txt" or ".rst".  Only files with this suffix are considered documents.
+ The file name suffix for source files. Commonly, this is either ".txt" or ".rst".
+ Only files with this suffix are considered documents.
  > Source file suffix [.rst]:
 
- One document is special in that it is considered the top node of the "contents tree", that is, it is the root of the hierarchical structure of the documents. Normally, this is "index", but if your "index" document is a custom template, you can also set this to another filename.
+ One document is special in that it is considered the top node of the "contents tree", 
+ that is, it is the root of the hierarchical structure of the documents. Normally, this 
+ is "index", but if your "index" document is a custom template, you can also set this to 
+ another filename.
  > Name of your master document (without suffix) [index]:
  Indicate which of the following Sphinx extensions should be enabled:
  > autodoc: automatically insert docstrings from modules (y/n) [n]: y
@@ -101,7 +108,8 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
  > viewcode: include links to the source code of documented Python objects (y/n) [n]: y
  > githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y
 
- A Makefile and a Windows command file can be generated for you so that you only have to run e.g. 'make html' instead of invoking sphinx-build directly.
+ A Makefile and a Windows command file can be generated for you so that you only have to 
+ run e.g. 'make html' instead of invoking sphinx-build directly.
  > Create Makefile? (y/n) [y]: y
  > Create Windows command file? (y/n) [y]: y
 
@@ -112,11 +120,15 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
 
  Finished: An initial directory structure has been created.
 
- You should now populate your master file ./source/index.rst and create other documentation source files. Use the Makefile to build the docs, like so:
+ You should now populate your master file ./source/index.rst and create other documentation 
+ source files. Use the Makefile to build the docs, like so:
    make builder
  where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
 
- This script creates the all important conf.py where all the settings (such as the theme) of the web page resides. The site is already populated with an example, so it is ready to be built, however, a slight modification to Makefile is handy, so that it copies the output to docs directory automatically
+ This script creates the all important conf.py where all the settings (such as the theme) 
+ of the web page resides. The site is already populated with an example, so it is ready 
+ to be built, however, a slight modification to Makefile is handy, so that it copies 
+ the output to docs directory automatically
 
  # Minimal makefile for Sphinx documentation
  #
@@ -141,9 +153,11 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
 	@make html
 	cp -a build/html/. ../docs
 
- The last "github" part compiles the documents in the source directory, and copies the relevant files from build/html to the docs
+ The last "github" part compiles the documents in the source directory, and copies the 
+ relevant files from build/html to the docs
 
- Before doing a make github , let's add, commit and puMakefilesh the files first. Go to the root
+ Before doing a make github , let's add, commit and puMakefilesh the files first. 
+ Go to the root
 
  git add docsrc/ --all
  git commit -m "Sphinx source" 
