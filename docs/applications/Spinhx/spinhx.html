@@ -49,23 +49,18 @@
             
   <div class="section" id="spinhx-kullanarak-github-da-web-sayfasi-hazirlamak">
 <span id="spinhx"></span><h1>SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak<a class="headerlink" href="#spinhx-kullanarak-github-da-web-sayfasi-hazirlamak" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="github-web-sayfasi-icin-hazirlik">
+<h2>GitHub Web Sayfası İçin Hazırlık<a class="headerlink" href="#github-web-sayfasi-icin-hazirlik" title="Permalink to this headline">¶</a></h2>
 <p><em>GitHub’da web sayfaları barındırabileceğinizi biliyor musunuz? Web sayfanızı Spinhx ile özelleştirebilirsiniz!</em></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>GitHub, kişisel sayfalar ve projeleriniz için web sayfaları oluşturmanıza imkan tanır. Kişisel sayfanız, kullanıcı adınızla aynı olması gereken özel bir depoda (repository) tutulur. Bu kişisel web sayfası varsayılan olarak <a class="reference external" href="https://kullanciadi.github.io'da">https://kullanciadi.github.io’da</a> yer alacaktır. İstediğiniz bir alan adı yönlendirmesine de sahip olabilirsiniz. Proje web sayfaları, varsayılan olarak, <a class="reference external" href="https://kullaniciadi.github.io/repository">https://kullaniciadi.github.io/repository</a> şeklinde sunulur; burada “repository” projeniz için oluşturduğunuz deponun ismidir.</p></li>
-<li><p>GitHub üzerinde web sayfası oluşturmak için ilgili yönergelere <a class="reference external" href="https://pages.github.com/">buradan</a> ulaşabilirsiniz. Spinhx’i kullanmak istiyorsanız işlem adımları biraz farklıdır. Spinhx kullanarak bir proje için web sayfasının nasıl kurulacağına dair bilgileri aşağıda bulabilirsiniz. Kişisel web sayfası için de işlem adımları benzerdir, sadece ‘repository’ yerine kullanıcı adınızı kullanmanız gerekecektir.</p></li>
-</ul>
-<blockquote>
-<div><ul>
+<p>GitHub, kişisel sayfalar ve projeleriniz için web sayfaları oluşturmanıza imkan tanır. Kişisel sayfanız, kullanıcı adınızla aynı olması gereken özel bir depoda (repository) tutulur. Bu kişisel web sayfası varsayılan olarak <a class="reference external" href="https://kullanciadi.github.io'da">https://kullanciadi.github.io’da</a> yer alacaktır. İstediğiniz bir alan adı yönlendirmesine de sahip olabilirsiniz. Proje web sayfaları, varsayılan olarak, <a class="reference external" href="https://kullaniciadi.github.io/repository">https://kullaniciadi.github.io/repository</a> şeklinde sunulur; burada “repository” projeniz için oluşturduğunuz deponun ismidir.</p>
+<p>GitHub üzerinde web sayfası oluşturmak için ilgili yönergelere <a class="reference external" href="https://pages.github.com/">buradan</a> ulaşabilirsiniz. Spinhx’i kullanmak istiyorsanız işlem adımları biraz farklıdır. Spinhx kullanarak bir proje için web sayfasının nasıl kurulacağına dair bilgileri aşağıda bulabilirsiniz. Kişisel web sayfası için de işlem adımları benzerdir, sadece ‘repository’ yerine kullanıcı adınızı kullanmanız gerekecektir.</p>
+<ul>
 <li><p>‘hpcnotes’ adında boş bir proje ile başlayalım.</p></li>
 <li><p>Proje havuzunu GitHub’da belirtildiği şekilde oluşturun.</p></li>
 <li><p>Daha sonra kendi bilgisayarınızda, projenizin kök dizininin altında <strong>docs</strong> adlı bir dizin oluşturun. Bu, web sayfası dosyalarının bulunacağı dizindir.</p>
-<blockquote>
-<div><p><em>Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusunda :doc:`../GitHubLocal/githublocal` sayfasına bakabilirsiniz.</em></p>
-</div></blockquote>
+<p><em>Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusunda :doc:`../GitHubLocal/githublocal` sayfasına bakabilirsiniz.</em></p>
 </li>
-<li><p>Spinhx’i kullanmak istediğimiz için GitHub’ın <code class="docutils literal notranslate"><span class="pre">jekyll</span></code> ini devre dışı bırakmamız gerekmektedir. Bu, web kök dizinine <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> adlı bir dosya yerleştirilerek yapılır. Bu dosya mevcut olduğunda GitHub, <em>index.html</em> ‘yi doğrudan sunacaktır. (Not: Bu aynı zamanda <code class="docutils literal notranslate"><span class="pre">Spinhx</span> <span class="pre">hızlı</span> <span class="pre">başlangıç</span> <span class="pre">betiği</span></code> tarafından da sunulmaktadır, ancak burada ilk aşamada yapılması daha iyidir.)</p></li>
-</ul>
+<li><p>Spinhx’i kullanmak istediğimiz için GitHub’ın <code class="docutils literal notranslate"><span class="pre">jekyll</span></code> ini devre dışı bırakmamız gerekmektedir. Bu, web kök dizinine <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> adlı bir dosya yerleştirilerek yapılır. Bu dosya mevcut olduğunda GitHub, <em>index.html</em> ‘yi doğrudan sunacaktır. (Not: Bu aynı zamanda <code class="docutils literal notranslate"><span class="pre">Spinhx</span> <span class="pre">hızlı</span> <span class="pre">başlangıç</span> <span class="pre">betiği</span></code> tarafından da sunulmaktadır, ancak burada ilk aşamada yapılması daha iyidir.)</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>mkdir docs</p></li>
@@ -76,20 +71,31 @@
 <li><p>git push</p></li>
 </ul>
 </div></blockquote>
-<ul class="simple">
+</li>
 <li><p>GitHub sayfanıza gidin ve projenizin ayarlar sayfasını açın.</p></li>
 </ul>
-</div></blockquote>
-<img alt="../../_images/project_settings.png" src="../../_images/project_settings.png" />
+<blockquote>
+<div><img alt="../../_images/project_settings.png" src="../../_images/project_settings.png" />
 </div></blockquote>
 <ul>
-<li><p>Eğer projeyi oluştururken GitHub önerilerini takip ettiyseniz projenize ait bir <strong>``ana dal``</strong> olacaktır. GitHub’a, bu projenin <strong>docs</strong> klasöründe ve <strong>ana dal</strong> da yer alan bir web sayfası olacağına dair tanımlama yapmamız gerekmektedir.</p>
-<blockquote>
-<div><p><em>Projenizin web sayfası olarak yayınlanabilmesi için oluşturduğunuz depo ``public`` olmalıdır.</em></p>
-</div></blockquote>
+<li><p>Eğer projeyi oluştururken GitHub önerilerini takip ettiyseniz projenize ait bir <strong>``ana dal``</strong> olacaktır. GitHub’a, bu projenin <strong>docs</strong> klasöründe ve <strong>ana dal</strong> da yer alan bir web sayfası olacağına dair tanımlama yapmamız gerekmektedir. Bunun için <code class="docutils literal notranslate"><span class="pre">Settings-&gt;Options-&gt;GitHub</span> <span class="pre">Pages</span></code> sayfasına giderek ayarları yapabilirsiniz.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Projenizin web sayfası olarak yayınlanabilmesi için oluşturduğunuz depo ``public`` olmalıdır.</em></p>
+</div>
 </li>
 </ul>
 <img alt="../../_images/project_page.png" src="../../_images/project_page.png" />
+</div>
+<div class="section" id="spinhx-kurulumu">
+<h2>Spinhx Kurulumu<a class="headerlink" href="#spinhx-kurulumu" title="Permalink to this headline">¶</a></h2>
+<p>Spinhx, anlaşılabilir ve güzel dökümantasyon oluşturmayı kolaylaştıran bir araçtır. Temel olarak, kod yazıyormuş gibi belgeler yazabilirsiniz ve kodlaması kolaydır. <a class="reference external" href="https://www.sphinx-doc.org/">Spinhx web sayfasından</a> ayrıntılı bilgilere ulaşabilirsiniz.</p>
+<p>Öncelikle Spinhx’i kurmanız gerekiyor. Farklı işletim sistemleri için <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">Spinhx kurulum yönergelerine</a> web sayfasından ulaşabilirsiniz. Linux için alağıdaki adımları takip edebilirsiniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">sphinx</span>
+</pre></div>
+</div>
+<p>Kurulduktan sonra, Sphinx’i projenin <em>kök dizini</em> nde başlatın. Bunun için Spinhx’in sayfasındaki <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">başlangıç betiği</a> incelenebilir.</p>
+</div>
 </div>
 
 
@@ -99,6 +105,15 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak</a><ul>
+<li><a class="reference internal" href="#github-web-sayfasi-icin-hazirlik">GitHub Web Sayfası İçin Hazırlık</a></li>
+<li><a class="reference internal" href="#spinhx-kurulumu">Spinhx Kurulumu</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="../GitHubLocal/githublocal.html"
                         title="previous chapter">Kendi Bilgisayarınızda GitHub İçeriği Düzenleme</a></p>
