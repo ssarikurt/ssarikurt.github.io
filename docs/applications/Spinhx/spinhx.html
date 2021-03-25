@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak &#8212; sevil  documentation</title>
+    <title>Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak &#8212; sevil  documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     
@@ -17,7 +17,7 @@
     <script src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="rst" href="rst-doc.html" />
+    <link rel="next" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)" href="../LAMMPS/lammps.html" />
     <link rel="prev" title="Kendi Bilgisayarınızda GitHub İçeriği Düzenleme" href="../GitHubLocal/githublocal.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
@@ -31,14 +31,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="rst-doc.html" title="rst"
+          <a href="../LAMMPS/lammps.html" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../GitHubLocal/githublocal.html" title="Kendi Bilgisayarınızda GitHub İçeriği Düzenleme"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../sw_guides.html" accesskey="U">Yazılım Kurulumları Kitapçığı</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak</a></li> 
       </ul>
     </div>  
 
@@ -48,7 +48,7 @@
           <div class="body" role="main">
             
   <div class="section" id="spinhx-kullanarak-github-da-web-sayfasi-hazirlamak">
-<span id="spinhx"></span><h1>SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak<a class="headerlink" href="#spinhx-kullanarak-github-da-web-sayfasi-hazirlamak" title="Permalink to this headline">¶</a></h1>
+<span id="spinhx"></span><h1>Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak<a class="headerlink" href="#spinhx-kullanarak-github-da-web-sayfasi-hazirlamak" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="github-web-sayfasi-icin-hazirlik">
 <h2>GitHub Web Sayfası İçin Hazırlık<a class="headerlink" href="#github-web-sayfasi-icin-hazirlik" title="Permalink to this headline">¶</a></h2>
 <p><em>GitHub’da web sayfaları barındırabileceğinizi biliyor musunuz? Web sayfanızı Spinhx ile özelleştirebilirsiniz!</em></p>
@@ -94,7 +94,122 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">sphinx</span>
 </pre></div>
 </div>
-<p>Kurulduktan sonra, Sphinx’i projenin <em>kök dizini</em> nde başlatın. Bunun için Spinhx’in sayfasındaki <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">başlangıç betiği</a> incelenebilir.</p>
+<p>Kurulduktan sonra, Sphinx’i projenin <em>kök dizini</em> nde başlatın. Bunun için Spinhx’in sayfasındaki <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">başlangıç betiği</a> incelenebilir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">docsrc</span>
+<span class="n">cd</span> <span class="n">docsrc</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+</div>
+<p>Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları verilmiştir. Diğer işletim sistemleri için ekrana çıkan bilgiler değişiklik gösterebilir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Welcome to the Sphinx 1.8.5 quickstart utility.
+
+Please enter values for the following settings (just press Enter to accept a default value, if one is given in brackets).
+Selected root path: .
+
+You have two options for placing the build directory for Sphinx output.
+Either, you use a directory &quot;_build&quot; within the root path, or you separate
+&quot;source&quot; and &quot;build&quot; directories within the root path.
+&gt; Separate source and build directories (y/n) [n]: y
+
+Inside the root directory, two more directories will be created; &quot;_templates&quot; for custom HTML templates and &quot;_static&quot; for custom stylesheets and other static files. You can enter another prefix (such as &quot;.&quot;) to replace the underscore.
+&gt; Name prefix for templates and static dir [_]:
+
+
+The project name will occur in several places in the built documentation.
+&gt; Project name: hpcnotes
+&gt; Author name(s): hpcnotes
+&gt; Project release []:
+
+If the documents are to be written in a language other than English,
+you can select a language here by its language code. Sphinx will then
+translate text that it generates into that language.
+
+For a list of supported codes, see
+http://sphinx-doc.org/config.html#confval-language.
+&gt; Project language [en]:
+
+The file name suffix for source files. Commonly, this is either &quot;.txt&quot; or &quot;.rst&quot;.  Only files with this suffix are considered documents.
+&gt; Source file suffix [.rst]:
+
+One document is special in that it is considered the top node of the &quot;contents tree&quot;, that is, it is the root of the hierarchical structure of the documents. Normally, this is &quot;index&quot;, but if your &quot;index&quot; document is a custom template, you can also set this to another filename.
+&gt; Name of your master document (without suffix) [index]:
+Indicate which of the following Sphinx extensions should be enabled:
+&gt; autodoc: automatically insert docstrings from modules (y/n) [n]: y
+&gt; doctest: automatically test code snippets in doctest blocks (y/n) [n]: y
+&gt; intersphinx: link between Sphinx documentation of different projects (y/n) [n]: y
+&gt; todo: write &quot;todo&quot; entries that can be shown or hidden on build (y/n) [n]: y
+&gt; coverage: checks for documentation coverage (y/n) [n]: y
+&gt; imgmath: include math, rendered as PNG or SVG images (y/n) [n]: n
+&gt; mathjax: include math, rendered in the browser by MathJax (y/n) [n]: y
+&gt; ifconfig: conditional inclusion of content based on config values (y/n) [n]: n
+&gt; viewcode: include links to the source code of documented Python objects (y/n) [n]: y
+&gt; githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y
+
+A Makefile and a Windows command file can be generated for you so that you only have to run e.g. &#39;make html&#39; instead of invoking sphinx-build directly.
+&gt; Create Makefile? (y/n) [y]: y
+&gt; Create Windows command file? (y/n) [y]: y
+
+Creating file ./source/conf.py.
+Creating file ./source/index.rst.
+Creating file ./Makefile.
+Creating file ./make.bat.
+
+Finished: An initial directory structure has been created.
+
+You should now populate your master file ./source/index.rst and create other documentation source files. Use the Makefile to build the docs, like so:
+  make builder
+where &quot;builder&quot; is one of the supported builders, e.g. html, latex or linkcheck.
+
+This script creates the all important conf.py where all the settings (such as the theme) of the web page resides. The site is already populated with an example, so it is ready to be built, however, a slight modification to Makefile is handy, so that it copies the output to docs directory automatically
+
+# Minimal makefile for Sphinx documentation
+#
+
+# You can set these variables from the command line.
+SPHINXOPTS    =
+SPHINXBUILD   = sphinx-build
+SOURCEDIR     = source
+BUILDDIR      = build
+
+# Put it first so that &quot;make&quot; without argument is like &quot;make help&quot;.
+help:
+       @$(SPHINXBUILD) -M help &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
+
+.PHONY: help Makefile
+
+# Catch-all target: route all unknown targets to Sphinx using the new
+# &quot;make mode&quot; option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+%: Makefile
+       @$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
+github:
+       @make html
+       cp -a build/html/. ../docs
+
+The last &quot;github&quot; part compiles the documents in the source directory, and copies the relevant files from build/html to the docs
+
+Before doing a make github , let&#39;s add, commit and puMakefilesh the files first. Go to the root
+
+git add docsrc/ --all
+git commit -m &quot;Sphinx source&quot;
+git push
+
+This will push only the sources. Now, to compile and push the web page itself.
+
+cd docsrc
+make github
+cd ..
+git add docs/ -all
+git commit -m &quot;Web page update&quot;
+git push
+
+Give GitHub some time to refresh, and the project webpage is ready to go.
+
+Notes:
+
+   You might want to add build directory to your .gitignore
+   The markup language reStructuredText is explained here.
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -107,7 +222,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak</a><ul>
+<li><a class="reference internal" href="#">Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak</a><ul>
 <li><a class="reference internal" href="#github-web-sayfasi-icin-hazirlik">GitHub Web Sayfası İçin Hazırlık</a></li>
 <li><a class="reference internal" href="#spinhx-kurulumu">Spinhx Kurulumu</a></li>
 </ul>
@@ -118,8 +233,8 @@
   <p class="topless"><a href="../GitHubLocal/githublocal.html"
                         title="previous chapter">Kendi Bilgisayarınızda GitHub İçeriği Düzenleme</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="rst-doc.html"
-                        title="next chapter">rst</a></p>
+  <p class="topless"><a href="../LAMMPS/lammps.html"
+                        title="next chapter">LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -148,14 +263,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="rst-doc.html" title="rst"
+          <a href="../LAMMPS/lammps.html" title="LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)"
              >next</a> |</li>
         <li class="right" >
           <a href="../GitHubLocal/githublocal.html" title="Kendi Bilgisayarınızda GitHub İçeriği Düzenleme"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../sw_guides.html" >Yazılım Kurulumları Kitapçığı</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
