@@ -26,4 +26,11 @@ SPINHX Kullanarak GitHub'da Web Sayfası Hazırlamak
    - git push
 
   * GitHub sayfanıza gidin ve projenizin ayarlar sayfasını açın.
-  * Eğer projeyi oluştururken GitHub önerilerini takip ettiyseniz projenize ait bir **``ana dal``** olacaktır. GitHub'a, bu projenin **docs** klasöründe ve **ana dal** da yer alan bir web sayfası olacağına dair tanımlama yapmamız gerekmektedir.   
+    
+ .. image:: files/project_settings.png
+
+* Eğer projeyi oluştururken GitHub önerilerini takip ettiyseniz projenize ait bir **``ana dal``** olacaktır. GitHub'a, bu projenin **docs** klasöründe ve **ana dal** da yer alan bir web sayfası olacağına dair tanımlama yapmamız gerekmektedir. 
+
+   *Projenizin web sayfası olarak yayınlanabilmesi için oluşturduğunuz depo ``public`` olmalıdır.*
+
+.. image:: files/project_page.png
