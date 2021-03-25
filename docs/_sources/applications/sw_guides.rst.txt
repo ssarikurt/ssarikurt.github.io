@@ -13,8 +13,6 @@ YBH sistemlerinde kullandığınız programların kendi bilgisayarınıza nasıl
 
    GitHubLocal/githublocal
    Spinhx/spinhx
-   Spinhx/rst-doc
-   VS_Code/vscode
    LAMMPS/lammps
 
 
