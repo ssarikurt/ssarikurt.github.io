@@ -65,7 +65,21 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Spinhx’i kullanmak istediğimiz için GitHub’ın <code class="docutils literal notranslate"><span class="pre">jekyll</span></code> ini devre dışı bırakmamız gerekmektedir.</p></li>
+<li><p>Spinhx’i kullanmak istediğimiz için GitHub’ın <code class="docutils literal notranslate"><span class="pre">jekyll</span></code> ini devre dışı bırakmamız gerekmektedir. Bu, web kök dizinine <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> adlı bir dosya yerleştirilerek yapılır. Bu dosya mevcut olduğunda GitHub, <em>index.html</em> ‘yi doğrudan sunacaktır. (Not: Bu aynı zamanda <code class="docutils literal notranslate"><span class="pre">Spinhx</span> <span class="pre">hızlı</span> <span class="pre">başlangıç</span> <span class="pre">betiği</span></code> tarafından da sunulmaktadır, ancak burada ilk aşamada yapılması daha iyidir.)</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>mkdir docs</p></li>
+<li><p>cd docs</p></li>
+<li><p>touch .nojekyll</p></li>
+<li><p>git add .nojekyll</p></li>
+<li><p>git commit -m “Disable jekyll”</p></li>
+<li><p>git push</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>GitHub sayfanıza gidin ve projenizin ayarlar sayfasını açın.</p></li>
+<li><p>Eğer projeyi oluştururken GitHub önerilerini takip ettiyseniz projenize ait bir <code class="docutils literal notranslate"><span class="pre">ana</span> <span class="pre">dal</span></code> olacaktır. GitHub’a, bu projenin <strong>docs</strong> klasöründe ve <strong>ana dalda</strong> yer alan bir web sayfası olacağına dair tanımlama yapmamız gerekmektedir.</p></li>
 </ul>
 </div></blockquote>
 </div></blockquote>
