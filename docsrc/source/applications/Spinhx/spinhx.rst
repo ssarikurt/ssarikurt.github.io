@@ -157,7 +157,7 @@ Bu komut dosyası, web sayfasının tüm ayarlarının (tema gibi) bulunduğu t�
 
 Sondaki``github`` bölümü, belgeleri kaynak dizinde (*source*) derler ve ilgili dosyaları ``build/html``'den ``docs`` klasörüne kopyalar. 
 
-``make github`` yapmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için *kök* dizininize gidip aşağıdaki komutları uygulamanız gerekmektedir::
+``make github`` yapmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için *kaynak* dizininize (source) gidip aşağıdaki komutları uygulamanız gerekmektedir::
 
  git add docsrc/ --all
  git commit -m "Sphinx source" 
@@ -176,5 +176,23 @@ GitHub'a yenilenmesi için biraz bekleyin ve artık proje web sayfanız hazır.
 
 .. note::
 
-   reStructuredText yazım dili hakkında `ayrıntılı bilgilere ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
+   reStructuredText (rst) yazım dili hakkında `ayrıntılı bilgilere ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 
+   rst formatında denemeler yapmak isterseniz `linkteki çevrimiçi editörü <http://rst.ninjs.org/#>`_ kullanabilirsiniz.
+
+.. hint:: Kaynak dizininizin (*source*) içerisinde bulunan ``conf.py`` konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için ``sphinx.ext.mathjax`` gibi:
+
+   .. code-block::
+   
+   # Add any Sphinx extension module names here, as strings. They can be
+   # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+   # ones.
+   extensions = [
+   'sphinx.ext.todo',
+   'sphinx.ext.mathjax',
+   'sphinx.ext.ifconfig',
+   'sphinx.ext.autodoc',
+   'sphinx.ext.viewcode'
+   ]
+
+  Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. `Spinhx temalarına ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes>` 

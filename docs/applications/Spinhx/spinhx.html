@@ -202,7 +202,7 @@ github:
 </pre></div>
 </div>
 <p>Sondaki``github`` bölümü, belgeleri kaynak dizinde (<em>source</em>) derler ve ilgili dosyaları <code class="docutils literal notranslate"><span class="pre">build/html</span></code>’den <code class="docutils literal notranslate"><span class="pre">docs</span></code> klasörüne kopyalar.</p>
-<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> yapmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için <em>kök</em> dizininize gidip aşağıdaki komutları uygulamanız gerekmektedir:</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> yapmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için <em>kaynak</em> dizininize (source) gidip aşağıdaki komutları uygulamanız gerekmektedir:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">docsrc</span><span class="o">/</span> <span class="o">--</span><span class="nb">all</span>
 <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Sphinx source&quot;</span>
 <span class="n">git</span> <span class="n">push</span>
@@ -220,7 +220,28 @@ github:
 <p>GitHub’a yenilenmesi için biraz bekleyin ve artık proje web sayfanız hazır.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>reStructuredText yazım dili hakkında <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">ayrıntılı bilgilere ulaşmak için tıklayınız.</a></p>
+<p>reStructuredText (rst) yazım dili hakkında <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">ayrıntılı bilgilere ulaşmak için tıklayınız.</a></p>
+<p>rst formatında denemeler yapmak isterseniz <a class="reference external" href="http://rst.ninjs.org/#">linkteki çevrimiçi editörü</a> kullanabilirsiniz.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Kaynak dizininizin (<em>source</em>) içerisinde bulunan <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için <code class="docutils literal notranslate"><span class="pre">sphinx.ext.mathjax</span></code> gibi:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p># Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named ‘sphinx.ext.*’) or your custom
+# ones.
+extensions = [
+‘sphinx.ext.todo’,
+‘sphinx.ext.mathjax’,
+‘sphinx.ext.ifconfig’,
+‘sphinx.ext.autodoc’,
+‘sphinx.ext.viewcode’
+]</p>
+</div></blockquote>
+<p>Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. <cite>Spinhx temalarına ulaşmak için tıklayınız. &lt;https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes&gt;</cite></p>
 </div>
 </div>
 </div>
