@@ -126,7 +126,7 @@ Daha sonra ./source/index.rst ana dosyanızı doldurmalı ve diğer kaynak dök�
 
   make builder
 
-Burda ``builder``, desteklenen oluşturuculardan biridir. Örneğin; html, latex veya linkcheck. 
+Burada ``builder``, desteklenen oluşturuculardan biridir. Örneğin; *html, latex veya linkcheck*. 
 
 Bu komut dosyası, web sayfasının tüm ayarlarının (tema gibi) bulunduğu tüm önemli ``conf.py`` dosyasını oluşturur. Site halihazırda bir örnekle doldurulmuştur, bu nedenle oluşturulmaya hazırdır, ancak Makefile'da küçük bir değişiklik yapmak kullanışlıdır, böylece çıktıyı otomatik olarak docs dizinine kopyalar.
 
@@ -172,7 +172,7 @@ Bu komutlar sadece kaynak dosyaları iletecektir. Web sayfasının kendisini der
  git commit -m "Web page update"
  git push
 
-GitHub'a yenilenmesi için biraz zaman tanıyın ve artık proje web sayfanız hazır. 
+GitHub'a yenilenmesi için biraz bekleyin ve artık proje web sayfanız hazır. 
 
 .. note::
 
