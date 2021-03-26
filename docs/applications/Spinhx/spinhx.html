@@ -54,12 +54,18 @@
 <p><em>GitHub’da web sayfaları barındırabileceğinizi biliyor musunuz? Web sayfanızı Spinhx ile özelleştirebilirsiniz!</em></p>
 <p>GitHub, kişisel sayfalar ve projeleriniz için web sayfaları oluşturmanıza imkan tanır. Kişisel sayfanız, kullanıcı adınızla aynı olması gereken özel bir depoda (repository) tutulur. Bu kişisel web sayfası varsayılan olarak <a class="reference external" href="https://kullanciadi.github.io'da">https://kullanciadi.github.io’da</a> yer alacaktır. İstediğiniz bir alan adı yönlendirmesine de sahip olabilirsiniz. Proje web sayfaları, varsayılan olarak, <a class="reference external" href="https://kullaniciadi.github.io/repository">https://kullaniciadi.github.io/repository</a> şeklinde sunulur; burada “repository” projeniz için oluşturduğunuz deponun ismidir.</p>
 <p>GitHub üzerinde web sayfası oluşturmak için ilgili yönergelere <a class="reference external" href="https://pages.github.com/">buradan</a> ulaşabilirsiniz. Spinhx’i kullanmak istiyorsanız işlem adımları biraz farklıdır. Spinhx kullanarak bir proje için web sayfasının nasıl kurulacağına dair bilgileri aşağıda bulabilirsiniz. Kişisel web sayfası için de işlem adımları benzerdir, sadece ‘repository’ yerine kullanıcı adınızı kullanmanız gerekecektir.</p>
-<ul>
+<ul class="simple">
 <li><p>‘hpcnotes’ adında boş bir proje ile başlayalım.</p></li>
 <li><p>Proje havuzunu GitHub’da belirtildiği şekilde oluşturun.</p></li>
-<li><p>Daha sonra kendi bilgisayarınızda, projenizin kök dizininin altında <strong>docs</strong> adlı bir dizin oluşturun. Bu, web sayfası dosyalarının bulunacağı dizindir.</p>
-<p><em>Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusundaki bilgilere `ulaşmak için tıklayınız. &lt;https://ssarikurt.github.io/applications/GitHubLocal/githublocal.html&gt;`_</em></p>
-</li>
+<li><p>Daha sonra kendi bilgisayarınızda, projenizin kök dizininin altında <strong>docs</strong> adlı bir dizin oluşturun. Bu, web sayfası dosyalarının bulunacağı dizindir.</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusundaki bilgilere <a class="reference external" href="https://ssarikurt.github.io/applications/GitHubLocal/githublocal.html">ulaşmak için tıklayınız.</a></p>
+</div>
+</div></blockquote>
+<ul>
 <li><p>Spinhx’i kullanmak istediğimiz için GitHub’ın <code class="docutils literal notranslate"><span class="pre">jekyll</span></code> ini devre dışı bırakmamız gerekmektedir. Bu, web kök dizinine <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> adlı bir dosya yerleştirilerek yapılır. Bu dosya mevcut olduğunda GitHub, <em>index.html</em> ‘yi doğrudan sunacaktır. (Not: Bu aynı zamanda <code class="docutils literal notranslate"><span class="pre">Spinhx</span> <span class="pre">hızlı</span> <span class="pre">başlangıç</span> <span class="pre">betiği</span></code> tarafından da sunulmaktadır, ancak burada ilk aşamada yapılması daha iyidir.)</p>
 <blockquote>
 <div><ul class="simple">
