@@ -8,9 +8,9 @@ GitHub hesabınızda projelerinize ait içerekleri yerel olarak kendi bilgisayar
 
 Bunun için öncelikle, her defasında düzenleme yaptıkça şifre girmemek için, bilgisayarınızda ``ssh-keygen`` oluşturmanız gerekmektedir. ``keys`` adlı bir klasör açıp anahtar dosyalarınızı burada saklayabilirsiniz::
 
-  ~$ mkdir keys
-  ~$ cd keys
-  ~$ ssh-keygen
+   mkdir keys
+   cd keys
+   ssh-keygen
 
 komutunu yazdığınızda ekranda aşağıdaki bilgiler görüntülecek::
 
