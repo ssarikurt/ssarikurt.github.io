@@ -62,7 +62,7 @@
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusundaki bilgilere <a class="reference external" href="https://ssarikurt.github.io/applications/GitHubLocal/githublocal.html">ulaşmak için tıklayınız.</a></p>
+<p>Kendi bilgisayarınızda GitHub hesabınızdaki içeriği nasıl düzenleyeceğiniz ile ilgili bilgilere <a class="reference external" href="https://ssarikurt.github.io/applications/GitHubLocal/githublocal.html">ulaşmak için tıklayınız.</a></p>
 </div>
 </div></blockquote>
 <ul>
@@ -171,12 +171,12 @@ Creating file ./make.bat.
 Finished: An initial directory structure has been created.
 </pre></div>
 </div>
-<p>You should now populate your master file ./source/index.rst and create other documentation source files. Use the Makefile to build the docs, like so:</p>
+<p>Daha sonra ./source/index.rst ana dosyanızı doldurmalı ve diğer kaynak dökümantasyon belgelerinizi oluşturmalısınız. Dökümanları oluşturmak için Makefile’ı aşağıdaki gibi kullanabilirsiniz:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">builder</span>
 </pre></div>
 </div>
-<p>where “builder” is one of the supported builders, e.g. html, latex or linkcheck.</p>
-<p>This script creates the all important conf.py where all the settings (such as the theme) of the web page resides. The site is already populated with an example, so it is ready to be built, however, a sligh modification to Makefile is handy, so that it copies the output to docs directory automatically:</p>
+<p>Burda <code class="docutils literal notranslate"><span class="pre">builder</span></code>, desteklenen oluşturuculardan biridir. Örneğin; html, latex veya linkcheck.</p>
+<p>Bu komut dosyası, web sayfasının tüm ayarlarının (tema gibi) bulunduğu tüm önemli <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> dosyasını oluşturur. Site halihazırda bir örnekle doldurulmuştur, bu nedenle oluşturulmaya hazırdır, ancak Makefile’da küçük bir değişiklik yapmak kullanışlıdır, böylece çıktıyı otomatik olarak docs dizinine kopyalar.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Minimal makefile for Sphinx documentation
 #
 
@@ -188,28 +188,27 @@ BUILDDIR      = build
 
 # Put it first so that &quot;make&quot; without argument is like &quot;make help&quot;.
 help:
-       @$(SPHINXBUILD) -M help &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
+    @$(SPHINXBUILD) -M help &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
 
 .PHONY: help Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # &quot;make mode&quot; option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
-       @$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
+    @$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
 github:
-       @make html
-       cp -a build/html/. ../docs
+    @make html
+    cp -a build/html/. ../docs
 </pre></div>
 </div>
-<p>The last “github” part compiles the documents in the source directory, and copies the relevant files from build/html to the docs</p>
-<p>Before doing a make github , let’s add, commit and puMakefilesh the files first.
-Go to the root:</p>
+<p>Sondaki``github`` bölümü, belgeleri kaynak dizinde (<em>source</em>) derler ve ilgili dosyaları <code class="docutils literal notranslate"><span class="pre">build/html</span></code>’den <code class="docutils literal notranslate"><span class="pre">docs</span></code> klasörüne kopyalar.</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> yapmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için <em>kök</em> dizininize gidip aşağıdaki komutları uygulamanız gerekmektedir:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">docsrc</span><span class="o">/</span> <span class="o">--</span><span class="nb">all</span>
 <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Sphinx source&quot;</span>
 <span class="n">git</span> <span class="n">push</span>
 </pre></div>
 </div>
-<p>This will push only the sources. Now, to compile and push the web page itself:</p>
+<p>Bu komutlar sadece kaynak dosyaları iletecektir. Web sayfasının kendisini derlemek ve de iletmek için ise aşağıdaki komutları kullanmanız gerekmektedir:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docsrc</span>
 <span class="n">make</span> <span class="n">github</span>
 <span class="n">cd</span> <span class="o">..</span>
@@ -218,12 +217,11 @@ Go to the root:</p>
 <span class="n">git</span> <span class="n">push</span>
 </pre></div>
 </div>
-<p>Give GitHub some time to refresh, and the project webpage is ready to go.</p>
-<blockquote>
-<div><p>Notes:</p>
-</div></blockquote>
-<p>You might want to add build directory to your .gitignore
-The markup language reStructuredText is explained here.</p>
+<p>GitHub’a yenilenmesi için biraz zaman tanıyın ve artık proje web sayfanız hazır.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>reStructuredText yazım dili hakkında <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">ayrıntılı bilgilere ulaşmak için tıklayınız.</a></p>
+</div>
 </div>
 </div>
 

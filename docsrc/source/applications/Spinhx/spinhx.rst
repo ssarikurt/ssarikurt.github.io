@@ -20,7 +20,7 @@ GitHub üzerinde web sayfası oluşturmak için ilgili yönergelere `buradan <ht
 
  .. note::
 
-  Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusundaki bilgilere `ulaşmak için tıklayınız. <https://ssarikurt.github.io/applications/GitHubLocal/githublocal.html>`_
+  Kendi bilgisayarınızda GitHub hesabınızdaki içeriği nasıl düzenleyeceğiniz ile ilgili bilgilere `ulaşmak için tıklayınız. <https://ssarikurt.github.io/applications/GitHubLocal/githublocal.html>`_
 
 * Spinhx'i kullanmak istediğimiz için GitHub'ın ``jekyll`` ini devre dışı bırakmamız gerekmektedir. Bu, web kök dizinine ``.nojekyll`` adlı bir dosya yerleştirilerek yapılır. Bu dosya mevcut olduğunda GitHub, *index.html* 'yi doğrudan sunacaktır. (Not: Bu aynı zamanda ``Spinhx hızlı başlangıç betiği`` tarafından da sunulmaktadır, ancak burada ilk aşamada yapılması daha iyidir.)
 
@@ -122,13 +122,15 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
 
  Finished: An initial directory structure has been created.
 
-You should now populate your master file ./source/index.rst and create other documentation source files. Use the Makefile to build the docs, like so::
+Daha sonra ./source/index.rst ana dosyanızı doldurmalı ve diğer kaynak dökümantasyon belgelerinizi oluşturmalısınız. Dökümanları oluşturmak için Makefile'ı aşağıdaki gibi kullanabilirsiniz::
 
   make builder
 
-where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
+Burda ``builder``, desteklenen oluşturuculardan biridir. Örneğin; html, latex veya linkcheck. 
 
-This script creates the all important conf.py where all the settings (such as the theme) of the web page resides. The site is already populated with an example, so it is ready to be built, however, a sligh modification to Makefile is handy, so that it copies the output to docs directory automatically::
+Bu komut dosyası, web sayfasının tüm ayarlarının (tema gibi) bulunduğu tüm önemli ``conf.py`` dosyasını oluşturur. Site halihazırda bir örnekle doldurulmuştur, bu nedenle oluşturulmaya hazırdır, ancak Makefile'da küçük bir değişiklik yapmak kullanışlıdır, böylece çıktıyı otomatik olarak docs dizinine kopyalar.
+
+.. code-block::
 
  # Minimal makefile for Sphinx documentation
  #
@@ -141,28 +143,27 @@ This script creates the all important conf.py where all the settings (such as th
 
  # Put it first so that "make" without argument is like "make help".
  help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
+     @$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+ 
  .PHONY: help Makefile
 
  # Catch-all target: route all unknown targets to Sphinx using the new
  # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
  %: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+     @$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
  github:
-	@make html
-	cp -a build/html/. ../docs
+     @make html
+     cp -a build/html/. ../docs
 
-The last "github" part compiles the documents in the source directory, and copies the relevant files from build/html to the docs
+Sondaki``github`` bölümü, belgeleri kaynak dizinde (*source*) derler ve ilgili dosyaları ``build/html``'den ``docs`` klasörüne kopyalar. 
 
-Before doing a make github , let's add, commit and puMakefilesh the files first. 
-Go to the root::
+``make github`` yapmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için *kök* dizininize gidip aşağıdaki komutları uygulamanız gerekmektedir::
 
  git add docsrc/ --all
  git commit -m "Sphinx source" 
  git push
 
-This will push only the sources. Now, to compile and push the web page itself::
+Bu komutlar sadece kaynak dosyaları iletecektir. Web sayfasının kendisini derlemek ve de iletmek için ise aşağıdaki komutları kullanmanız gerekmektedir::
 
  cd docsrc
  make github
@@ -171,21 +172,9 @@ This will push only the sources. Now, to compile and push the web page itself::
  git commit -m "Web page update"
  git push
 
-Give GitHub some time to refresh, and the project webpage is ready to go.
+GitHub'a yenilenmesi için biraz zaman tanıyın ve artık proje web sayfanız hazır. 
 
- Notes:
+.. note::
 
-You might want to add build directory to your .gitignore
-The markup language reStructuredText is explained here.
-
-
-
-
-
-
-
-
-
-
-
+   reStructuredText yazım dili hakkında `ayrıntılı bilgilere ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 
