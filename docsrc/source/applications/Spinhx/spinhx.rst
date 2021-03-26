@@ -18,7 +18,7 @@ GitHub üzerinde web sayfası oluşturmak için ilgili yönergelere `buradan <ht
 * Proje havuzunu GitHub'da belirtildiği şekilde oluşturun. 
 * Daha sonra kendi bilgisayarınızda, projenizin kök dizininin altında **docs** adlı bir dizin oluşturun. Bu, web sayfası dosyalarının bulunacağı dizindir.    
 
-  *Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusunda :doc:`../GitHubLocal/githublocal` sayfasına bakabilirsiniz.*
+  *Kendi bilgisayarınızda GitHub hesabınızdaki içeriği düzenleme konusunda :ref: ../GitHubLocal/githublocal sayfasına bakabilirsiniz.*
 
 * Spinhx'i kullanmak istediğimiz için GitHub'ın ``jekyll`` ini devre dışı bırakmamız gerekmektedir. Bu, web kök dizinine ``.nojekyll`` adlı bir dosya yerleştirilerek yapılır. Bu dosya mevcut olduğunda GitHub, *index.html* 'yi doğrudan sunacaktır. (Not: Bu aynı zamanda ``Spinhx hızlı başlangıç betiği`` tarafından da sunulmaktadır, ancak burada ilk aşamada yapılması daha iyidir.)
 
@@ -120,15 +120,13 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
 
  Finished: An initial directory structure has been created.
 
- You should now populate your master file ./source/index.rst and create other documentation 
- source files. Use the Makefile to build the docs, like so:
-   make builder
- where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
+You should now populate your master file ./source/index.rst and create other documentation source files. Use the Makefile to build the docs, like so::
 
- This script creates the all important conf.py where all the settings (such as the theme) 
- of the web page resides. The site is already populated with an example, so it is ready 
- to be built, however, a slight modification to Makefile is handy, so that it copies 
- the output to docs directory automatically
+  make builder
+
+where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
+
+This script creates the all important conf.py where all the settings (such as the theme) of the web page resides. The site is already populated with an example, so it is ready to be built, however, a sligh modification to Makefile is handy, so that it copies the output to docs directory automatically::
 
  # Minimal makefile for Sphinx documentation
  #
@@ -153,17 +151,16 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
 	@make html
 	cp -a build/html/. ../docs
 
- The last "github" part compiles the documents in the source directory, and copies the 
- relevant files from build/html to the docs
+The last "github" part compiles the documents in the source directory, and copies the relevant files from build/html to the docs
 
- Before doing a make github , let's add, commit and puMakefilesh the files first. 
- Go to the root
+Before doing a make github , let's add, commit and puMakefilesh the files first. 
+Go to the root::
 
  git add docsrc/ --all
  git commit -m "Sphinx source" 
  git push
 
- This will push only the sources. Now, to compile and push the web page itself.
+This will push only the sources. Now, to compile and push the web page itself::
 
  cd docsrc
  make github
@@ -172,12 +169,12 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
  git commit -m "Web page update"
  git push
 
- Give GitHub some time to refresh, and the project webpage is ready to go.
+Give GitHub some time to refresh, and the project webpage is ready to go.
 
  Notes:
 
-    You might want to add build directory to your .gitignore
-    The markup language reStructuredText is explained here.
+You might want to add build directory to your .gitignore
+The markup language reStructuredText is explained here.
 
 
 
