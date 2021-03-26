@@ -17,7 +17,7 @@
     <script src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak" href="../Spinhx/spinhx.html" />
+    <link rel="next" title="Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak" href="../Spinhx/spinhx.html" />
     <link rel="prev" title="Yazılım Kurulumları Kitapçığı" href="../sw_guides.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../Spinhx/spinhx.html" title="SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak"
+          <a href="../Spinhx/spinhx.html" title="Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../sw_guides.html" title="Yazılım Kurulumları Kitapçığı"
@@ -49,6 +49,34 @@
             
   <div class="section" id="kendi-bilgisayarinizda-github-icerigi-duzenleme">
 <span id="githublocal"></span><h1>Kendi Bilgisayarınızda GitHub İçeriği Düzenleme<a class="headerlink" href="#kendi-bilgisayarinizda-github-icerigi-duzenleme" title="Permalink to this headline">¶</a></h1>
+<p>GitHub hesabınızda projelerinize ait içerekleri yerel olarak kendi bilgisayarınızda <em>komut satırı</em> kullanarak oluşturabilirsiniz. İçerik oluşturmak için bilgisayarınıza kurabileceğiniz grafik arayüzü sağlayan programlar da bulunmaktadır. Örneğin; GitHub Desktop, Visual Studio Code.</p>
+<p>Bunun için öncelikle, her defasında düzenleme yaptıkça şifre girmemek için, bilgisayarınızda <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> oluşturmanız gerekmektedir. <code class="docutils literal notranslate"><span class="pre">keys</span></code> adlı bir klasör açıp anahtar dosyalarınızı burada saklayabilirsiniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ mkdir keys
+~$ cd keys
+~$ ssh-keygen
+</pre></div>
+</div>
+<p>komutunu yazdığınızda ekranda aşağıdaki bilgiler görüntülecek:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="n">public</span><span class="o">/</span><span class="n">private</span> <span class="n">rsa</span> <span class="n">key</span> <span class="n">pair</span><span class="o">.</span>
+<span class="n">Enter</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">sevilsarikurt</span><span class="o">/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">):</span> <span class="n">hpcnotes_rsa</span>
+<span class="n">Enter</span> <span class="n">passphrase</span> <span class="p">(</span><span class="n">empty</span> <span class="k">for</span> <span class="n">no</span> <span class="n">passphrase</span><span class="p">):</span>
+<span class="n">Enter</span> <span class="n">same</span> <span class="n">passphrase</span> <span class="n">again</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Bu aşamada herhangi bir şifre girmeyip sadece <code class="docutils literal notranslate"><span class="pre">enter</span></code> a basabilirsiniz. Sonuç olarak iki tane rsa şifreleme dosyaları oluşacak (örneğin; <em>hpcnootes_rsa</em> ve <em>hpcnotes_rsa.pub</em>). Tarayıcınızdan GitHub kullanıcı sayfanızı açınız ve <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">-&gt;</span> <span class="pre">SSH</span> <span class="pre">and</span> <span class="pre">GPG</span> <span class="pre">Keys</span></code> sayfasına gidiniz. Sayfanın sağ üst kısmındaki <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">SSH</span> <span class="pre">key</span></code> butonuna tıklayınız. Çıkan ekranda Title a bir tanımlama yapıp <code class="docutils literal notranslate"><span class="pre">Key</span></code> kısmına da <code class="docutils literal notranslate"><span class="pre">hpcnotes_rsa.pub</span></code> içerindeki şifreleme bilgisini kopyalayınız. <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">key</span></code> dedikten sonra kendi bilgisayarınızda komut satırında aşağıdaki komutu yazdığınızdam şifre, anahtarlığınıza eklenecektir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">add</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">keys</span><span class="o">/</span><span class="n">hpcnotes_rsa</span>
+</pre></div>
+</div>
+<p>Daha sonra GitHub içerisinde oluşturduğunuz proje (<em>repository</em>) sayfanızı açınız ve sağ üst kısımda bulunan yeşil renkli <code class="docutils literal notranslate"><span class="pre">Code</span></code> menüsüne giriniz. Buradan <code class="docutils literal notranslate"><span class="pre">SSH</span></code> sekmesi altında “<em>git</em>” ile başlayan kısmı kopyalayınız ve komut satırında aşağıdaki komutu yazınız:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ssarikurt</span><span class="o">/</span><span class="n">hpcnotes</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Bu komut, GitHub üzerindeki proje klasörünüzün içeriğini kendi bilgisayarınıza indirmenizi sağlamaktadır. İçeride yer alan bir dosyayı kullandığınız editör yardımıyla düzenleyip kaydettikten veya yeni bir dosya ekledikten sonra aşağıdaki komutları kullanarak projenize ait web sayfanızı güncelleyebilirsiniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">dosyaadi</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;icerik guncelleme bilgisi&#39;</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -63,7 +91,7 @@
                         title="previous chapter">Yazılım Kurulumları Kitapçığı</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../Spinhx/spinhx.html"
-                        title="next chapter">SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak</a></p>
+                        title="next chapter">Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -92,7 +120,7 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../Spinhx/spinhx.html" title="SPINHX Kullanarak GitHub’da Web Sayfası Hazırlamak"
+          <a href="../Spinhx/spinhx.html" title="Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak"
              >next</a> |</li>
         <li class="right" >
           <a href="../sw_guides.html" title="Yazılım Kurulumları Kitapçığı"
