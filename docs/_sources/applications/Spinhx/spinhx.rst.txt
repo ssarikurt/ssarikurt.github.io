@@ -180,19 +180,17 @@ GitHub'a yenilenmesi için biraz bekleyin ve artık proje web sayfanız hazır.
 
    rst formatında denemeler yapmak isterseniz `linkteki çevrimiçi editörü <http://rst.ninjs.org/#>`_ kullanabilirsiniz.
 
-.. hint:: Kaynak dizininizin (*source*) içerisinde bulunan ``conf.py`` konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için ``sphinx.ext.mathjax`` gibi:
+.. hint:: Kaynak dizininizin (*source*) içerisinde bulunan ``conf.py`` konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için ``sphinx.ext.mathjax`` gibi::
 
-   .. code-block::
-   
-   # Add any Sphinx extension module names here, as strings. They can be
-   # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-   # ones.
-   extensions = [
-   'sphinx.ext.todo',
-   'sphinx.ext.mathjax',
-   'sphinx.ext.ifconfig',
-   'sphinx.ext.autodoc',
-   'sphinx.ext.viewcode'
-   ]
+      # Add any Sphinx extension module names here, as strings. They can be
+      # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+      # ones.
+      extensions = [
+      'sphinx.ext.todo',
+      'sphinx.ext.mathjax',
+      'sphinx.ext.ifconfig',
+      'sphinx.ext.autodoc',
+      'sphinx.ext.viewcode'
+       ]
 
-  Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. `Spinhx temalarına ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes>` 
+  Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. `Spinhx temalarına ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes>`_

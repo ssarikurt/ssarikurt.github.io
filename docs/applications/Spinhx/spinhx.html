@@ -226,22 +226,19 @@ github:
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Kaynak dizininizin (<em>source</em>) içerisinde bulunan <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için <code class="docutils literal notranslate"><span class="pre">sphinx.ext.mathjax</span></code> gibi:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
+<span class="c1"># ones.</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
+<span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+<span class="s1">&#39;sphinx.ext.ifconfig&#39;</span><span class="p">,</span>
+<span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+<span class="s1">&#39;sphinx.ext.viewcode&#39;</span>
+ <span class="p">]</span>
 </pre></div>
 </div>
-<p># Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named ‘sphinx.ext.*’) or your custom
-# ones.
-extensions = [
-‘sphinx.ext.todo’,
-‘sphinx.ext.mathjax’,
-‘sphinx.ext.ifconfig’,
-‘sphinx.ext.autodoc’,
-‘sphinx.ext.viewcode’
-]</p>
-</div></blockquote>
-<p>Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. <cite>Spinhx temalarına ulaşmak için tıklayınız. &lt;https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes&gt;</cite></p>
+<p>Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes">Spinhx temalarına ulaşmak için tıklayınız.</a></p>
 </div>
 </div>
 </div>
