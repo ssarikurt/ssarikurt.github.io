@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRUBA’da LAMMPS Kullanımı: &#8212; sevil  documentation</title>
+    <title>TRUBA’da LAMMPS Kurulumu: &#8212; sevil  documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
     
@@ -17,7 +17,6 @@
     <script src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="VS Code Editörü ile .rst Dökümanı Hazırlamak" href="../VS_Code/vscode.html" />
     <link rel="prev" title="Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma" href="lammps_personal.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
@@ -31,15 +30,12 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../VS_Code/vscode.html" title="VS Code Editörü ile .rst Dökümanı Hazırlamak"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
           <a href="lammps_personal.html" title="Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../sw_guides.html" >Yazılım Kurulumları Kitapçığı</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="lammps.html" accesskey="U">LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">TRUBA’da LAMMPS Kullanımı:</a></li> 
+        <li class="nav-item nav-item-this"><a href="">TRUBA’da LAMMPS Kurulumu:</a></li> 
       </ul>
     </div>  
 
@@ -48,14 +44,55 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="truba-da-lammps-kullanimi">
-<span id="lammps-truba"></span><h1>TRUBA’da LAMMPS Kullanımı:<a class="headerlink" href="#truba-da-lammps-kullanimi" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="truba-da-lammps-kurulumu">
+<span id="lammps-truba"></span><h1>TRUBA’da LAMMPS Kurulumu:<a class="headerlink" href="#truba-da-lammps-kurulumu" title="Permalink to this headline">¶</a></h1>
 <p>TRUBA sisteminde kurulu olan programlar hakkındaki bilgiye:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">available</span>
 </pre></div>
 </div>
 <p>komutu ile ulaşabilirsiniz.</p>
-<p>TRUBA sisteminde LAMMPS çalıştırmak için örnek iş betiği dosyası aşağıdaki gibidir:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module list
+</pre></div>
+</div>
+<p>komutu ile kullanıcınızda yüklenmiş programları listeleyebilirsiniz. Herhangi bir çakışma olmaması açısından öncelikle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">purge</span>
+</pre></div>
+</div>
+<p>komutu ile  yüklü olan tüm modül dosyalarını kaldırmanız önerilmektedir.</p>
+<p>Aşağıdaki komutları kullanarak Intel Parallel Studio’nun güncel versiyonunu load ediniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">centos7</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">comp</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">PS2018</span><span class="o">-</span><span class="n">update2</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">centos7</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openmpi</span><span class="o">/</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">intel</span><span class="o">-</span><span class="n">PS2018</span>
+</pre></div>
+</div>
+<p>LAMMPS modulü, LAMMPS kullanım kitapçığındaki standart <a class="reference external" href="https://lammps.sandia.gov/doc/Build_cmake.html">CMake prosedürünü</a> izler. Kurulumu CMake ile yapmak için ilgili modülü load ediniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">centos7</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">comp</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="mf">3.18</span><span class="o">.</span><span class="mi">0</span>
+</pre></div>
+</div>
+<p>LAMMPS için derleme ortamını hazırlayınız:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span>  <span class="o">-</span><span class="n">b</span> <span class="n">stable</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lammps</span><span class="o">/</span><span class="n">lammps</span><span class="o">.</span><span class="n">git</span> <span class="n">lammps</span><span class="o">-</span><span class="n">stable</span>
+<span class="n">cd</span> <span class="n">lammps</span><span class="o">-</span><span class="n">stable</span>
+<span class="n">mkdir</span> <span class="n">build</span><span class="o">-</span><span class="n">intel18</span><span class="o">-</span><span class="n">openmpi4</span>
+<span class="n">cd</span> <span class="n">build</span><span class="o">-</span><span class="n">intel18</span><span class="o">-</span><span class="n">openmpi4</span>
+</pre></div>
+</div>
+<p>C/C++ ve Fortran90 derleyicilerin tanımlamalarını yapınız:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CC</span><span class="o">=</span><span class="n">mpicc</span> <span class="n">CXX</span><span class="o">=</span><span class="n">mpic</span><span class="o">++</span> <span class="n">FC</span><span class="o">=</span><span class="n">mpif90</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">PKG_NAME=value</span></code> komutu ile kurulmasını istediğiniz paketleri belirtebilirsiniz. Paket ayrıntıları için LAMMPS kullanma kitapçığını inceleyebilirsiniz (<a class="reference external" href="https://lammps.sandia.gov/doc/Packages.html">https://lammps.sandia.gov/doc/Packages.html</a>).</p>
+<p>Örnek olarak aşağıdaki kurulum komutuna bazı kullanıcı paketleri eklenmiştir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">../</span><span class="n">cmake</span> <span class="o">-</span><span class="n">D</span> <span class="n">BUILD_MPI</span><span class="o">=</span><span class="n">on</span> <span class="o">-</span><span class="n">D</span> <span class="n">BLAS_LIBRARIES</span><span class="o">=</span><span class="s2">&quot;-L$</span><span class="si">{MKLROOT}</span><span class="s2">/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl&quot;</span> <span class="o">-</span><span class="n">D</span> <span class="n">LAPACK_LIBRARIES</span><span class="o">=</span><span class="s2">&quot;-L$</span><span class="si">{MKLROOT}</span><span class="s2">/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl&quot;</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_BODY</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_CLASS2</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_DIPOLE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_MANYBODY</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_MC</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_LATTE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_MLIAP</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_SNAP</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_SPIN</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_PYTHON</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">MOLFILE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_MOLECULE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">PHONON</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">REAXC</span><span class="o">=</span><span class="n">yes</span>  <span class="o">-</span><span class="n">D</span> <span class="n">PKG_KSPACE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">MEAMC</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">PLUMED</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">SMTBQ</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">DIFFRACTION</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">FFT</span><span class="o">=</span><span class="n">MKL</span>
+</pre></div>
+</div>
+<p>Daha sonrasında CMake ile build komutunu çalışarak LAMMPS’i derleyiniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz <code class="docutils literal notranslate"><span class="pre">build-intel18-openmpi4</span></code> dizininde <code class="docutils literal notranslate"><span class="pre">bin</span></code> klasörü altında çalıştırılabilir <code class="docutils literal notranslate"><span class="pre">lmp</span></code> dosyası yer alacaktır.</p>
+</div>
+<div class="section" id="truba-da-lammps-kullanimi">
+<h1>TRUBA’da LAMMPS Kullanımı:<a class="headerlink" href="#truba-da-lammps-kullanimi" title="Permalink to this headline">¶</a></h1>
+<p>Kendi kullanıcınıza kurduğunuz LAMMPS programını TRUBA sisteminde çalıştırmak için örnek iş betiği dosyası aşağıdaki gibidir:</p>
 <div class="section" id="lammps-run-slurm">
 <h2>lammps_run.slurm<a class="headerlink" href="#lammps-run-slurm" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -82,7 +119,7 @@ mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp_mpi  &lt; <span class="k">in</sp
 <span class="nb">exit</span>
 </pre></div>
 </div>
-<p>Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını oluşturduktan sonra</p>
+<p>Güncel LAMMPS versiyonu için benzer betik dosyasını <code class="docutils literal notranslate"><span class="pre">/truba/sw/scripts</span></code> klasörü altında bulabilirsiniz (lammps-4Feb21-openmpi-1.8.8-gcc.slurm). Çalıştığınız klasör içerisinde yukarıdaki betik dosyasını düzenleyip oluşturduktan sonra</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">lammps_run</span><span class="o">.</span><span class="n">slurm</span>
 </pre></div>
 </div>
@@ -99,7 +136,8 @@ mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp_mpi  &lt; <span class="k">in</sp
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">TRUBA’da LAMMPS Kullanımı:</a><ul>
+<li><a class="reference internal" href="#">TRUBA’da LAMMPS Kurulumu:</a></li>
+<li><a class="reference internal" href="#truba-da-lammps-kullanimi">TRUBA’da LAMMPS Kullanımı:</a><ul>
 <li><a class="reference internal" href="#lammps-run-slurm">lammps_run.slurm</a></li>
 </ul>
 </li>
@@ -108,9 +146,6 @@ mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp_mpi  &lt; <span class="k">in</sp
   <h4>Previous topic</h4>
   <p class="topless"><a href="lammps_personal.html"
                         title="previous chapter">Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../VS_Code/vscode.html"
-                        title="next chapter">VS Code Editörü ile .rst Dökümanı Hazırlamak</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -139,15 +174,12 @@ mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp_mpi  &lt; <span class="k">in</sp
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../VS_Code/vscode.html" title="VS Code Editörü ile .rst Dökümanı Hazırlamak"
-             >next</a> |</li>
-        <li class="right" >
           <a href="lammps_personal.html" title="Kendi Bilgisayarınıza LAMMPS Yükleme ve Çalıştırma"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../sw_guides.html" >Yazılım Kurulumları Kitapçığı</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="lammps.html" >LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator)</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">TRUBA’da LAMMPS Kullanımı:</a></li> 
+        <li class="nav-item nav-item-this"><a href="">TRUBA’da LAMMPS Kurulumu:</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
