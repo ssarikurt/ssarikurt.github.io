@@ -64,25 +64,28 @@ lammps_run.slurm
 .. code-block:: bash
 
   #!/bin/bash
-  #SBATCH -p barbun
+  #SBATCH -p mid1
+  #SBATCH -C barbun
   #SBATCH -A accountname
   #SBATCH -J lammps-test
   #SBATCH -N 1
   #SBATCH -n 20
+  #SBATCH --time=03:00:00
+  #SBATCH --output=slurm-%j.out
+  #SBATCH --error=slurm-%j.err
+
 
   echo "SLURM_NODELIST $SLURM_NODELIST"
   echo "NUMBER OF CORES $SLURM_NTASKS"
 
   export OMP_NUM_THREADS=1
   
-  module load centos7.3/lib/openmpi/1.8.8-gcc-4.8.5
-  module load centos7.3/comp/gcc/9.2
+  module load centos7.3/comp/intel/PS2018-update2
+  module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
 
-  export OMP_NUM_THREADS=1
+  LAMMPS_DIR=/truba/home/username/lammps-stable/build-intel18-openmpi4/bin
 
-  LAMMPS_DIR=/truba/sw/centos7.3/app/lammps/4Feb21-openmpi-1.8.8-gcc-4.8.5/bin
-
-  mpirun  $LAMMPS_DIR/lmp_mpi  < in.lammpsinputfile
+  mpirun  $LAMMPS_DIR/lmp_mpi  < in.lammpsinputfile > lammps-outputfile.out
 
   exit
 

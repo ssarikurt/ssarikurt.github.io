@@ -96,25 +96,28 @@
 <div class="section" id="lammps-run-slurm">
 <h2>lammps_run.slurm<a class="headerlink" href="#lammps-run-slurm" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH -p barbun</span>
+<span class="c1">#SBATCH -p mid1</span>
+<span class="c1">#SBATCH -C barbun</span>
 <span class="c1">#SBATCH -A accountname</span>
 <span class="c1">#SBATCH -J lammps-test</span>
 <span class="c1">#SBATCH -N 1</span>
 <span class="c1">#SBATCH -n 20</span>
+<span class="c1">#SBATCH --time=03:00:00</span>
+<span class="c1">#SBATCH --output=slurm-%j.out</span>
+<span class="c1">#SBATCH --error=slurm-%j.err</span>
+
 
 <span class="nb">echo</span> <span class="s2">&quot;SLURM_NODELIST </span><span class="nv">$SLURM_NODELIST</span><span class="s2">&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;NUMBER OF CORES </span><span class="nv">$SLURM_NTASKS</span><span class="s2">&quot;</span>
 
 <span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
 
-module load centos7.3/lib/openmpi/1.8.8-gcc-4.8.5
-module load centos7.3/comp/gcc/9.2
+module load centos7.3/comp/intel/PS2018-update2
+module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
 
-<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">LAMMPS_DIR</span><span class="o">=</span>/truba/home/username/lammps-stable/build-intel18-openmpi4/bin
 
-<span class="nv">LAMMPS_DIR</span><span class="o">=</span>/truba/sw/centos7.3/app/lammps/4Feb21-openmpi-1.8.8-gcc-4.8.5/bin
-
-mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp_mpi  &lt; <span class="k">in</span>.lammpsinputfile
+mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp_mpi  &lt; <span class="k">in</span>.lammpsinputfile &gt; lammps-outputfile.out
 
 <span class="nb">exit</span>
 </pre></div>
