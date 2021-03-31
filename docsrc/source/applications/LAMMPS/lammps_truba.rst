@@ -1,8 +1,7 @@
 .. _lammps_truba:
 
-
 ==========================
-TRUBA'da LAMMPS Kurulumu:
+TRUBA'da LAMMPS Kurulumu
 ==========================
 TRUBA sisteminde kurulu olan programlar hakkındaki bilgiye::
 
@@ -85,7 +84,7 @@ lammps_run.slurm
 
   LAMMPS_DIR=/truba/home/username/lammps-stable/build-intel18-openmpi4/bin
 
-  mpirun  $LAMMPS_DIR/lmp_mpi  < in.lammpsinputfile > lammps-outputfile.out
+  mpirun  $LAMMPS_DIR/lmp  < in.lammpsinputfile > lammps-outputfile.out
 
   exit
 
