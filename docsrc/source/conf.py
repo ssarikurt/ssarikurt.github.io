@@ -44,6 +44,7 @@ extensions = [
 'sphinx.ext.viewcode'
 ]
 
+
 ###mathjax_path="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Add any paths that contain templates here, relative to this directory.

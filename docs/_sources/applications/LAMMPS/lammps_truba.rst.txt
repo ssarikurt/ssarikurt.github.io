@@ -48,6 +48,7 @@ C/C++ ve Fortran90 derleyicilerin tanımlamalarını yapınız::
 Daha sonrasında CMake ile build komutunu çalışarak LAMMPS’i derleyiniz::
 
    cmake --build .
+   make install
 
 Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz ``build-intel18-openmpi4`` dizininde ``bin`` klasörü altında çalıştırılabilir ``lmp`` dosyası yer alacaktır.
 
