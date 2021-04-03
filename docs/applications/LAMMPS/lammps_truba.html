@@ -82,10 +82,9 @@ mkdir build-intel18-openmpi4
 <p><code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">PKG_NAME=yes</span></code> komutu ile kurulmasını istediğiniz paketleri belirtebilirsiniz. Paket ayrıntıları için LAMMPS kullanma kitapçığını inceleyebilirsiniz (<a class="reference external" href="https://lammps.sandia.gov/doc/Packages.html">https://lammps.sandia.gov/doc/Packages.html</a>).</p>
 <p>Örnek olarak aşağıdaki kurulum komutuna bazı kullanıcı paketleri eklenmiştir:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake ../cmake -D <span class="nv">BUILD_MPI</span><span class="o">=</span>on -D <span class="nv">BLAS_LIBRARIES</span><span class="o">=</span><span class="s2">&quot;-L</span><span class="si">${</span><span class="nv">MKLROOT</span><span class="si">}</span><span class="s2">/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl&quot;</span> -D <span class="nv">LAPACK_LIBRARIES</span><span class="o">=</span><span class="s2">&quot;-L</span><span class="si">${</span><span class="nv">MKLROOT</span><span class="si">}</span><span class="s2">/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl&quot;</span> -D <span class="nv">PKG_BODY</span><span class="o">=</span>yes -D <span class="nv">PKG_CLASS2</span><span class="o">=</span>yes -D <span class="nv">PKG_DIPOLE</span><span class="o">=</span>yes -D <span class="nv">PKG_MANYBODY</span><span class="o">=</span>yes -D <span class="nv">PKG_MC</span><span class="o">=</span>yes -D <span class="nv">PKG_LATTE</span><span class="o">=</span>yes -D <span class="nv">PKG_MLIAP</span><span class="o">=</span>yes -D <span class="nv">PKG_SNAP</span><span class="o">=</span>yes -D <span class="nv">PKG_SPIN</span><span class="o">=</span>yes -D <span class="nv">PKG_PYTHON</span><span class="o">=</span>yes -D PKG_USER-MOLFILE<span class="o">=</span>yes -D <span class="nv">PKG_MOLECULE</span><span class="o">=</span>yes -D PKG_USER-PHONON<span class="o">=</span>yes -D PKG_USER-REAXC<span class="o">=</span>yes  -D <span class="nv">PKG_KSPACE</span><span class="o">=</span>yes -D PKG_USER-MEAMC<span class="o">=</span>yes -D PKG_USER-PLUMED<span class="o">=</span>yes -D PKG_USER-SMTBQ<span class="o">=</span>yes -D PKG_USER-DIFFRACTION<span class="o">=</span>yes -D <span class="nv">FFT</span><span class="o">=</span>MKL
 </pre></div>
 </div>
-<p>cmake ../cmake -D BUILD_MPI=on -D BLAS_LIBRARIES=”-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl” -D LAPACK_LIBRARIES=”-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl” -D PKG_BODY=yes -D PKG_CLASS2=yes -D PKG_DIPOLE=yes -D PKG_MANYBODY=yes -D PKG_MC=yes -D PKG_LATTE=yes -D PKG_MLIAP=yes -D PKG_SNAP=yes -D PKG_SPIN=yes -D PKG_PYTHON=yes -D PKG_USER-MOLFILE=yes -D PKG_MOLECULE=yes -D PKG_USER-PHONON=yes -D PKG_USER-REAXC=yes  -D PKG_KSPACE=yes -D PKG_USER-MEAMC=yes -D PKG_USER-PLUMED=yes -D PKG_USER-SMTBQ=yes -D PKG_USER-DIFFRACTION=yes -D FFT=MKL</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -97,12 +96,9 @@ mkdir build-intel18-openmpi4
 </div>
 </div>
 <p>Daha sonrasında CMake ile build komutunu çalışarak LAMMPS’i derleyiniz:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake --build .
 </pre></div>
 </div>
-<p>cmake –build .</p>
-</div></blockquote>
 <p>Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz <code class="docutils literal notranslate"><span class="pre">build-intel18-openmpi4</span></code> dizininde <code class="docutils literal notranslate"><span class="pre">bin</span></code> klasörü altında çalıştırılabilir <code class="docutils literal notranslate"><span class="pre">lmp</span></code> dosyası yer alacaktır.</p>
 </div>
 <div class="section" id="truba-da-lammps-kullanimi">
