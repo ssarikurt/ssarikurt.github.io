@@ -46,8 +46,8 @@
             
   <div class="section" id="truba-da-lammps-kurulumu">
 <span id="lammps-truba"></span><h1>TRUBA’da LAMMPS Kurulumu<a class="headerlink" href="#truba-da-lammps-kurulumu" title="Permalink to this headline">¶</a></h1>
-<p>TRUBA sisteminde kurulu olan programlar hakkındaki bilgiye:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">available</span>
+<p>TRUBA sisteminde kurulu olan programlar hakkındaki bilgiye</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module available
 </pre></div>
 </div>
 <p>komutu ile ulaşabilirsiniz.</p>
@@ -55,40 +55,54 @@
 </pre></div>
 </div>
 <p>komutu ile kullanıcınızda yüklenmiş programları listeleyebilirsiniz. Herhangi bir çakışma olmaması açısından öncelikle:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">purge</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module purge
 </pre></div>
 </div>
 <p>komutu ile  yüklü olan tüm modül dosyalarını kaldırmanız önerilmektedir.</p>
 <p>Aşağıdaki komutları kullanarak Intel Parallel Studio’nun güncel versiyonunu load ediniz:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">centos7</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">comp</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">PS2018</span><span class="o">-</span><span class="n">update2</span>
-<span class="n">module</span> <span class="n">load</span> <span class="n">centos7</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openmpi</span><span class="o">/</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="n">intel</span><span class="o">-</span><span class="n">PS2018</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load centos7.3/comp/intel/PS2018-update2
+module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
 </pre></div>
 </div>
 <p>LAMMPS modulü, LAMMPS kullanım kitapçığındaki standart <a class="reference external" href="https://lammps.sandia.gov/doc/Build_cmake.html">CMake prosedürünü</a> izler. Kurulumu CMake ile yapmak için ilgili modülü load ediniz:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">centos7</span><span class="o">.</span><span class="mi">3</span><span class="o">/</span><span class="n">comp</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="mf">3.18</span><span class="o">.</span><span class="mi">0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load centos7.3/comp/cmake/3.18.0
 </pre></div>
 </div>
 <p>LAMMPS için derleme ortamını hazırlayınız:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span>  <span class="o">-</span><span class="n">b</span> <span class="n">stable</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">lammps</span><span class="o">/</span><span class="n">lammps</span><span class="o">.</span><span class="n">git</span> <span class="n">lammps</span><span class="o">-</span><span class="n">stable</span>
-<span class="n">cd</span> <span class="n">lammps</span><span class="o">-</span><span class="n">stable</span>
-<span class="n">mkdir</span> <span class="n">build</span><span class="o">-</span><span class="n">intel18</span><span class="o">-</span><span class="n">openmpi4</span>
-<span class="n">cd</span> <span class="n">build</span><span class="o">-</span><span class="n">intel18</span><span class="o">-</span><span class="n">openmpi4</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone  -b stable https://github.com/lammps/lammps.git lammps-stable
+<span class="nb">cd</span> lammps-stable
+mkdir build-intel18-openmpi4
+<span class="nb">cd</span> build-intel18-openmpi4
 </pre></div>
 </div>
 <p>C/C++ ve Fortran90 derleyicilerin tanımlamalarını yapınız:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CC</span><span class="o">=</span><span class="n">mpicc</span> <span class="n">CXX</span><span class="o">=</span><span class="n">mpic</span><span class="o">++</span> <span class="n">FC</span><span class="o">=</span><span class="n">mpif90</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CC</span><span class="o">=</span>mpicc <span class="nv">CXX</span><span class="o">=</span>mpic++ <span class="nv">FC</span><span class="o">=</span>mpif90
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">PKG_NAME=value</span></code> komutu ile kurulmasını istediğiniz paketleri belirtebilirsiniz. Paket ayrıntıları için LAMMPS kullanma kitapçığını inceleyebilirsiniz (<a class="reference external" href="https://lammps.sandia.gov/doc/Packages.html">https://lammps.sandia.gov/doc/Packages.html</a>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">PKG_NAME=yes</span></code> komutu ile kurulmasını istediğiniz paketleri belirtebilirsiniz. Paket ayrıntıları için LAMMPS kullanma kitapçığını inceleyebilirsiniz (<a class="reference external" href="https://lammps.sandia.gov/doc/Packages.html">https://lammps.sandia.gov/doc/Packages.html</a>).</p>
 <p>Örnek olarak aşağıdaki kurulum komutuna bazı kullanıcı paketleri eklenmiştir:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">../</span><span class="n">cmake</span> <span class="o">-</span><span class="n">D</span> <span class="n">BUILD_MPI</span><span class="o">=</span><span class="n">on</span> <span class="o">-</span><span class="n">D</span> <span class="n">BLAS_LIBRARIES</span><span class="o">=</span><span class="s2">&quot;-L$</span><span class="si">{MKLROOT}</span><span class="s2">/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl&quot;</span> <span class="o">-</span><span class="n">D</span> <span class="n">LAPACK_LIBRARIES</span><span class="o">=</span><span class="s2">&quot;-L$</span><span class="si">{MKLROOT}</span><span class="s2">/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl&quot;</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_BODY</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_CLASS2</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_DIPOLE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_MANYBODY</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_MC</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_LATTE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_MLIAP</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_SNAP</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_SPIN</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_PYTHON</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">MOLFILE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_MOLECULE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">PHONON</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">REAXC</span><span class="o">=</span><span class="n">yes</span>  <span class="o">-</span><span class="n">D</span> <span class="n">PKG_KSPACE</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">MEAMC</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">PLUMED</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">SMTBQ</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">PKG_USER</span><span class="o">-</span><span class="n">DIFFRACTION</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">D</span> <span class="n">FFT</span><span class="o">=</span><span class="n">MKL</span>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
+</div>
+<p>cmake ../cmake -D BUILD_MPI=on -D BLAS_LIBRARIES=”-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl” -D LAPACK_LIBRARIES=”-L${MKLROOT}/lib/intel64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm -ldl” -D PKG_BODY=yes -D PKG_CLASS2=yes -D PKG_DIPOLE=yes -D PKG_MANYBODY=yes -D PKG_MC=yes -D PKG_LATTE=yes -D PKG_MLIAP=yes -D PKG_SNAP=yes -D PKG_SPIN=yes -D PKG_PYTHON=yes -D PKG_USER-MOLFILE=yes -D PKG_MOLECULE=yes -D PKG_USER-PHONON=yes -D PKG_USER-REAXC=yes  -D PKG_KSPACE=yes -D PKG_USER-MEAMC=yes -D PKG_USER-PLUMED=yes -D PKG_USER-SMTBQ=yes -D PKG_USER-DIFFRACTION=yes -D FFT=MKL</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Özellikle PLUMED ve MSCCG paketlerine hesaplamalarınız için ihtiyanız yoksa eğer cmake komutundan çıkartabilirsiniz. Eğer bu paketlere ihtiyacınız varsa Conda ile GSL paketini kurmanız gerekmektedir. Conda kurulumu için aşağıdaki linki ziyaret edebilirsiniz.
+<a class="reference external" href="https://docs.truba.gov.tr/GPU/deep-learning/virtual-env.html#ev-dizininize-anaconda-kurun">https://docs.truba.gov.tr/GPU/deep-learning/virtual-env.html#ev-dizininize-anaconda-kurun</a></p>
+<p>Conda ile GSL paketini de aşağıdaki komut ile kurabilirsiniz:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge gsl
+</pre></div>
+</div>
 </div>
 <p>Daha sonrasında CMake ile build komutunu çalışarak LAMMPS’i derleyiniz:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span>
-<span class="n">make</span> <span class="n">install</span>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<p>cmake –build .</p>
+</div></blockquote>
 <p>Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz <code class="docutils literal notranslate"><span class="pre">build-intel18-openmpi4</span></code> dizininde <code class="docutils literal notranslate"><span class="pre">bin</span></code> klasörü altında çalıştırılabilir <code class="docutils literal notranslate"><span class="pre">lmp</span></code> dosyası yer alacaktır.</p>
 </div>
 <div class="section" id="truba-da-lammps-kullanimi">
