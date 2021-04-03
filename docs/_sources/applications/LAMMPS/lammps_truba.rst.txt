@@ -109,7 +109,7 @@ lammps_run.slurm
   module load centos7.3/comp/intel/PS2018-update2
   module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
 
-  LAMMPS_DIR=/truba/home/username/lammps-stable/build-intel18-openmpi4/bin
+  LAMMPS_DIR=/truba/home/username/lammps-stable/build-intel18-openmpi4
 
   mpirun  $LAMMPS_DIR/lmp  < in.lammpsinputfile > lammps-outputfile.out
 
