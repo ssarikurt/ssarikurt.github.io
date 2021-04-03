@@ -61,7 +61,7 @@ C/C++ ve Fortran90 derleyicilerin tanımlamalarını yapınız:
 
 .. note::
 
-   Özellikle PLUMED ve MSCCG paketlerine hesaplamalarınız için ihtiyanız yoksa eğer cmake komutundan çıkartabilirsiniz. Eğer bu paketlere ihtiyacınız varsa Conda ile GSL paketini kurmanız gerekmektedir. Conda kurulumu için aşağıdaki linki ziyaret edebilirsiniz.
+   Özellikle `PLUMED <http://gensoft.pasteur.fr/docs/lammps/12Dec2018/Build_extras.html#user-plumed-package>`_ ve `MSCG <http://gensoft.pasteur.fr/docs/lammps/12Dec2018/Build_extras.html#mscg-package>`_ paketlerine hesaplamalarınız için ihtiyanız yoksa eğer cmake komutundan çıkartabilirsiniz. Eğer bu paketlere ihtiyacınız varsa Conda ile GSL paketini kurmanız gerekmektedir. Conda kurulumu için aşağıdaki linki ziyaret edebilirsiniz.
 
    https://docs.truba.gov.tr/GPU/deep-learning/virtual-env.html#ev-dizininize-anaconda-kurun
 
