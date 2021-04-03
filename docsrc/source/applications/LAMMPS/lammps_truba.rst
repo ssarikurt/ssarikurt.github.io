@@ -106,6 +106,7 @@ lammps_run.slurm
   echo "NUMBER OF CORES $SLURM_NTASKS"
 
   export OMP_NUM_THREADS=1
+  export OMPI_MCA_btl_openib_allow_ib=1
   
   module load centos7.3/comp/intel/PS2018-update2
   module load centos7.3/lib/openmpi/4.0.1-intel-PS2018
