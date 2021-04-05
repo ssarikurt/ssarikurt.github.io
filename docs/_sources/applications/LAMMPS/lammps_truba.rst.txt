@@ -53,7 +53,7 @@ C/C++ ve Fortran90 derleyicilerin tanımlamalarını yapınız:
 
 ``-D PKG_NAME=yes`` komutu ile kurulmasını istediğiniz paketleri belirtebilirsiniz. Paket ayrıntıları için LAMMPS kullanma kitapçığını inceleyebilirsiniz (https://lammps.sandia.gov/doc/Packages.html).
 
-Örnek olarak aşağıdaki kurulum komutuna bazı kullanıcı paketleri eklenmiştir:
+Örnek olarak aşağıdaki kurulum komutuna MANYBODY, DIPOLE, PHONON, REAXC gibi bazı kullanıcı paketleri eklenmiştir:
 
 .. code-block:: bash
 
