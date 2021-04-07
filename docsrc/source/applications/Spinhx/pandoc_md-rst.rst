@@ -65,7 +65,7 @@ Kurulum tamamlandıktan sonra terminalden ``pandoc`` komutunu test edebilirsiniz
 
 .. note::
 
- Kod tanımındaki anahtar kelimelerin karşılıkgeldiği ifadeler aşağıdaki gibidir:
+ Kod tanımındaki anahtar kelimelerin karşılık geldiği ifadeler aşağıdaki gibidir:
 
  -s pandoc'a bağımsız bir belge oluşturmasını söyler
 
