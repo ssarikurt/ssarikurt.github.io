@@ -4,9 +4,18 @@
 Conda ile Spinhx Kurulumu
 ==================================================
 
+Öncelikle, eğer kurulu değilse, ev dizininize anaconda kurmanız gerekmektedir. Anaconda kurulumu için aşağıdaki linkleri inceleyebilirsiniz:
+
+`TRUBA Conda Kurulum Dökümantasyonu <https://docs.truba.gov.tr/how-to-guides/GPU/deep-learning/virtual-env.html#ev-dizininize-anaconda-kurun>`_
+
+`Conda Web Sayfası <https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html>`_
+
+
 .. code-block:: bash
 
    bash Miniconda3-latest-Linux-x86_64.sh 
+
+.. code-block:: bash
 
    Welcome to Miniconda3 py38_4.9.2
 
@@ -243,4 +252,14 @@ Conda ile Spinhx Kurulumu
    # To deactivate an active environment, use
    #
    #     $ conda deactivate
+
+
+.. code-block:: bash
+
+   conda activate sphinx
+
+.. code-block:: bash
+
+   pip install jupyter-sphinx nbsphinx  sphinx sphinx-bootstrap-theme sphinx-issues sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-youtube
+
 

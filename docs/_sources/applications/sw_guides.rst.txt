@@ -14,6 +14,7 @@ YBH sistemlerinde kullandığınız programların kendi bilgisayarınıza nasıl
    GitHubLocal/githublocal
    Spinhx/spinhx
    Spinhx/spinhx_conda
+   Spinhx/pandoc_md-rst
    LAMMPS/lammps
 
 

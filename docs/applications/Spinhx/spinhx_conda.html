@@ -17,6 +17,8 @@
     <script src="../../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pandoc Kurulumu" href="pandoc_md-rst.html" />
+    <link rel="prev" title="Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak" href="spinhx.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <!--[if lt IE 9]>
     <script src="_static/css3-mediaqueries.js"></script>
@@ -28,7 +30,14 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pandoc_md-rst.html" title="Pandoc Kurulumu"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="spinhx.html" title="Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak"
+             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../sw_guides.html" accesskey="U">Yazılım Kurulumları Kitapçığı</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Conda ile Spinhx Kurulumu</a></li> 
       </ul>
     </div>  
@@ -40,9 +49,13 @@
             
   <div class="section" id="conda-ile-spinhx-kurulumu">
 <span id="spinhx-conda"></span><h1>Conda ile Spinhx Kurulumu<a class="headerlink" href="#conda-ile-spinhx-kurulumu" title="Permalink to this headline">¶</a></h1>
+<p>Öncelikle, eğer kurulu değilse, ev dizininize anaconda kurmanız gerekmektedir. Anaconda kurulumu için aşağıdaki linkleri inceleyebilirsiniz:</p>
+<p><a class="reference external" href="https://docs.truba.gov.tr/how-to-guides/GPU/deep-learning/virtual-env.html#ev-dizininize-anaconda-kurun">TRUBA Conda Kurulum Dökümantasyonu</a></p>
+<p><a class="reference external" href="https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html">Conda Web Sayfası</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash Miniconda3-latest-Linux-x86_64.sh
-
-Welcome to Miniconda3 py38_4.9.2
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Welcome to Miniconda3 py38_4.9.2
 
 In order to <span class="k">continue</span> the installation process, please review the license agreement.
 Please, press ENTER to <span class="k">continue</span>
@@ -278,6 +291,12 @@ Executing transaction: <span class="k">done</span>
 <span class="c1">#     $ conda deactivate</span>
 </pre></div>
 </div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate sphinx
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyter-sphinx nbsphinx  sphinx sphinx-bootstrap-theme sphinx-issues sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-youtube
+</pre></div>
+</div>
 </div>
 
 
@@ -287,6 +306,12 @@ Executing transaction: <span class="k">done</span>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="spinhx.html"
+                        title="previous chapter">Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pandoc_md-rst.html"
+                        title="next chapter">Pandoc Kurulumu</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -314,7 +339,14 @@ Executing transaction: <span class="k">done</span>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="pandoc_md-rst.html" title="Pandoc Kurulumu"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="spinhx.html" title="Spinhx Kullanarak GitHub’da Web Sayfası Hazırlamak"
+             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../sw_guides.html" >Yazılım Kurulumları Kitapçığı</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Conda ile Spinhx Kurulumu</a></li> 
       </ul>
     </div>
