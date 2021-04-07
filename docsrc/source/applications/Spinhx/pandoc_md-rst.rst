@@ -6,7 +6,7 @@ Pandoc Kurulumu
 
 Pandoc, açık kaynak kodlu bir belge dönüştürme aracıdır. Yaygın olarak, özellikle akademisyenler tarafından, bir yazma aracı ve de iş akışlarını yayınlamak için temel olarak kullanılır. Dosyaları bir biçimlendirme biçiminden diğerine dönüştürmeniz gerekiyorsa, pandoc sizin için bir isviçre çakısıdır.
 
-`Çevrimiçi pandoc uygulamasını <https://pandoc.org/try/>_` kullanarak da elinizdeki mevcut içerikleri programın izin verdiği formata (.html, .md, .rst, .tex vb. gibi) dönüştürebilirsiniz.
+`Çevrimiçi pandoc uygulamasını <https://pandoc.org/try/>`_ kullanarak da elinizdeki mevcut içerikleri programın izin verdiği formata (.html, .md, .rst, .tex vb. gibi) dönüştürebilirsiniz.
 
 Farklı işletim sistemleri için kurulum yönergelerine ve de kurulum paketleri hakkındaki bilgiye `Pandoc web sayfasından <https://pandoc.org/installing.html>`_ ulaşabilirsiniz. Pandoc kurulum paketinin son sürümüne ulaşmak için aşağıdaki linki kontrol edebilirsiniz:
 
