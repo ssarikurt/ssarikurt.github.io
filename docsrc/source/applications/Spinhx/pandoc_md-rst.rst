@@ -4,18 +4,21 @@
 Pandoc Kurulumu
 ===============
 
-Pandoc ile 
+Pandoc, açık kaynak kodlu bir belge dönüştürme aracıdır. Yaygın olarak, özellikle akademisyenler tarafından, bir yazma aracı ve de iş akışlarını yayınlamak için temel olarak kullanılır. Dosyaları bir biçimlendirme biçiminden diğerine dönüştürmeniz gerekiyorsa, pandoc sizin için bir isviçre çakısıdır.
 
-`Çevrimiçi pandoc uygulamasını <https://pandoc.org/try/>_` kullanarak da içerikleri programın izin verdiği formata (.html, .md, .rst, .tex vb. gibi) dönüştürebilirsiniz.
+`Çevrimiçi pandoc uygulamasını <https://pandoc.org/try/>_` kullanarak da elinizdeki mevcut içerikleri programın izin verdiği formata (.html, .md, .rst, .tex vb. gibi) dönüştürebilirsiniz.
 
-Farklı işletim sistemleri için kurulum yönergelerine ve de kurulum paketleri hakkındaki bilgiye `Pandoc web sayfasından <https://pandoc.org/installing.html>`_ ulaşabilirsiniz. Pandoc kurulum paketinin son sürümüne aşağıdaki linki kontrol edebilirsiniz:
+Farklı işletim sistemleri için kurulum yönergelerine ve de kurulum paketleri hakkındaki bilgiye `Pandoc web sayfasından <https://pandoc.org/installing.html>`_ ulaşabilirsiniz. Pandoc kurulum paketinin son sürümüne ulaşmak için aşağıdaki linki kontrol edebilirsiniz:
 
 `Pandoc GitHub sayfası <https://github.com/jgm/pandoc/releases/latest>`_
 
+Bilgisayarınıza Pandoc'u kurmak için öncelikle terminalden ``wget`` komutu ile, işletim sisteminize uygun olan kurulum dosyasını indiriniz. Ubuntu işletim sistemi için:
 
 .. code-block::
 
   wget https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-1-amd64.deb
+
+Terminal ekranınızda aşağıdaki gibi bir çıktı görüntülenecektir:
 
 .. code-block::
 
@@ -35,10 +38,13 @@ Farklı işletim sistemleri için kurulum yönergelerine ve de kurulum paketleri
 
  2021-04-07 12:16:12 (9,40 MB/s) - ‘pandoc-2.13-1-amd64.deb’ saved [14799022/14799022]
 
+Daha sonra Pandec paketinin kurulumu için aşağıdaki komutu yazınız:
 
 .. code-block::
 
    sudo dpkg -i pandoc-2.13-1-amd64.deb
+
+Kurulum sırasında terminalde aşağıdaki gibi bilgiler görüntülenecektir:
 
 .. code-block::
 
@@ -48,6 +54,8 @@ Farklı işletim sistemleri için kurulum yönergelerine ve de kurulum paketleri
   Unpacking pandoc (2.13-1) ...
   Setting up pandoc (2.13-1) ...
   Processing triggers for man-db (2.9.1-1) ...
+
+Kurulum tamamlandıktan sonra terminalden ``pandoc`` komutunu test edebilirsiniz. ``pandoc -h`` ile omut hakkında ayrıntılı bilgi elde edebilirsiniz.
 
 ``.md`` formatından ``.rst`` formatına dönüştürmek istediğiniz dosyaların bulunduğu klasöre gidiniz. Dönüştürmek istediğiniz her dosya için aşağıdaki komutu yazınız:
 
