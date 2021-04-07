@@ -13,6 +13,7 @@ YBH sistemlerinde kullandığınız programların kendi bilgisayarınıza nasıl
 
    GitHubLocal/githublocal
    Spinhx/spinhx
+   Spinhx/spinhx_conda
    LAMMPS/lammps
 
 
