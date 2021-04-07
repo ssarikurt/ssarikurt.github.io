@@ -75,7 +75,7 @@ pandoc-2.13-1-amd64.deb           100%[=========================================
 2021-04-07 12:16:12 (9,40 MB/s) - ‘pandoc-2.13-1-amd64.deb’ saved [14799022/14799022]
 </pre></div>
 </div>
-<p>Daha sonra Pandec paketinin kurulumu için aşağıdaki komutu yazınız:</p>
+<p>Daha sonra Pandoc paketinin kurulumu için aşağıdaki komutu yazınız:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">pandoc</span><span class="o">-</span><span class="mf">2.13</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">amd64</span><span class="o">.</span><span class="n">deb</span>
 </pre></div>
 </div>
@@ -88,22 +88,24 @@ pandoc-2.13-1-amd64.deb           100%[=========================================
 <span class="n">Processing</span> <span class="n">triggers</span> <span class="k">for</span> <span class="n">man</span><span class="o">-</span><span class="n">db</span> <span class="p">(</span><span class="mf">2.9</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">...</span>
 </pre></div>
 </div>
-<p>Kurulum tamamlandıktan sonra terminalden <code class="docutils literal notranslate"><span class="pre">pandoc</span></code> komutunu test edebilirsiniz. <code class="docutils literal notranslate"><span class="pre">pandoc</span> <span class="pre">-h</span></code> ile omut hakkında ayrıntılı bilgi elde edebilirsiniz.</p>
+<p>Kurulum tamamlandıktan sonra terminalden <code class="docutils literal notranslate"><span class="pre">pandoc</span></code> komutunu test edebilirsiniz. <code class="docutils literal notranslate"><span class="pre">pandoc</span> <span class="pre">-h</span></code> ile komut hakkında ayrıntılı bilgi elde edebilirsiniz.</p>
 <p><code class="docutils literal notranslate"><span class="pre">.md</span></code> formatından <code class="docutils literal notranslate"><span class="pre">.rst</span></code> formatına dönüştürmek istediğiniz dosyaların bulunduğu klasöre gidiniz. Dönüştürmek istediğiniz her dosya için aşağıdaki komutu yazınız:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pandoc</span> <span class="o">-</span><span class="n">s</span> <span class="o">--</span><span class="n">toc</span> <span class="o">-</span><span class="n">f</span> <span class="n">markdown</span> <span class="o">&lt;</span><span class="n">girdidosyası</span><span class="o">.</span><span class="n">md</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">t</span> <span class="n">rst</span> <span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="n">ciktidosyası</span><span class="o">.</span><span class="n">rst</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">s</span> <span class="n">pandoc</span><span class="s1">&#39;a bağımsız bir belge oluşturmasını söyler</span>
-
-<span class="o">--</span><span class="n">toc</span><span class="p">,</span> <span class="n">pandoc</span><span class="s1">&#39;a içindekiler tablosu oluşturmasını söyler (isteğe bağlı)</span>
-
-<span class="o">-</span><span class="n">t</span> <span class="n">pandoc</span><span class="s1">&#39;a reStructuredText çıktısı üretmesini söyler</span>
-
-<span class="o">-</span><span class="n">f</span> <span class="n">pandoc</span><span class="s1">&#39;a girdi biçimini söyler</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Kod tanımındaki anahtar kelimelerin karşılıkgeldiği ifadeler aşağıdaki gibidir:</p>
+<p>-s pandoc’a bağımsız bir belge oluşturmasını söyler</p>
+<p>–toc, pandoc’a içindekiler tablosu oluşturmasını söyler (isteğe bağlı)</p>
+<p>-t pandoc’a reStructuredText çıktısı üretmesini söyler</p>
+<p>-f pandoc’a girdi biçimini söyler</p>
 </div>
-<p>Formatlar hakkındaki bilgiye <a class="reference external" href="https://pandoc.org/MANUAL.html">Pandoc kullanım kitapçığından</a> ulaşabilirsiniz.</p>
+<p>Pandoc programı ile dönüştürülebilen formatlar hakkındaki bilgiye <a class="reference external" href="https://pandoc.org/MANUAL.html">Pandoc kullanım kitapçığından</a> ulaşabilirsiniz.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Kısa kod blokları kullanılarak klasörün içindeki mevcut .md formatındaki dosyalar .rst formatına otomatik olarak kolayca dönüştürülebilir. Örnek olarak <a class="reference external" href="https://gist.github.com/ldong/48f0df6f99396266970d">https://gist.github.com/ldong/48f0df6f99396266970d</a> linkindeki kodu inceleyebilirsiniz.</p>
+</div>
 </div>
 
 

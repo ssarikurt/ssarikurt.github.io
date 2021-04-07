@@ -38,7 +38,7 @@ Terminal ekranınızda aşağıdaki gibi bir çıktı görüntülenecektir:
 
  2021-04-07 12:16:12 (9,40 MB/s) - ‘pandoc-2.13-1-amd64.deb’ saved [14799022/14799022]
 
-Daha sonra Pandec paketinin kurulumu için aşağıdaki komutu yazınız:
+Daha sonra Pandoc paketinin kurulumu için aşağıdaki komutu yazınız:
 
 .. code-block::
 
@@ -55,7 +55,7 @@ Kurulum sırasında terminalde aşağıdaki gibi bilgiler görüntülenecektir:
   Setting up pandoc (2.13-1) ...
   Processing triggers for man-db (2.9.1-1) ...
 
-Kurulum tamamlandıktan sonra terminalden ``pandoc`` komutunu test edebilirsiniz. ``pandoc -h`` ile omut hakkında ayrıntılı bilgi elde edebilirsiniz.
+Kurulum tamamlandıktan sonra terminalden ``pandoc`` komutunu test edebilirsiniz. ``pandoc -h`` ile komut hakkında ayrıntılı bilgi elde edebilirsiniz.
 
 ``.md`` formatından ``.rst`` formatına dönüştürmek istediğiniz dosyaların bulunduğu klasöre gidiniz. Dönüştürmek istediğiniz her dosya için aşağıdaki komutu yazınız:
 
@@ -63,19 +63,23 @@ Kurulum tamamlandıktan sonra terminalden ``pandoc`` komutunu test edebilirsiniz
 
    pandoc -s --toc -f markdown <girdidosyası.md> -t rst -o <ciktidosyası.rst>
 
-.. code-block::
+.. note::
 
-  -s pandoc'a bağımsız bir belge oluşturmasını söyler
+ Kod tanımındaki anahtar kelimelerin karşılıkgeldiği ifadeler aşağıdaki gibidir:
 
-  --toc, pandoc'a içindekiler tablosu oluşturmasını söyler (isteğe bağlı)
+ -s pandoc'a bağımsız bir belge oluşturmasını söyler
 
-  -t pandoc'a reStructuredText çıktısı üretmesini söyler
+ --toc, pandoc'a içindekiler tablosu oluşturmasını söyler (isteğe bağlı)
 
-  -f pandoc'a girdi biçimini söyler
+ -t pandoc'a reStructuredText çıktısı üretmesini söyler
 
-Formatlar hakkındaki bilgiye `Pandoc kullanım kitapçığından <https://pandoc.org/MANUAL.html>`_ ulaşabilirsiniz.
+ -f pandoc'a girdi biçimini söyler
 
-Kısa kod blokları kullanılarak klasörün içindeki mevcut .md formatındaki dosyalar .rst formatına otomatik olarak kolayca dönüştürülebilir. Örnek olarak `<https://gist.github.com/ldong/48f0df6f99396266970d>`_ linkindeki kodu inceleyebilirsiniz.
+Pandoc programı ile dönüştürülebilen formatlar hakkındaki bilgiye `Pandoc kullanım kitapçığından <https://pandoc.org/MANUAL.html>`_ ulaşabilirsiniz.
+
+.. note::
+
+ Kısa kod blokları kullanılarak klasörün içindeki mevcut .md formatındaki dosyalar .rst formatına otomatik olarak kolayca dönüştürülebilir. Örnek olarak `<https://gist.github.com/ldong/48f0df6f99396266970d>`_ linkindeki kodu inceleyebilirsiniz.
 
 
 
