@@ -48,7 +48,7 @@
           <div class="body" role="main">
             
   <div class="section" id="izole-edilmis-yerel-kurulum-xconda-ile">
-<span id="spinhx-conda"></span><h1>1) İzole edilmiş yerel kurulum (xConda ile)<a class="headerlink" href="#izole-edilmis-yerel-kurulum-xconda-ile" title="Permalink to this headline">¶</a></h1>
+<span id="sphinx-conda"></span><h1>1) İzole edilmiş yerel kurulum (xConda ile)<a class="headerlink" href="#izole-edilmis-yerel-kurulum-xconda-ile" title="Permalink to this headline">¶</a></h1>
 <p>Conda ile sanal ortam yaratarak, bilgisayarınızdaki mevcut çevre değişkenlerine dokunmadan, kurulum gerçekleştirebilirsiniz. <em>İzole edilmemiş</em> yerel kurulum sırasında farklı uygulamalarınız için çakışma problemleri ortaya çıkabilir. <strong>İzole edilmiş</strong> yerel kurulum sayesinde ortaya çıkabilecek çakışma problemlerinden de kurtulmuş olursunuz.</p>
 <p>Öncelikle, eğer kurulu değilse, ev dizininize Conda kurmanız gerekmektedir. Conda kurulumu için aşağıdaki linkleri de inceleyebilirsiniz:</p>
 <p><a class="reference external" href="https://docs.truba.gov.tr/how-to-guides/GPU/deep-learning/virtual-env.html#ev-dizininize-anaconda-kurun">TRUBA Conda Kurulum Dökümantasyonu</a></p>
@@ -66,7 +66,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">sphinx</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span>
 </pre></div>
 </div>
-<p>Komutu ile <code class="docutils literal notranslate"><span class="pre">spinhx</span></code> isimli (veya farklı bir isimde) çevre değişkeni oluşturunuz.</p>
+<p>Komutu ile <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> isimli (veya farklı bir isimde) çevre değişkeni oluşturunuz.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">sphinx</span>
 </pre></div>
 </div>
@@ -77,6 +77,56 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>İlgili çevre değişkenini aktif durumdan çekmek için <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactive</span></code> komutunu kullanmanız yeterli olacaktır.</p>
+</div>
+<p>Conda ile etkinleştirilen ortam <code class="docutils literal notranslate"><span class="pre">pip</span></code> ile birlikte gelir. Burada <code class="docutils literal notranslate"><span class="pre">pip</span></code> komutu ile belirttiğiniz paketler sadece etkinleştirilmiş ortam için kurulacaktır. Aktif çevre değişkeni içerisinde <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> kurmadan önce <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> ile ilgili paketleri aşağıdaki komutu kullanarak arayabilirsiniz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(sphinx) $ wget -O - https://pypi.org/simple/ | grep -i sphinx
+</pre></div>
+</div>
+<p>Terminalde <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> ile ilgili bir sürü paketin listelendiğini göreceksiniz. Temel kullanım için bu paketlerin hepsine ihtiyacınız olmayacaktır. Aşağıdaki örnek komut satırında belirtildiği gibi istediğiniz özellikleri sağlayan paketleri araştırıp (matematiksel yazım, jupyter ortamı gibi) kurabilirsiniz.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">sphinx</span> <span class="n">nbsphinx</span>  <span class="n">sphinx</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">bootstrap</span><span class="o">-</span><span class="n">theme</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">jsmath</span>
+
+<span class="n">Yukarıdaki</span> <span class="n">komut</span> <span class="n">satırı</span> <span class="n">belirtilen</span> <span class="n">paketler</span> <span class="n">için</span> <span class="n">gerekli</span> <span class="n">tüm</span> <span class="n">paketleri</span> <span class="n">kuracaktır</span><span class="o">.</span> <span class="n">Daha</span> <span class="n">sonra</span> <span class="n">klasik</span> <span class="n">sphinx</span> <span class="n">kurulum</span> <span class="n">adımına</span> <span class="n">geçebilirsiniz</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Sphinx’i projenizin <em>kök dizini</em> nde başlatın. Bunun için Spinhx’in sayfasındaki <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">başlangıç betiği</a> incelenebilir. Aşağıdaki örnek komut satırında, projenin kök dizininde <code class="docutils literal notranslate"><span class="pre">docsrc</span></code> klasörü oluşturularak bu klasör altında <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> başlatılmaktadır.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(sphinx) $ mkdir docsrc
+(sphinx) $ cd docsrc
+(sphinx) ~docsrc$ sphinx-quickstart
+</pre></div>
+</div>
+<p>Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları verilmiştir. Diğer işletim sistemleri için ekrana çıkan bilgiler değişiklik gösterebilir.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Welcome</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Sphinx</span> <span class="mf">3.5</span><span class="o">.</span><span class="mi">3</span> <span class="n">quickstart</span> <span class="n">utility</span><span class="o">.</span>
+
+<span class="n">Please</span> <span class="n">enter</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="n">following</span> <span class="n">settings</span> <span class="p">(</span><span class="n">just</span> <span class="n">press</span> <span class="n">Enter</span> <span class="n">to</span>
+<span class="n">accept</span> <span class="n">a</span> <span class="n">default</span> <span class="n">value</span><span class="p">,</span> <span class="k">if</span> <span class="n">one</span> <span class="ow">is</span> <span class="n">given</span> <span class="ow">in</span> <span class="n">brackets</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">Selected</span> <span class="n">root</span> <span class="n">path</span><span class="p">:</span> <span class="o">.</span>
+
+<span class="n">You</span> <span class="n">have</span> <span class="n">two</span> <span class="n">options</span> <span class="k">for</span> <span class="n">placing</span> <span class="n">the</span> <span class="n">build</span> <span class="n">directory</span> <span class="k">for</span> <span class="n">Sphinx</span> <span class="n">output</span><span class="o">.</span>
+<span class="n">Either</span><span class="p">,</span> <span class="n">you</span> <span class="n">use</span> <span class="n">a</span> <span class="n">directory</span> <span class="s2">&quot;_build&quot;</span> <span class="n">within</span> <span class="n">the</span> <span class="n">root</span> <span class="n">path</span><span class="p">,</span> <span class="ow">or</span> <span class="n">you</span> <span class="n">separate</span>
+<span class="s2">&quot;source&quot;</span> <span class="ow">and</span> <span class="s2">&quot;build&quot;</span> <span class="n">directories</span> <span class="n">within</span> <span class="n">the</span> <span class="n">root</span> <span class="n">path</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="n">Separate</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">directories</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> <span class="n">y</span>
+
+<span class="n">The</span> <span class="n">project</span> <span class="n">name</span> <span class="n">will</span> <span class="n">occur</span> <span class="ow">in</span> <span class="n">several</span> <span class="n">places</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">built</span> <span class="n">documentation</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">name</span><span class="p">:</span> <span class="n">hpc</span>
+<span class="o">&gt;</span> <span class="n">Author</span> <span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="n">hpc</span><span class="o">-</span><span class="n">contributer</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">release</span> <span class="p">[]:</span> <span class="mi">2021</span>
+
+<span class="n">If</span> <span class="n">the</span> <span class="n">documents</span> <span class="n">are</span> <span class="n">to</span> <span class="n">be</span> <span class="n">written</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">language</span> <span class="n">other</span> <span class="n">than</span> <span class="n">English</span><span class="p">,</span>
+<span class="n">you</span> <span class="n">can</span> <span class="n">select</span> <span class="n">a</span> <span class="n">language</span> <span class="n">here</span> <span class="n">by</span> <span class="n">its</span> <span class="n">language</span> <span class="n">code</span><span class="o">.</span> <span class="n">Sphinx</span> <span class="n">will</span> <span class="n">then</span>
+<span class="n">translate</span> <span class="n">text</span> <span class="n">that</span> <span class="n">it</span> <span class="n">generates</span> <span class="n">into</span> <span class="n">that</span> <span class="n">language</span><span class="o">.</span>
+
+<span class="n">For</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">supported</span> <span class="n">codes</span><span class="p">,</span> <span class="n">see</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">sphinx</span><span class="o">-</span><span class="n">doc</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">usage</span><span class="o">/</span><span class="n">configuration</span><span class="o">.</span><span class="n">html</span><span class="c1">#confval-language.</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">language</span> <span class="p">[</span><span class="n">en</span><span class="p">]:</span>
+
+<span class="n">Creating</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sevil</span><span class="o">/</span><span class="n">hpcnotes</span><span class="o">/</span><span class="n">docsrc</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">conf</span><span class="o">.</span><span class="n">py</span><span class="o">.</span>
+<span class="n">Creating</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sevil</span><span class="o">/</span><span class="n">hpcnotes</span><span class="o">/</span><span class="n">docsrc</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">rst</span><span class="o">.</span>
+<span class="n">Creating</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sevil</span><span class="o">/</span><span class="n">hpcnotes</span><span class="o">/</span><span class="n">docsrc</span><span class="o">/</span><span class="n">Makefile</span><span class="o">.</span>
+<span class="n">Creating</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sevil</span><span class="o">/</span><span class="n">hpcnotes</span><span class="o">/</span><span class="n">docsrc</span><span class="o">/</span><span class="n">make</span><span class="o">.</span><span class="n">bat</span><span class="o">.</span>
+
+<span class="n">Finished</span><span class="p">:</span> <span class="n">An</span> <span class="n">initial</span> <span class="n">directory</span> <span class="n">structure</span> <span class="n">has</span> <span class="n">been</span> <span class="n">created</span><span class="o">.</span>
+</pre></div>
 </div>
 </div>
 

@@ -1,4 +1,4 @@
-.. _spinhx_conda:
+.. _sphinx_conda:
 
 
 1) İzole edilmiş yerel kurulum (xConda ile)
@@ -29,7 +29,7 @@ Conda'nın nasıl kulanılacağı ile ilgili `ayrıntılı bilgiye web sayfasın
 
    conda create -n sphinx python=3
 
-Komutu ile ``spinhx`` isimli (veya farklı bir isimde) çevre değişkeni oluşturunuz.
+Komutu ile ``sphinx`` isimli (veya farklı bir isimde) çevre değişkeni oluşturunuz.
 
 .. code-block::
 
@@ -44,4 +44,62 @@ Komutu ile ``sphinx`` adını verdiğiniz çevre değişkenini aktif hale getiri
 .. note::
 
    İlgili çevre değişkenini aktif durumdan çekmek için ``conda deactive`` komutunu kullanmanız yeterli olacaktır.
-   
+
+Conda ile etkinleştirilen ortam ``pip`` ile birlikte gelir. Burada ``pip`` komutu ile belirttiğiniz paketler sadece etkinleştirilmiş ortam için kurulacaktır. Aktif çevre değişkeni içerisinde ``sphinx`` kurmadan önce ``sphinx`` ile ilgili paketleri aşağıdaki komutu kullanarak arayabilirsiniz.
+
+.. code-block::
+
+   (sphinx) $ wget -O - https://pypi.org/simple/ | grep -i sphinx
+
+Terminalde ``sphinx`` ile ilgili bir sürü paketin listelendiğini göreceksiniz. Temel kullanım için bu paketlerin hepsine ihtiyacınız olmayacaktır. Aşağıdaki örnek komut satırında belirtildiği gibi istediğiniz özellikleri sağlayan paketleri araştırıp (matematiksel yazım, jupyter ortamı gibi) kurabilirsiniz.
+
+.. code-block::
+
+   pip install jupyter-sphinx nbsphinx  sphinx sphinx-bootstrap-theme sphinxcontrib-jsmath
+
+ Yukarıdaki komut satırı belirtilen paketler için gerekli tüm paketleri kuracaktır. Daha sonra klasik sphinx kurulum adımına geçebilirsiniz.
+
+Sphinx'i projenizin *kök dizini* nde başlatın. Bunun için Spinhx'in sayfasındaki `başlangıç betiği <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_ incelenebilir. Aşağıdaki örnek komut satırında, projenin kök dizininde ``docsrc`` klasörü oluşturularak bu klasör altında ``sphinx`` başlatılmaktadır.
+
+.. code-block:: 
+
+   (sphinx) $ mkdir docsrc
+   (sphinx) $ cd docsrc
+   (sphinx) ~docsrc$ sphinx-quickstart
+
+Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları verilmiştir. Diğer işletim sistemleri için ekrana çıkan bilgiler değişiklik gösterebilir.
+
+.. code-block::
+
+   Welcome to the Sphinx 3.5.3 quickstart utility.
+
+   Please enter values for the following settings (just press Enter to 
+   accept a default value, if one is given in brackets).
+
+   Selected root path: .
+
+   You have two options for placing the build directory for Sphinx output.
+   Either, you use a directory "_build" within the root path, or you separate
+   "source" and "build" directories within the root path.
+   > Separate source and build directories (y/n) [n]: y
+
+   The project name will occur in several places in the built documentation.
+   > Project name: hpc
+   > Author name(s): hpc-contributer
+   > Project release []: 2021
+
+   If the documents are to be written in a language other than English,
+   you can select a language here by its language code. Sphinx will then
+   translate text that it generates into that language.
+
+   For a list of supported codes, see
+   https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
+   > Project language [en]:
+
+   Creating file /home/sevil/hpcnotes/docsrc/source/conf.py.
+   Creating file /home/sevil/hpcnotes/docsrc/source/index.rst.
+   Creating file /home/sevil/hpcnotes/docsrc/Makefile.
+   Creating file /home/sevil/hpcnotes/docsrc/make.bat.
+
+   Finished: An initial directory structure has been created.
+
