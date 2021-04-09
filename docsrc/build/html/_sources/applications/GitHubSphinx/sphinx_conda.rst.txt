@@ -103,3 +103,87 @@ Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları ve
 
    Finished: An initial directory structure has been created.
 
+   You should now populate your master file ./source/index.rst and create other documentation    source files. Use the Makefile to build the docs, like so:
+   make builder
+   where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
+
+Kurulum tamamlandıktan sonra web sayfasına dair önemli ayarların (tema, eklentiler gibi) tamamının bulunduğu ``conf.py`` dosyasını oluşturur. 
+
+.. hint:: Kaynak dizininizin (*docsrc/source*) içerisinde bulunan ``conf.py`` konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için ``sphinx.ext.mathjax``, jupyter için ``jupyter_sphinx`` ve ``nbsphinx`` gibi::
+
+      # Add any Sphinx extension module names here, as strings. They can be
+      # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+      # ones.
+      extensions = [
+        'sphinx.ext.intersphinx',
+        'sphinx.ext.todo',
+        'sphinx.ext.coverage',
+        'sphinx.ext.mathjax',
+        'sphinx.ext.viewcode',
+        'sphinx.ext.githubpages',
+        'jupyter_sphinx',
+        'nbsphinx',
+       ]
+
+  Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. Bunun için de `conf.py` dosyasında ``html_theme`` kısmında ilgili değişiklikleri yapmanız gerekmektedir (örnek: html_theme = 'bizstyle' )
+  `Spinhx temalarına ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes>`_
+
+Site halihazırda bir örnekle doldurulmuştur, bu nedenle oluşturulmaya hazırdır, ancak Makefile’da küçük bir değişiklik yapmak kullanışlıdır. Makefile dosyasında aşağıdaki gibi son kısımda yapılan değişiklikle çıktının otomatik olarak docs dizinine kopyalanması sağlanmaktadır.
+
+.. code-block::
+
+   # Minimal makefile for Sphinx documentation
+   #
+
+   # You can set these variables from the command line.
+   SPHINXOPTS    =
+   SPHINXBUILD   = sphinx-build
+   SOURCEDIR     = source
+   BUILDDIR      = build
+
+   # Put it first so that "make" without argument is like "make help".
+   help:
+	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+   .PHONY: help Makefile
+
+   # Catch-all target: route all unknown targets to Sphinx using the new
+   # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+   %: Makefile
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+   github:
+	@make html
+	cp -a build/html/. ../docs
+
+Sona eklediğimiz ``github`` bölümü, belgeleri ``source`` dizininde (daha net olarak; buradaki akışta ``hpcnotes/docsrc/source`` dizininde) derler ve ilgili dosyaları ``build/html``'den ``docs`` klasörüne kopyalar. 
+
+.. note::
+
+   Makefile dosyasında yapılan değişiklikle ``build/html`` klasörünü içerisindeki tüm html sayfaları ``docs`` klasörüne kopyalandığı için ``build`` klasörü ``git push`` komutu ile karşı tarafa (GitHub sayfanıza) iletilecek içerikten hariç tutulabilir. Çünkü halihazırda tüm html bilgileri ``docs`` klasörünü eşlenmesiyle iletilmektedir. Bunun için ana dizine (buradaki akışta hpcnotes klasörü altında), dosya trafiğini azaltmak adına, ``.gitignore`` dosyası eklenerek içerisinde ``build`` klasörü tanımlanabilir.
+
+``make github`` komutundan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için kök dizininize (buradaki örnek için ``hpcnotes`` klasörüne) gidip aşağıdaki komutları uygulamanız gerekmektedir:
+
+.. code-block::
+
+   git add docsrc/ --all
+   git commit -m "Sphinx source" 
+   git push
+
+Bu komutlar sadece kaynak dosyaları iletecektir. Web sayfasının kendisini derlemek ve de iletmek için ise aşağıdaki komutları kullanmanız gerekmektedir:
+
+.. code-block::
+
+   cd docsrc
+   make github
+   cd ..
+   git add --all
+   git commit -m "Web page update"
+   git push
+
+GitHub'a yenilenmesi için biraz zaman tanıyın. Ve artık proje web sayfanız hazır!
+
+.. note::
+
+   reStructuredText (rst) yazım dili hakkında `ayrıntılı bilgilere ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
+
+
