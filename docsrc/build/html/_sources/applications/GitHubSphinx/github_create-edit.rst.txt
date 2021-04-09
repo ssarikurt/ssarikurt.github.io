@@ -110,3 +110,5 @@ Artık GitHub üzerindeki repository sayfanız güncellenmiş olacaktır.
    *Projenizin web sayfası olarak yayınlanabilmesi için oluşturduğunuz depo ``public`` olmalıdır.*
 
 .. image:: files/project_page.png
+
+:ref:`Sphinx kurulumu ile ilgili sayfaya ulaşmak için tıklayınız <spinhx_install>`
