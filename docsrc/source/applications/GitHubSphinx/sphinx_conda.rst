@@ -19,9 +19,9 @@ Aşağıda örnek olarak Linux/Ubuntu işletim sistemi üzerinde ``miniconda`` k
    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
    bash Miniconda3-latest-Linux-x86_64.sh
 
- .. note::
+.. note::
 
-    Kurulum işlemi tamamlandıktan sonra çalıştırılabilir ``Miniconda3-latest-Linux-x86_64.sh`` dosyasını silebilirsiniz. Kurulumdan sonra Conda'nın aktif olabilmesi için terminalinizi kapatıp yeniden açmanız gerekmektedir.
+   Kurulum işlemi tamamlandıktan sonra çalıştırılabilir ``Miniconda3-latest-Linux-x86_64.sh`` dosyasını silebilirsiniz. Kurulumdan sonra Conda'nın aktif olabilmesi için terminalinizi kapatıp yeniden açmanız gerekmektedir.
 
 Conda'nın nasıl kulanılacağı ile ilgili `ayrıntılı bilgiye web sayfasından ulaşabilirsiniz <https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment>`_.
 
