@@ -57,7 +57,7 @@ Terminalde ``sphinx`` ile ilgili bir sürü paketin listelendiğini göreceksini
 
    pip install jupyter-sphinx nbsphinx  sphinx sphinx-bootstrap-theme sphinxcontrib-jsmath
 
- Yukarıdaki komut satırı belirtilen paketler için gerekli tüm paketleri kuracaktır. Daha sonra klasik sphinx kurulum adımına geçebilirsiniz.
+Yukarıdaki komut satırı belirtilen paketler için gerekli tüm paketleri kuracaktır. Daha sonra klasik sphinx kurulum adımına geçebilirsiniz.
 
 Sphinx'i projenizin *kök dizini* nde başlatın. Bunun için Spinhx'in sayfasındaki `başlangıç betiği <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_ incelenebilir. Aşağıdaki örnek komut satırında, projenin kök dizininde ``docsrc`` klasörü oluşturularak bu klasör altında ``sphinx`` başlatılmaktadır.
 
