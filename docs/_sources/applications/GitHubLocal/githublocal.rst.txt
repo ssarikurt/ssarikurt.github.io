@@ -4,7 +4,7 @@
 Kendi Bilgisayarınızda GitHub İçeriği Düzenleme
 ================================================
 
-GitHub hesabınızda projelerinize ait içerekleri yerel olarak kendi bilgisayarınızda *komut satırı* kullanarak oluşturabilirsiniz. İçerik oluşturmak için bilgisayarınıza kurabileceğiniz grafik arayüzü sağlayan programlar da bulunmaktadır. Örneğin; GitHub Desktop, Visual Studio Code.
+GitHub hesabınızda projelerinize ait içerekleri yerel olarak kendi bilgisayarınızda *komut satırı* kullanarak oluşturabilirsiniz. İçerik oluşturmak için bilgisayarınıza kurabileceğiniz grafik arayüzü sağlayan programlar da bulunmaktadır. Örneğin; `GitHub Desktop <https://desktop.github.com/>`_, `Visual Studio Code <https://code.visualstudio.com/>`_.
 
 Bunun için öncelikle, her defasında düzenleme yaptıkça şifre girmemek için, bilgisayarınızda ``ssh-keygen`` oluşturmanız gerekmektedir. ``keys`` adlı bir klasör açıp anahtar dosyalarınızı burada saklayabilirsiniz::
 

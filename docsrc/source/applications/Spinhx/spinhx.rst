@@ -12,7 +12,34 @@ GitHub Web Sayfası İçin Hazırlık
 
 GitHub, kişisel sayfalar ve projeleriniz için web sayfaları oluşturmanıza imkan tanır. Kişisel sayfanız, kullanıcı adınızla aynı olması gereken özel bir depoda (repository) tutulur. Bu kişisel web sayfası varsayılan olarak https://kullanciadi.github.io'da yer alacaktır. İstediğiniz bir alan adı yönlendirmesine de sahip olabilirsiniz. Proje web sayfaları, varsayılan olarak, https://kullaniciadi.github.io/repository şeklinde sunulur; burada "repository" projeniz için oluşturduğunuz deponun ismidir.
 
-GitHub üzerinde web sayfası oluşturmak için ilgili yönergelere `buradan <https://pages.github.com/>`_ ulaşabilirsiniz. Spinhx'i kullanmak istiyorsanız işlem adımları biraz farklıdır. Spinhx kullanarak bir proje için web sayfasının nasıl kurulacağına dair bilgileri aşağıda bulabilirsiniz. Kişisel web sayfası için de işlem adımları benzerdir, sadece 'repository' yerine kullanıcı adınızı kullanmanız gerekecektir.
+GitHub üzerinde web sayfası oluşturmak için ilgili yönergelere `buradan <https://pages.github.com/>`_ ulaşabilirsiniz. Spinhx'i kullanmak istiyorsanız işlem adımları biraz farklıdır. Spinhx kullanarak, bir proje için web sayfasının nasıl kurulacağına dair bilgileri aşağıda bulabilirsiniz. Kişisel web sayfası için de işlem adımları benzerdir, sadece 'repository' yerine kullanıcı adınızı kullanmanız gerekecektir.
+
+GitHub İçeriği Oluşturma ve Düzenleme
+---------------------------------------
+
+GitHub hesabınızda projelerinize ait içerekleri yerel olarak kendi bilgisayarınızda *komut satırı* kullanarak oluşturabilirsiniz. İçerik oluşturmak için bilgisayarınıza kurabileceğiniz grafik arayüzü sağlayan programlar da bulunmaktadır. Örneğin; `GitHub Desktop <https://desktop.github.com/>`_, `Visual Studio Code <https://code.visualstudio.com/>`_.
+
+https://kullaniciadi.github.io/repository şeklinde web sayfası yayınlamak için öncelikle bir repository oluşturmamız gerekmektedir. Bunun için https://github.com/username GitHub kullanıcı sayfanızda sağ üstteki kullanıcı avatarınızın yanında ``+`` ikonuna tıklayınız ve ``new repository`` i seçiniz. Ve repository için bir isim belirleyiniz. Bu repository altında oluşturacağınız içeriğin web sayfası olarak yayınlanabilmesi için oluşturduğunuz repository ``public`` olmalıdır.  
+
+.. image:: files/github-newrepo.png
+
+``Create repository`` i seçtikten sonra boş bir repository oluşturulacak ve aşağıdaki gibi bir ekran karşınıza çıkacak.
+
+.. image:: files/github-repolocal.png
+
+Kendi bilgisayarınızdan içeriği oluşturup düzenlemek için çalışmak istediğiniz klasöre gidiniz ve burada, tercihen, GitHub üzerinden oluşturduğunuz ``repository`` ile aynı isimde olacak şekilde bir klasör oluşturunuz. Aşağıdaki komutları kullanarak klasör içerisinde bir dosya oluşturup, ``repository`` niz için branch yaratınız ve bunları GitHub sayfanıza gönderiniz:
+
+.. code-block::
+
+   mkdir hpcnotes
+   cd hpcnotes
+   touch testfile
+   git init
+   git add testfile
+   git commit -m "first commit"
+   git branch -M main
+   git remote add origin git@github.com:ssarikurt/hpcnotes.git
+   git push -u origin main
 
 * 'hpcnotes' adında boş bir proje ile başlayalım.
 * Proje havuzunu GitHub'da belirtildiği şekilde oluşturun. 
