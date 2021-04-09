@@ -8,6 +8,7 @@ Sphinx, anlaşılabilir ve güzel dökümantasyon oluşturmayı kolaylaştıran 
 
 Öncelikle Sphinx'i kurmanız gerekmektedir. Kurulumu iki şekilde yapabilirsiniz:
 
-1) **İzole edilmiş** yerel kurulum (xConda ile)
+1) :ref:`**İzole edilmiş** yerel kurulum (xConda ile) <sphinx_conda>`
 
-2) **İzole edilmemiş** yerel kurulum.
+2) :ref:`**İzole edilmemiş** yerel kurulum <spinhx_noconda>`
+
