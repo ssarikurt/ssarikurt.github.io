@@ -57,7 +57,7 @@ komutunu yazdığınızda ekranda aşağıdaki bilgiler görüntülecek::
   Enter passphrase (empty for no passphrase):
   Enter same passphrase again:
 
-Bu aşamada herhangi bir şifre girmeyip sadece ``enter`` a basabilirsiniz. Sonuç olarak iki tane rsa şifreleme dosyaları oluşacak (buradaki örnek için; *hpcnotes_rsa* ve *hpcnotes_rsa.pub*). Tarayıcınızdan GitHub kullanıcı sayfanızı açınız ve ``Settings -> SSH and GPG Keys`` sayfasına gidiniz. Sayfanın sağ üst kısmındaki ``New SSH key`` butonuna tıklayınız. Çıkan ekranda ``Title`` a bir tanımlama yapıp ``Key`` kısmına da ``hpcnotes_rsa.pub`` içerindeki şifreleme bilgisini kopyalayınız. ``Add SSH key`` dedikten sonra kendi bilgisayarınızda komut satırında aşağıdaki komutu yazdığınızda şifre, anahtarlığınıza eklenecektir:
+Bu aşamada herhangi bir şifre girmeyip sadece ``enter`` a basabilirsiniz. Sonuç olarak iki tane rsa şifreleme dosyaları oluşacak (buradaki örnek için; *hpcnotes_rsa* ve *hpcnotes_rsa.pub*). Tarayıcınızdan GitHub kullanıcı sayfanızı açınız ve ``Settings -> SSH and GPG Keys`` sayfasına gidiniz. Sayfanın sağ üst kısmındaki ``New SSH key`` butonuna tıklayınız. Çıkan ekranda ``Title`` a bir tanımlama yapıp ``Key`` kısmına da ``hpcnotes_rsa.pub`` içerisindeki şifreleme bilgisini kopyalayınız. ``Add SSH key`` dedikten sonra kendi bilgisayarınızda komut satırında aşağıdaki komutu yazdığınızda şifre, anahtarlığınıza eklenecektir:
 
 .. code-block::
 
@@ -221,12 +221,12 @@ Bu komut dosyası, web sayfasının tüm ayarlarının (tema gibi) bulunduğu t�
  %: Makefile
      @$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
  github:
-     @make html
-     cp -a build/html/. ../docs
+        @make html
+        cp -a build/html/. ../docs
 
-Sondaki``github`` bölümü, belgeleri kaynak dizinde (*source*) derler ve ilgili dosyaları ``build/html``'den ``docs`` klasörüne kopyalar. 
+Sona eklediğimiz ``github`` bölümü, belgeleri ``source`` dizininde (daha net olarak; buradaki akışta ``hpcnotes/docsrc/source`` dizininde) derler ve ilgili dosyaları ``build/html``'den ``docs`` klasörüne kopyalar. 
 
-``make github`` yapmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için *kaynak* dizininize (source) gidip aşağıdaki komutları uygulamanız gerekmektedir::
+``make github`` komutunu yazmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için kök dizininize (buradaki örnek için ``hpcnotes`` klasörüne) gidip aşağıdaki komutları uygulamanız gerekmektedir::
 
  git add docsrc/ --all
  git commit -m "Sphinx source" 
@@ -237,11 +237,11 @@ Bu komutlar sadece kaynak dosyaları iletecektir. Web sayfasının kendisini der
  cd docsrc
  make github
  cd ..
- git add docs/ -all
+ git add --all
  git commit -m "Web page update"
  git push
 
-GitHub'a yenilenmesi için biraz bekleyin ve artık proje web sayfanız hazır. 
+GitHub'a yenilenmesi için biraz zaman tanıyın. Ve artık proje web sayfanız hazır!
 
 .. note::
 
@@ -249,17 +249,21 @@ GitHub'a yenilenmesi için biraz bekleyin ve artık proje web sayfanız hazır.
 
    rst formatında denemeler yapmak isterseniz `linkteki çevrimiçi editörü <http://rst.ninjs.org/#>`_ kullanabilirsiniz.
 
-.. hint:: Kaynak dizininizin (*source*) içerisinde bulunan ``conf.py`` konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için ``sphinx.ext.mathjax`` gibi::
+.. hint:: Kaynak dizininizin (*docsrc/source*) içerisinde bulunan ``conf.py`` konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için ``sphinx.ext.mathjax``, jupyter için ``jupyter_sphinx`` ve ``nbsphinx`` gibi::
 
       # Add any Sphinx extension module names here, as strings. They can be
       # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
       # ones.
       extensions = [
-      'sphinx.ext.todo',
-      'sphinx.ext.mathjax',
-      'sphinx.ext.ifconfig',
-      'sphinx.ext.autodoc',
-      'sphinx.ext.viewcode'
+        'sphinx.ext.intersphinx',
+        'sphinx.ext.todo',
+        'sphinx.ext.coverage',
+        'sphinx.ext.mathjax',
+        'sphinx.ext.viewcode',
+        'sphinx.ext.githubpages',
+        'jupyter_sphinx',
+        'nbsphinx',
        ]
 
-  Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. `Spinhx temalarına ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes>`_
+  Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. Bunun için de `conf.py` dosyasında ``html_theme`` kısmında ilgili değişiklikleri yapmanız gerekmektedir (örnek: ``html_theme = 'bizstyle' `` )
+  `Spinhx temalarına ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes>`_

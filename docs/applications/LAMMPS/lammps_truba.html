@@ -5,7 +5,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>TRUBA’da LAMMPS Kurulumu &#8212; sevil  documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
@@ -44,7 +45,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="truba-da-lammps-kurulumu">
+  <section id="truba-da-lammps-kurulumu">
 <span id="lammps-truba"></span><h1>TRUBA’da LAMMPS Kurulumu<a class="headerlink" href="#truba-da-lammps-kurulumu" title="Permalink to this headline">¶</a></h1>
 <p>TRUBA sisteminde kurulu olan programlar hakkındaki bilgiye</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module available
@@ -98,11 +99,11 @@ mkdir build-intel18-openmpi4
 </pre></div>
 </div>
 <p>Yukarıdaki kurulum adımları tamamlandığında bulunduğunuz <code class="docutils literal notranslate"><span class="pre">build-intel18-openmpi4</span></code> dizininde çalıştırılabilir <code class="docutils literal notranslate"><span class="pre">lmp</span></code> dosyası yer alacaktır.</p>
-</div>
-<div class="section" id="truba-da-lammps-kullanimi">
+</section>
+<section id="truba-da-lammps-kullanimi">
 <h1>TRUBA’da LAMMPS Kullanımı:<a class="headerlink" href="#truba-da-lammps-kullanimi" title="Permalink to this headline">¶</a></h1>
 <p>Kendi kullanıcınıza kurduğunuz LAMMPS programını TRUBA sisteminde çalıştırmak için örnek iş betiği dosyası aşağıdaki gibidir:</p>
-<div class="section" id="lammps-run-slurm">
+<section id="lammps-run-slurm">
 <h2>lammps_run.slurm<a class="headerlink" href="#lammps-run-slurm" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH -p mid1</span>
@@ -137,8 +138,8 @@ mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp  &lt; <span class="k">in</span>.
 </pre></div>
 </div>
 <p>komutu ile TRUBA sistemine işinizi gönderebilirsiniz.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -197,7 +198,7 @@ mpirun  <span class="nv">$LAMMPS_DIR</span>/lmp  &lt; <span class="k">in</span>.
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, sevil.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.3.
     </div>
   </body>
 </html>
