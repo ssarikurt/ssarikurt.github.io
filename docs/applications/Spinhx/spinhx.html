@@ -143,7 +143,26 @@
 <section id="spinhx-kurulumu">
 <h2>Spinhx Kurulumu<a class="headerlink" href="#spinhx-kurulumu" title="Permalink to this headline">¶</a></h2>
 <p>Spinhx, anlaşılabilir ve güzel dökümantasyon oluşturmayı kolaylaştıran bir araçtır. Temel olarak, kod yazıyormuş gibi belgeler yazabilirsiniz ve kodlaması kolaydır. <a class="reference external" href="https://www.sphinx-doc.org/">Spinhx web sayfasından</a> ayrıntılı bilgilere ulaşabilirsiniz.</p>
-<p>Öncelikle Spinhx’i kurmanız gerekiyor. Farklı işletim sistemleri için <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">Spinhx kurulum yönergelerine</a> web sayfasından ulaşabilirsiniz. Linux için aşağıdaki adımları takip edebilirsiniz:</p>
+<p>Öncelikle Spinhx’i kurmanız gerekmektedir. Kurulumu iki şekilde yapabilirsiniz:</p>
+<ol class="arabic simple">
+<li><p><strong>İzole edilmiş</strong> yerel kurulum (xConda ile)</p></li>
+<li><p><strong>İzole edilmemiş</strong> yerel kurulum.</p></li>
+</ol>
+<section id="izole-edilmis-yerel-kurulum-xconda-ile">
+<h3>1) İzole edilmiş yerel kurulum (xConda ile)<a class="headerlink" href="#izole-edilmis-yerel-kurulum-xconda-ile" title="Permalink to this headline">¶</a></h3>
+<p>Conda ile sanal ortam yaratarak, bilgisayarınızdaki mevcut çevre değişkenlerine dokunmadan, kurulum gerçekleştirebilirsiniz. <em>İzole edilmemiş</em> yerel kurulum sırasında farklı uygulamalarınız için çakışma problemleri ortaya çıkabilir. <strong>İzole edilmiş</strong> yerel kurulum sayesinde ortaya çıkabilecek çakışma problemlerinden de kurtulmuş olursunuz.</p>
+<p>Öncelikle, eğer kurulu değilse, ev dizininize Conda kurmanız gerekmektedir. Conda kurulumu için aşağıdaki linkleri de inceleyebilirsiniz:</p>
+<p><a class="reference external" href="https://docs.truba.gov.tr/how-to-guides/GPU/deep-learning/virtual-env.html#ev-dizininize-anaconda-kurun">TRUBA Conda Kurulum Dökümantasyonu</a></p>
+<p><a class="reference external" href="https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html">Conda Web Sayfası</a></p>
+<p>Aşağıda örnek olarak Linux/Ubuntu işletim sistemi üzerinde <code class="docutils literal notranslate"><span class="pre">miniconda</span></code> kurulumu anlatılmıştır. Terminalden Miniconda’nın mevcut güncel sürümünü indirip çalıştırınız:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">bash</span> <span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</section>
+<section id="yerel-olarak-sphinx-kurulumu">
+<h3>2) Yerel olarak Sphinx kurulumu<a class="headerlink" href="#yerel-olarak-sphinx-kurulumu" title="Permalink to this headline">¶</a></h3>
+<p>Farklı işletim sistemleri için <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">Spinhx kurulum yönergelerine</a> web sayfasından ulaşabilirsiniz. Linux bilgisayarınıza yerel olarak Sphinx’i kurmak için aşağıdaki adımları takip edebilirsiniz:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">sphinx</span>
 </pre></div>
 </div>
@@ -293,6 +312,7 @@ github:
 </div>
 </section>
 </section>
+</section>
 
 
             <div class="clearer"></div>
@@ -308,7 +328,11 @@ github:
 <li><a class="reference internal" href="#github-icerigi-olusturma-ve-duzenleme">GitHub İçeriği Oluşturma ve Düzenleme</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#spinhx-kurulumu">Spinhx Kurulumu</a></li>
+<li><a class="reference internal" href="#spinhx-kurulumu">Spinhx Kurulumu</a><ul>
+<li><a class="reference internal" href="#izole-edilmis-yerel-kurulum-xconda-ile">1) İzole edilmiş yerel kurulum (xConda ile)</a></li>
+<li><a class="reference internal" href="#yerel-olarak-sphinx-kurulumu">2) Yerel olarak Sphinx kurulumu</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

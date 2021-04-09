@@ -116,7 +116,37 @@ Spinhx Kurulumu
 
 Spinhx, anlaşılabilir ve güzel dökümantasyon oluşturmayı kolaylaştıran bir araçtır. Temel olarak, kod yazıyormuş gibi belgeler yazabilirsiniz ve kodlaması kolaydır. `Spinhx web sayfasından <https://www.sphinx-doc.org/>`_ ayrıntılı bilgilere ulaşabilirsiniz.
 
-Öncelikle Spinhx'i kurmanız gerekiyor. Farklı işletim sistemleri için `Spinhx kurulum yönergelerine <https://www.sphinx-doc.org/en/master/usage/installation.html>`_ web sayfasından ulaşabilirsiniz. Linux için aşağıdaki adımları takip edebilirsiniz::
+Öncelikle Spinhx'i kurmanız gerekmektedir. Kurulumu iki şekilde yapabilirsiniz:
+
+1) **İzole edilmiş** yerel kurulum (xConda ile)
+
+2) **İzole edilmemiş** yerel kurulum.
+
+1) İzole edilmiş yerel kurulum (xConda ile)
+--------------------------------------------
+
+Conda ile sanal ortam yaratarak, bilgisayarınızdaki mevcut çevre değişkenlerine dokunmadan, kurulum gerçekleştirebilirsiniz. *İzole edilmemiş* yerel kurulum sırasında farklı uygulamalarınız için çakışma problemleri ortaya çıkabilir. **İzole edilmiş** yerel kurulum sayesinde ortaya çıkabilecek çakışma problemlerinden de kurtulmuş olursunuz.
+
+Öncelikle, eğer kurulu değilse, ev dizininize Conda kurmanız gerekmektedir. Conda kurulumu için aşağıdaki linkleri de inceleyebilirsiniz:
+
+`TRUBA Conda Kurulum Dökümantasyonu <https://docs.truba.gov.tr/how-to-guides/GPU/deep-learning/virtual-env.html#ev-dizininize-anaconda-kurun>`_
+
+`Conda Web Sayfası <https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/index.html>`_
+
+Aşağıda örnek olarak Linux/Ubuntu işletim sistemi üzerinde ``miniconda`` kurulumu anlatılmıştır. Terminalden Miniconda'nın mevcut güncel sürümünü indirip çalıştırınız:
+
+.. code-block::
+
+   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+   bash Miniconda3-latest-Linux-x86_64.sh
+
+
+
+   
+2) Yerel olarak Sphinx kurulumu
+-------------------------------
+
+Farklı işletim sistemleri için `Spinhx kurulum yönergelerine <https://www.sphinx-doc.org/en/master/usage/installation.html>`_ web sayfasından ulaşabilirsiniz. Linux bilgisayarınıza yerel olarak Sphinx'i kurmak için aşağıdaki adımları takip edebilirsiniz::
 
  sudo apt install python3-sphinx
 
