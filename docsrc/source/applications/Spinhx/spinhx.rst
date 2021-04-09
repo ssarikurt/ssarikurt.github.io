@@ -265,5 +265,5 @@ GitHub'a yenilenmesi için biraz zaman tanıyın. Ve artık proje web sayfanız 
         'nbsphinx',
        ]
 
-  Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. Bunun için de `conf.py` dosyasında ``html_theme`` kısmında ilgili değişiklikleri yapmanız gerekmektedir (örnek: ``html_theme = 'bizstyle' `` )
+  Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. Bunun için de `conf.py` dosyasında ``html_theme`` kısmında ilgili değişiklikleri yapmanız gerekmektedir (örnek: html_theme = 'bizstyle' )
   `Spinhx temalarına ulaşmak için tıklayınız. <https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes>`_
