@@ -12,9 +12,11 @@ YBH sistemlerinde kullandığınız programların kendi bilgisayarınıza nasıl
    :titlesonly:
 
    GitHubLocal/githublocal
-   Spinhx/spinhx
-   Spinhx/spinhx_conda
-   Spinhx/pandoc_md-rst
+   GitHubSphinx/github_create-edit
+   GitHubSphinx/sphinx_install
+   GitHubSphinx/sphinx_conda
+   GitHubSphinx/sphinx_noconda
+   GitHubSphinx/pandoc_md-rst
    LAMMPS/lammps
 
 

@@ -106,7 +106,7 @@ Artık GitHub üzerindeki repository sayfanız güncellenmiş olacaktır.
 
 * Eğer projeyi oluştururken GitHub önerilerini takip ettiyseniz projenize ait bir **``ana dal``** olacaktır. GitHub'a, bu projenin **docs** klasöründe ve **ana dal** da yer alan bir web sayfası olacağına dair tanımlama yapmamız gerekmektedir. Bunun için ``Settings -> Pages`` sayfasına giderek ayarları yapabilirsiniz.
 
-  .. note::
+.. note::
    *Projenizin web sayfası olarak yayınlanabilmesi için oluşturduğunuz depo ``public`` olmalıdır.*
 
 .. image:: files/project_page.png
@@ -136,12 +136,29 @@ Conda ile sanal ortam yaratarak, bilgisayarınızdaki mevcut çevre değişkenle
 Aşağıda örnek olarak Linux/Ubuntu işletim sistemi üzerinde ``miniconda`` kurulumu anlatılmıştır. Terminalden Miniconda'nın mevcut güncel sürümünü indirip çalıştırınız:
 
 .. code-block::
-
    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
    bash Miniconda3-latest-Linux-x86_64.sh
 
+.. note::
+   Kurulum işlemi tamamlandıktan sonra çalıştırılabilir ``Miniconda3-latest-Linux-x86_64.sh`` dosyasını silebilirsiniz. Kurulumdan sonra Conda'nın aktif olabilmesi için terminalinizi kapatıp yeniden açmanız gerekmektedir.
 
+Conda'nın nasıl kulanılacağı ile ilgili `ayrıntılı bilgiye web sayfasından ulaşabilirsiniz <https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment>`_.
 
+.. code-block::
+   conda create -n sphinx python=3
+
+Komutu ile ``spinhx`` isimli (veya farklı bir isimde) çevre değişkeni oluşturunuz.
+
+.. code-block::
+   conda activate sphinx
+
+Komutu ile ``sphinx`` adını verdiğiniz çevre değişkenini aktif hale getiriniz. Çevre değişkenini aktif hale getirdikten sonra terminalinizde parantez içerisinde çevre değişkeninizin ismi yer alacaktır:
+
+.. code-block::
+   (sphinx) $
+
+.. note::
+   İlgili çevre değişkenini aktif durumdan çekmek için ``conda deactive`` komutunu kullanmanız yeterli olacaktır.
    
 2) Yerel olarak Sphinx kurulumu
 -------------------------------

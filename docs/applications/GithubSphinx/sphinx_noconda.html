@@ -1,0 +1,258 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2) İzole edilmemiş yerel kurulum &#8212; sevil  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pandoc Kurulumu" href="pandoc_md-rst.html" />
+    <link rel="prev" title="1) İzole edilmiş yerel kurulum (xConda ile)" href="sphinx_conda.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pandoc_md-rst.html" title="Pandoc Kurulumu"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sphinx_conda.html" title="1) İzole edilmiş yerel kurulum (xConda ile)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../sw_guides.html" accesskey="U">Yazılım Kurulumları Kitapçığı</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2) <strong>İzole edilmemiş</strong> yerel kurulum</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="izole-edilmemis-yerel-kurulum">
+<span id="spinhx-noconda"></span><h1>2) <strong>İzole edilmemiş</strong> yerel kurulum<a class="headerlink" href="#izole-edilmemis-yerel-kurulum" title="Permalink to this headline">¶</a></h1>
+<p>Farklı işletim sistemleri için <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">Spinhx kurulum yönergelerine</a> web sayfasından ulaşabilirsiniz. Linux bilgisayarınıza yerel olarak Sphinx’i kurmak için aşağıdaki adımları takip edebilirsiniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">sphinx</span>
+</pre></div>
+</div>
+<p>Kurulduktan sonra, Sphinx’i projenin <em>kök dizini</em> nde başlatın. Bunun için Spinhx’in sayfasındaki <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">başlangıç betiği</a> incelenebilir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">docsrc</span>
+<span class="n">cd</span> <span class="n">docsrc</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+</div>
+<p>Aşağıda Linux işletim sisteminde çalıştırılan örnek betik ayarları verilmiştir. Diğer işletim sistemleri için ekrana çıkan bilgiler değişiklik gösterebilir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Welcome to the Sphinx 1.8.5 quickstart utility.
+
+Please enter values for the following settings (just press Enter to accept a default value,
+if one is given in brackets).
+Selected root path: .
+
+You have two options for placing the build directory for Sphinx output.
+Either, you use a directory &quot;_build&quot; within the root path, or you separate
+&quot;source&quot; and &quot;build&quot; directories within the root path.
+&gt; Separate source and build directories (y/n) [n]: y
+
+Inside the root directory, two more directories will be created; &quot;_templates&quot; for custom
+HTML templates and &quot;_static&quot; for custom stylesheets and other static files. You can enter
+another prefix (such as &quot;.&quot;) to replace the underscore.
+&gt; Name prefix for templates and static dir [_]:
+
+
+The project name will occur in several places in the built documentation.
+&gt; Project name: hpcnotes
+&gt; Author name(s): hpcnotes
+&gt; Project release []:
+
+If the documents are to be written in a language other than English,
+you can select a language here by its language code. Sphinx will then
+translate text that it generates into that language.
+
+For a list of supported codes, see
+http://sphinx-doc.org/config.html#confval-language.
+&gt; Project language [en]:
+
+The file name suffix for source files. Commonly, this is either &quot;.txt&quot; or &quot;.rst&quot;.
+Only files with this suffix are considered documents.
+&gt; Source file suffix [.rst]:
+
+One document is special in that it is considered the top node of the &quot;contents tree&quot;,
+that is, it is the root of the hierarchical structure of the documents. Normally, this
+is &quot;index&quot;, but if your &quot;index&quot; document is a custom template, you can also set this to
+another filename.
+&gt; Name of your master document (without suffix) [index]:
+Indicate which of the following Sphinx extensions should be enabled:
+&gt; autodoc: automatically insert docstrings from modules (y/n) [n]: y
+&gt; doctest: automatically test code snippets in doctest blocks (y/n) [n]: y
+&gt; intersphinx: link between Sphinx documentation of different projects (y/n) [n]: y
+&gt; todo: write &quot;todo&quot; entries that can be shown or hidden on build (y/n) [n]: y
+&gt; coverage: checks for documentation coverage (y/n) [n]: y
+&gt; imgmath: include math, rendered as PNG or SVG images (y/n) [n]: n
+&gt; mathjax: include math, rendered in the browser by MathJax (y/n) [n]: y
+&gt; ifconfig: conditional inclusion of content based on config values (y/n) [n]: n
+&gt; viewcode: include links to the source code of documented Python objects (y/n) [n]: y
+&gt; githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: y
+
+A Makefile and a Windows command file can be generated for you so that you only have to
+run e.g. &#39;make html&#39; instead of invoking sphinx-build directly.
+&gt; Create Makefile? (y/n) [y]: y
+&gt; Create Windows command file? (y/n) [y]: y
+
+Creating file ./source/conf.py.
+Creating file ./source/index.rst.
+Creating file ./Makefile.
+Creating file ./make.bat.
+
+Finished: An initial directory structure has been created.
+</pre></div>
+</div>
+<p>Daha sonra ./source/index.rst ana dosyanızı doldurmalı ve diğer kaynak dökümantasyon belgelerinizi oluşturmalısınız. Dökümanları oluşturmak için Makefile’ı aşağıdaki gibi kullanabilirsiniz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">builder</span>
+</pre></div>
+</div>
+<p>Burada <code class="docutils literal notranslate"><span class="pre">builder</span></code>, desteklenen oluşturuculardan biridir. Örneğin; <em>html, latex veya linkcheck</em>.</p>
+<p>Bu komut dosyası, web sayfasının tüm ayarlarının (tema gibi) bulunduğu tüm önemli <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> dosyasını oluşturur. Site halihazırda bir örnekle doldurulmuştur, bu nedenle oluşturulmaya hazırdır, ancak Makefile’da küçük bir değişiklik yapmak kullanışlıdır, böylece çıktıyı otomatik olarak docs dizinine kopyalar.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Minimal makefile for Sphinx documentation
+#
+
+# You can set these variables from the command line.
+SPHINXOPTS    =
+SPHINXBUILD   = sphinx-build
+SOURCEDIR     = source
+BUILDDIR      = build
+
+# Put it first so that &quot;make&quot; without argument is like &quot;make help&quot;.
+help:
+    @$(SPHINXBUILD) -M help &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
+
+.PHONY: help Makefile
+
+# Catch-all target: route all unknown targets to Sphinx using the new
+# &quot;make mode&quot; option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+%: Makefile
+    @$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
+github:
+       @make html
+       cp -a build/html/. ../docs
+</pre></div>
+</div>
+<p>Sona eklediğimiz <code class="docutils literal notranslate"><span class="pre">github</span></code> bölümü, belgeleri <code class="docutils literal notranslate"><span class="pre">source</span></code> dizininde (daha net olarak; buradaki akışta <code class="docutils literal notranslate"><span class="pre">hpcnotes/docsrc/source</span></code> dizininde) derler ve ilgili dosyaları <code class="docutils literal notranslate"><span class="pre">build/html</span></code>’den <code class="docutils literal notranslate"><span class="pre">docs</span></code> klasörüne kopyalar.</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> komutunu yazmadan önce dosyaları ekleyip, işlemek ve de iletmek gerekmektedir. Bunun için kök dizininize (buradaki örnek için <code class="docutils literal notranslate"><span class="pre">hpcnotes</span></code> klasörüne) gidip aşağıdaki komutları uygulamanız gerekmektedir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">docsrc</span><span class="o">/</span> <span class="o">--</span><span class="nb">all</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Sphinx source&quot;</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<p>Bu komutlar sadece kaynak dosyaları iletecektir. Web sayfasının kendisini derlemek ve de iletmek için ise aşağıdaki komutları kullanmanız gerekmektedir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docsrc</span>
+<span class="n">make</span> <span class="n">github</span>
+<span class="n">cd</span> <span class="o">..</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">--</span><span class="nb">all</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Web page update&quot;</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<p>GitHub’a yenilenmesi için biraz zaman tanıyın. Ve artık proje web sayfanız hazır!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>reStructuredText (rst) yazım dili hakkında <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">ayrıntılı bilgilere ulaşmak için tıklayınız.</a></p>
+<p>rst formatında denemeler yapmak isterseniz <a class="reference external" href="http://rst.ninjs.org/#">linkteki çevrimiçi editörü</a> kullanabilirsiniz.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Kaynak dizininizin (<em>docsrc/source</em>) içerisinde bulunan <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> konfigürasyon dosyasında, aşağıdaki örnekte olduğu gibi, web sayfanızı oluşturmak için gerekli eklentileri tanımlayabilirsiniz. Örneğin; matematiksel yazım formatı için <code class="docutils literal notranslate"><span class="pre">sphinx.ext.mathjax</span></code>, jupyter için <code class="docutils literal notranslate"><span class="pre">jupyter_sphinx</span></code> ve <code class="docutils literal notranslate"><span class="pre">nbsphinx</span></code> gibi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
+<span class="c1"># ones.</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sphinx.ext.coverage&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;sphinx.ext.githubpages&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;jupyter_sphinx&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;nbsphinx&#39;</span><span class="p">,</span>
+ <span class="p">]</span>
+</pre></div>
+</div>
+<p>Spinhx ile oluşturacağınız web sayfanız için farklı temalar kullanabilirsiniz. Bunun için de <cite>conf.py</cite> dosyasında <code class="docutils literal notranslate"><span class="pre">html_theme</span></code> kısmında ilgili değişiklikleri yapmanız gerekmektedir (örnek: html_theme = ‘bizstyle’ )
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes">Spinhx temalarına ulaşmak için tıklayınız.</a></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sphinx_conda.html"
+                        title="previous chapter">1) İzole edilmiş yerel kurulum (xConda ile)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pandoc_md-rst.html"
+                        title="next chapter">Pandoc Kurulumu</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/applications/GitHubSphinx/sphinx_noconda.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pandoc_md-rst.html" title="Pandoc Kurulumu"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sphinx_conda.html" title="1) İzole edilmiş yerel kurulum (xConda ile)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">sevil  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../sw_guides.html" >Yazılım Kurulumları Kitapçığı</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2) <strong>İzole edilmemiş</strong> yerel kurulum</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, sevil.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.3.
+    </div>
+  </body>
+</html>
