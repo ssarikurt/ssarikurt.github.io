@@ -1,8 +1,8 @@
 .. _spinhx_noconda:
 
 
-2) **İzole edilmemiş** yerel kurulum
-======================================
+2) İzole edilmemiş yerel kurulum
+=================================
 
 Farklı işletim sistemleri için `Spinhx kurulum yönergelerine <https://www.sphinx-doc.org/en/master/usage/installation.html>`_ web sayfasından ulaşabilirsiniz. Linux bilgisayarınıza yerel olarak Sphinx'i kurmak için aşağıdaki adımları takip edebilirsiniz::
 
